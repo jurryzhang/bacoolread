@@ -1,0 +1,5 @@
+<ul class="ultop">
+{?section name=i loop=$newsrows?}
+<li><a href="{?$jieqi_modules['news']['url']?}/newslist.php?pid={?$newsrows[i].categoryid?}">{?$newsrows[i].categoryname|truncate:$long:".."?}</a></li>
+{?/section?}
+</ul>

@@ -1,0 +1,28 @@
+{?if $reviewrows|count > 0?}
+		<div class="intrReviewTab">
+          <ul class="reviewTabTit mb10 cf">
+                <li id="three1" class="on">最新书评</li>
+                <li id="three2" style="border-left:0;"><a href="{?$jieqi_modules['article']['url']?}/reviews.php?aid={?$reviewaid?}&type=good" target="_blank">精华评论</a></li>
+                <li id="three3" style="border-left:0;"><a href="{?$jieqi_modules['article']['url']?}/reviews.php?aid={?$reviewaid?}&type=all" target="_blank">全部评论</a></li>
+            </ul>
+            <div class="reviewTabCon">
+                <div id="con_three_1">
+{?section name=i loop=$reviewrows?}
+                    <div class="shupingList cf">
+                        <div class="splImg"><img src="{?function jieqi_geturl:'system':'avatar':$reviewrows[i].posterid:'s'?}" alt="{?if $reviewrows[i].posterid > 0?}{?$reviewrows[i].poster?}{?else?}游客{?/if?}"/></div>
+                        <div class="splInfo cf">
+                        	<div class="cf">
+                            <b>{?if $reviewrows[i].posterid > 0?}<a href="{?function jieqi_geturl:'system':'user':$reviewrows[i].posterid?}" target="_blank">{?$reviewrows[i].poster?}</a>{?else?}游客{?/if?}</b>
+                            <em>{?$reviewrows[i].replytime|date:Y-m-d H:i:s?} 发表</em>
+                        	</div>
+                            <p>{?if $reviewrows[i].istop == 1?}<span class="hot"><i class="fa fa-thumbs-up fa-fw"></i></span>{?/if?}{?if $reviewrows[i].isgood == 1?}<span class="hot"><i class="fa fa-trophy fa-fw"></i></span>{?/if?}<a href="{?$jieqi_modules['article']['url']?}/reviewshow.php?rid={?$reviewrows[i].topicid?}" target="_blank">{?$reviewrows[i].posttext|truncate:320:'..'?}</a></p>
+                          <div class="splInfohf"><a href="{?$jieqi_modules['article']['url']?}/reviewshow.php?rid={?$reviewrows[i].topicid?}#postnew" target="_blank">回复</a></div>
+                        </div>
+                    </div>
+                    
+{?/section?}
+                    
+                </div>
+            </div>
+        </div>
+{?/if?}

@@ -1,0 +1,132 @@
+<div style="width:100%;padding:20px 0px;text-align:center;">
+
+    <div id="tab1" style="margin:auto; width:660px; height:300px; padding:20px;">
+        <div class="tablist">
+            <ul>
+                <!--<li><a href="javascript:void(0)" onclick="selecttab(this)" class="selected">完善账号信息</a></li>-->
+
+                <!--<li><a href="javascript:void(0)" onclick="selecttab(this)">已有账号？绑定我的账号</a></li>-->
+            </ul>
+        </div>
+        <div class="tabcontent">
+            <div class="tabvalue">
+
+                <form name="frmbindnew" id="frmbindnew" action="{?$jieqi_user_url?}/api/{?$apiname?}/bind.php?do=submit" method="post">
+                    <!--<table class="grid" width="80%" align="center">-->
+                        <caption>{?$apititle?}登录成功，完善本站账号信息</caption>
+
+                    <fieldset>
+                        <div class="form-item">
+                            <div class="field-name">用户名:</div>
+                            <div class="field-input">
+                                <input type="text" name="username" id="username" size="25" maxlength="30" value="" onBlur="Ajax.Update('{?$check_url?}?item=u&username='+this.value, {outid:'usermsg', tipid:'usermsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="usermsg"></span>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="field-name">密码:</div>
+                            <div class="field-input">
+                                <input type="password" name="password" id="password" size="25" maxlength="30"  value="" onBlur="Ajax.Update('{?$check_url?}?item=p&password='+this.value, {outid:'passmsg', tipid:'passmsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="passmsg"></span>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="field-name">确认密码:</div>
+                            <div class="field-input">
+                                <input type="password" name="repassword" id="repassword" size="25" maxlength="30"  value=""  onBlur="Ajax.Update('{?$check_url?}?item=r&password='+password.value+'&repassword='+this.value, {outid:'repassmsg', tipid:'repassmsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="repassmsg"></span>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="field-name">Email:</div>
+                            <div class="field-input">
+                                <input type="text" name="email" id="email" size="25" maxlength="60"  value="" onBlur="Ajax.Update('{?$check_url?}?item=m&email='+this.value, {outid:'mailmsg', tipid:'mailmsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="mailmsg"></span>
+                            </div>
+                        </div>
+
+
+                        <!--<div class="form-item">-->
+                            <!--<div class="field-name">用户名(必填)<span class="hottext">(必填)</span>:</div>-->
+                            <!--<div class="field-input">-->
+                                <!--<input type="text" class="text" name="username" id="username" size="25" maxlength="30" style="width:160px" value="{?$api_nickname?}" onBlur="Ajax.Update('{?$check_url?}?item=u&username='+this.value, {outid:'usermsg', tipid:'usermsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="usermsg"></span>-->
+                                <!--<br /><span style="line-height:150%;color:gray;">用于本站登录及显示的用户名</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-item">-->
+                            <!--<td class="tdl" width="25%">用户名<span class="hottext">(必填)</span></td>-->
+                            <!--<td class="tdr"><input type="text" class="text" name="username" id="username" size="25" maxlength="30" style="width:160px" value="{?$api_nickname?}" onBlur="Ajax.Update('{?$check_url?}?item=u&username='+this.value, {outid:'usermsg', tipid:'usermsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="usermsg"></span>-->
+                                <!--<br /><span style="line-height:150%;color:gray;">用于本站登录及显示的用户名</span>-->
+                            <!--</td>-->
+                        <!--</div>-->
+
+                        <!--<tr>-->
+                        <!--<div>-->
+                            <!--<td class="tdl" width="25%">用户名<span class="hottext">(必填)</span></td>-->
+                            <!--<td class="tdr"><input type="text" class="text" name="username" id="username" size="25" maxlength="30" style="width:160px" value="{?$api_nickname?}" onBlur="Ajax.Update('{?$check_url?}?item=u&username='+this.value, {outid:'usermsg', tipid:'usermsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" /> <span id="usermsg"></span>-->
+                                <!--<br /><span style="line-height:150%;color:gray;">用于本站登录及显示的用户名</span>-->
+                            <!--</td>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                        <!--<div>-->
+                            <!--<td class="tdl" width="25%">Email<span class="hottext">(必填)</span></td>-->
+                            <!--<td class="tdr">-->
+                                <!--<input type="text" class="text" name="email" id="email" size="25" maxlength="60" style="width:160px" value="" onBlur="Ajax.Update('{?$check_url?}?item=m&email='+this.value, {outid:'mailmsg', tipid:'mailmsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});" />-->
+                                <!--<span id="mailmsg"></span>-->
+                            <!--</td>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<td class="tdl" width="25%">本站密码<span class="hottext">(必填)</span></td>-->
+                            <!--<td class="tdr">-->
+                                <!--<input type="password" class="text" name="password" id="password" size="25" maxlength="20" style="width:160px" value="" />-->
+                                <!--<span id="passmsg"></span>-->
+                                <!--<br />-->
+                            <!--</td>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<td class="tdl" width="25%">确认密码<span class="hottext">(必填)</span></td>-->
+                            <!--<td class="tdr"><input type="password" class="text" name="repassword" id="repassword" size="25" maxlength="20" style="width:160px" value="" /> <span id="repassmsg"></span>-->
+                                <!--<br /><span style="line-height:150%;color:gray;">重复输入以上密码。</span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="tdl" width="25%">&nbsp;<input type="hidden" name="action" id="action" value="bindnew" /></td>-->
+                            <!--<td class="tdr"><input type="submit" class="button" name="submit"  id="submit" value="确认绑定" />-->
+                                <!--&lt;!&ndash;<a href="{?$jieqi_url?}/">以后再说，立即去看书！</a>&ndash;&gt;-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <div class="form-item">
+                            <div class="f12 g6 xy">
+                                <input type="checkbox" name="iagree" id="iagree" value="1" checked="checked" class="check" />我已阅读并同意<a href="javascript:void(0)" onclick="shxy()" class="f_blue">《用户协议》</a>
+                            </div>
+                        </div>
+
+                        <button name="submit" id="submit" class="btn-submit2" type="submit">确认绑定</button>
+
+                    <!--</table>-->
+                    </fieldset>
+                </form>
+            </div>
+            <div class="tabvalue" style="display:none">
+                <form name="frmbindold" id="frmbindold" action="{?$jieqi_user_url?}/api/{?$apiname?}/bind.php?do=submit" method="post">
+                    <table class="grid" width="80%" align="center">
+                        <caption>{?$apititle?}登录成功，跟本站已有账号绑定</caption>
+                        <tr>
+                            <td class="tdl" width="25%">用户名</td>
+                            <td class="tdr"><input type="text" class="text" size="20" maxlength="30" style="width:120px" name="username" onKeyPress="javascript: if (event.keyCode == 32 || event.which == 32) return false;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdl" width="25%">密　码</td>
+                            <td class="tdr"><input type="password" class="text" size="20" maxlength="30" style="width:120px" name="password"></td>
+                        </tr>
+                        <tr>
+                            <td class="tdl" width="25%">&nbsp;<input type="hidden" name="action" id="action" value="bindold" /></td>
+                            <td class="tdr"><input type="submit" class="button" name="submit"  id="submit" value="确认绑定" />
+                                <!--<a href="{?$jieqi_url?}/">以后再说，立即去看书！</a>-->
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

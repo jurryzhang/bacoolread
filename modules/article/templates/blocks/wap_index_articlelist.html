@@ -1,0 +1,12 @@
+{?section name=i loop=$articlerows?} 
+<div class="one_radius">
+            <div class="radius_l"> <span class="radius_{?$i.order?}">{?$i.order?}</span> </div>
+      <div class="c_r_a">
+        <ul>
+          <li> <a style="color:#000000" href="{?$jieqi_wap_url?}/info.php?id={?$articlerows[i].articleid?}">
+            [{?$articlerows[i].sort?}]{?$articlerows[i].articlename?}</a></li>
+          <li > <span>{?$articlerows[i].intro|truncate:40?}...</span></li>
+        </ul>
+      </div>
+    </div>
+	{?/section?}

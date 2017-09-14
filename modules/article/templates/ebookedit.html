@@ -1,0 +1,113 @@
+<link rel="stylesheet" type="text/css" href="{?$jieqi_url?}/uploadify/uploadify.css">
+<script type="text/javascript" src="{?$jieqi_url?}/uploadify/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{?$jieqi_url?}/uploadify/jquery.uploadify.min.js"></script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function() {
+	$("#upload_cover").uploadify({
+		swf : '/uploadify/uploadify.swf',
+		uploader : '/modules/article/upload.php',
+        formData : {
+            type : 'cover',
+            userid : '{?$jieqi_userid?}',
+            token : $("#token").val()
+        },
+		buttonText : '选择封面图片',
+		buttonImage: "/uploadify/filebotton.png",
+		width: "124",
+		height: "33",
+		fileObjName : 'cover',
+		fileTypeDesc : '支持格式：',
+		fileTypeExts : '*.jpg;*.jpge;*.gif;*.png',
+		fileSizeLimit : '2MB',
+		queueSizeLimit : 1,
+		multi : false,
+		removeCompleted : false,
+		onSelect : function(file) {
+			$("#cover").val("");
+			var queuedFile = {};
+			for (var n in this.queueData.files) {
+				queuedFile = this.queueData.files[n];
+				if (queuedFile.id !== file.id) {
+					$('#' + queuedFile.id).remove();
+					this.cancelUpload(queuedFile.id);
+					delete this.queueData.files[n];
+				}
+			}
+		},
+		onUploadSuccess : function(file, data) {
+			$("#cover").val(data);
+			$('#' + file.id).find('.cancel').hide();
+			$('#' + file.id).find('.uploadify-progress').hide();
+			if (data == "") {
+				$('#' + file.id).find('.data').html(' - <font color="red">上传失败！</font>');
+				return false;
+			}
+			$('#' + file.id).find('.data').html(' - <font color="green">上传成功！</font>');
+		}
+	});
+});
+function frmnewarticle_validate(){
+  if(document.frmnewarticle.sortid.value == "0"){
+    alert("请输入类别");
+    document.frmnewarticle.sortid.focus();
+    return false;
+  }
+  if(document.frmnewarticle.articlename.value == ""){
+    alert("请输入文章名称");
+    document.frmnewarticle.articlename.focus();
+    return false;
+  }
+  if(document.frmnewarticle.author.value == ""){
+    alert("请输入作者");
+    document.frmnewarticle.author.focus();
+    return false;
+  }
+}
+</script>
+<link rel="stylesheet" rev="stylesheet" href="{?$jieqi_local_url?}/69css/case.css" type="text/css" media="all" />
+<div class="case_main">
+<div class="case_left">
+<dl>
+<dt>会员中心</dt>
+<dd><a href="{?$jieqi_url?}/userdetail.php" title="会员首页">会员首页</a></dd><dd><a href="{?$jieqi_url?}/modules/article/newebook.php" title="上传小说">上传电子书</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/ebook.php" title="我的上传列表">我的上传列表</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/bookcase.php" title="我的书架">我的书架</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/jifen.php" title="兑换鲜花鸡蛋 ">兑换鲜花鸡蛋</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/qiandao/qiandao.php" title="我要签到" target="_blank">我要签到</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd></dl>
+<dl>
+<dt>消息中心</dt>
+<dd><a href="{?$jieqi_url?}/message.php?box=inbox" title="收件箱">收件箱</a></dd><dd><a href="{?$jieqi_url?}/message.php?box=outbox" title="发件箱">发件箱</a></dd><dd><a href="{?$jieqi_url?}/newmessage.php" title="发送新消息">发送新消息</a></dd><dd><a href="{?$jieqi_url?}/newmessage.php?tosys=1" title="发送给管理员">发送给管理员</a></dd>
+</dl>
+<dl>
+<dt>作者专区</dt>
+<dd><a href="{?$jieqi_url?}/modules/article/newarticle.php" title="发表新作">发表新作</a></dd><dd><a href="{?$jieqi_url?}/modules/article/newdraft.php" title="新建草稿">新建草稿</a></dd><dd><a href="{?$jieqi_url?}/modules/article/draft.php" title="草稿箱">草稿箱</a></dd><dd><a href="{?$jieqi_url?}/modules/article/masterpage.php" title="我的文章列表">我的文章列表</a></dd>
+</dl>
+<dl>
+<dt>会员设置</dt>
+<dd><a href="{?$jieqi_url?}/useredit.php" title="修改资料">修改资料</a></dd><dd><a href="{?$jieqi_url?}/setavatar.php" title="设置头像">设置头像</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/passedit.php" title="修改密码">修改密码</a></dd><dd><a href="{?$jieqi_url?}/logout.php" title="退出登录">退出登录</a></dd>
+</dl>
+</div>
+<form name="frmnewarticle" id="frmnewarticle" method="post" onsubmit="return frmnewarticle_validate();" enctype="multipart/form-data">
+<div class="case_rightee">
+<div class="case_title">发表新作</div>
+<div class="msg_left">类别：</div><div class="msg_right">
+  <select class="select" size="1" name="sortid" id="sortid">
+  <option value="0">请选择类别</option>
+  {?section name=i loop=$sortrows?}
+  <option value="{?$i['key']?}" {?if $i['key'] == $sortid?} selected="selected"{?/if?}>{?$sortrows[i].caption?}</option>
+  {?/section?}
+  </select>
+</div>
+<div class="msg_left">文章名称：</div><div class="msg_right"><input type="text" class="input" name="articlename" id="articlename" size="30" maxlength="50" value="{?$articlename?}" /></div>
+<div class="msg_left">作者：</div><div class="msg_right">
+<input type="text" class="input" name="author" id="author" size="30" maxlength="30" value="{?$author?}" /></div>
+<div class="msg_left">关键字者：</div><div class="msg_right">
+<input type="text" class="input" name="keywords" id="keywords" size="30" maxlength="50" value="{?$keywords?}" /> <span class="hottext">主角姓名,特定名词等,以空格分隔</span></div>
+<div class="msg_left">连载状态：</div><div class="msg_right">
+  <input type="radio" class="radio" name="fullflag" id="fullflag_0" value="0" {?if $fullflag==0?}checked="checked"{?/if?} /><label for="fullflag_0">连载中</label> &nbsp;
+  <input type="radio" class="radio" name="fullflag" id="fullflag_1" value="1" {?if $fullflag>0?}checked="checked"{?/if?} /><label for="fullflag_1">已完成</label>
+</div>
+<div class="msg_left">内容简介：</div><div class="msg_right2">
+<textarea class="textarea" name="intro" id="intro" rows="6" cols="60">{?$intro?}</textarea></div>
+<div class="msg_left">封面图片：</div><div class="msg_right">
+<input type="file" class="text" size="30" id="upload_cover" /><input type="hidden" name="cover" id="cover" value="" /> <span id="tip_cover" class="hottext">图片格式：.jpg</span></div>
+<div class="msg_left">&nbsp;</div><div class="msg_right"><input type="hidden" name="token" id="token" value="{?$token?}" /><input type="hidden" name="action" id="action" value="check" /><input type="submit" class="button" name="submit"  id="submit" value="提 交" /></div>
+</form>
+</div>
+</div>

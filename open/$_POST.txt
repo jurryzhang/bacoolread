@@ -1,0 +1,6 @@
+Array
+(
+    [spiderid] => 1
+    [userid] => 1
+    [bookid] => 206
+)

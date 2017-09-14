@@ -1,0 +1,32 @@
+{?if $reviewrows|count > 0?}
+<div class="cf">
+<div class="fl">
+<ul class="ultab">
+<li><a href="javascript:;" class="selected">&nbsp;&nbsp;最新书评&nbsp;&nbsp;</a></li>
+</ul>
+</div>
+<div class="fr">
+<a href="{?$jieqi_modules['article']['url']?}/reviews.php?aid={?$reviewaid?}&type=good" target="_blank">精华书评</a> | 
+<a href="{?$jieqi_modules['article']['url']?}/reviews.php?aid={?$reviewaid?}&type=all" target="_blank">全部书评</a>&nbsp;
+</div>
+</div>
+<table class="grid" width="100%">
+{?section name=i loop=$reviewrows?}
+	<tr><td class="topic">
+	{?if $reviewrows[i].istop == 1?}<span class="pop">[顶]</span>{?/if?}{?if $reviewrows[i].isgood == 1?}<span class="pop">[精]</span>{?/if?}<a class="pop" href="{?$jieqi_modules['article']['url']?}/reviewshow.php?rid={?$reviewrows[i].topicid?}" target="_blank">{?$reviewrows[i].title|str_replace:"<br />":" "|truncate:80:'..'?}</a>
+	</td></tr>
+	<tr><td>
+	{?$reviewrows[i].posttext|truncate:320:'..'?}
+	<p class="mt">
+	<span class="gray">发表人：</span>{?if $reviewrows[i].posterid > 0?}<a href="{?function jieqi_geturl:'system':'user':$reviewrows[i].posterid?}" target="_blank">{?$reviewrows[i].poster?}</a></a>{?else?}游客{?/if?}
+	&nbsp;&nbsp;
+	<span class="gray">最后回复时间：</span>{?$reviewrows[i].replytime|date:Y-m-d H:i:s?}
+	&nbsp;&nbsp;
+	<span class="gray">点击数：</span>{?$reviewrows[i].views?}
+	&nbsp;&nbsp;
+	<span class="gray">回复数：</span>{?$reviewrows[i].replies?}
+	</p>
+	</td></tr>
+{?/section?}
+</table>
+{?/if?}

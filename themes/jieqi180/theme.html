@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta id="ctl00_metaKeywords" content="小说,小说网,言情小说,青春小说,玄幻小说,武侠小说,都市小说,历史小说,网络小说,原创网络文学"
+          name="keywords">
+    <meta id="ctl00_metaDescription" content="小说阅读,精彩小说尽在{?$jieqi_pagetitle?}。{?$jieqi_pagetitle?}提供玄幻小说,武侠小说,原创小说,网游小说,都市小说,言情小说,青春小说,历史小说,军事小说,网游小说,科幻小说,恐怖小说,首发小说最新章节免费小说阅读,精彩尽在{?$jieqi_pagetitle?}！热门小说:莽荒纪,绝世唐门,天骄无双,胜者为王,醉枕江山。"
+          name="description">
+    <!-- 360安全游览器使用webkit极速核 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="description" content="{?$jieqi_pagetitle?}网络各界小说高手,每日更新小说连载,小说排行榜更是提供全网最收欢迎的小说下载,当下最好看的小说,如言情小说.穿越小说.玄幻小说等.找最好看的免费小说就来{?$jieqi_pagetitle?}."
+    />
+    <meta name="keywords" content="小说,小说排行榜,免费小说下载,好看的小说" />
+    <!-- IE使用它支持的最高模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="baidu-site-verification" content="3R33MUNLCM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{?$jieqi_pagetitle?}</title>
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="/favicon.ico" type="image/x-icon" rel="Bookmark">
+    <link rel="stylesheet" type="text/css" href="/sink/css/base.css"/>{?if $jieqi_thisurl|strstr:info !== false?}
+    <script type="text/javascript">
+        var article_id = "{?$articleid?}";
+    </script>
+    <script type="text/javascript" src="/scripts/url/info.js"></script>{?/if?}
+    <!--<script type="text/javascript" src="{?$jieqi_url?}/scripts/jquery-1.7.min.js"></script>-->
+    <script type="text/javascript" src="/sink/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/sink/js/base.js"></script>
+    <script type="text/javascript" src="/sink/js/layer.js"></script>
+    <script type="text/javascript" src="/sink/js/page.js"></script>
+</head>
+<body>
+
+{?include file="sink/head.html"?}
+
+<!-- 顶部导航的模板 -->
+<textarea id="topNavBarTpl" style="display:none;">
+
+	 </textarea>
+<script type="text/javascript">
+    $(function() {
+        CS.common.init();
+    });
+</script>
+<div class="pageCenter">
+    <div class="mainNavWrap cf">
+        <a class="yqLogo" href="/">
+            <img src="/sink/image/logo.png" width="181"
+                 height="80" alt="{?$jieqi_pagetitle?}" title="{?$jieqi_pagetitle?}" />
+        </a>
+
+        <!-- 非首页第一条广告 -->
+        <a class="topBanner" target="_blank" href="http://www.mianfeidushu.com/info/24.html"><img width="800" height="80" alt="#"  title="" src="/sink/image/cjtssy.png" ></a>
+
+    </div>
+    <div class="head_mainnav">
+        <div class="head_mainnav_hd cf  clearfix">
+            <h3>
+                <a href="{?$jieqi_url?}/">
+                    首页
+                </a>
+            </h3>
+
+
+            {?if $jieqi_thisfile|basename == 'articlefilter.php' || $jieqi_thisfile|basename == 'articleinfo.php'?}{?else?}<span>
+          </span>{?/if?}
+            <h3{?if $jieqi_thisfile|basename == 'articlefilter.php' || $jieqi_thisfile|basename == 'articleinfo.php'?} class="cur"{?/if?}>
+            <a href="{?$jieqi_modules['article']['url']?}/articlefilter.php">
+                书库
+            </a>
+            </h3>
+            {?if $jieqi_thisfile|basename == 'articlefilter.php' || $jieqi_thisfile|basename == 'articleinfo.php'?}{?else?}<span>
+          </span>{?/if?}
+
+
+            <h3>
+                <a href="{?$jieqi_modules['article']['url']?}/myarticle.php">
+                    作家中心
+                </a>
+            </h3>
+            <span>
+          </span>
+
+            <h3>
+                <a href="http://www.mianfeidushu.com/user">
+                    个人中心
+                </a>
+            </h3>
+            <span>
+          </span>
+            <h3>
+                <a href="http://www.mianfeidushu.com/modules/fuli/2016.html" target="_blank">
+                    作者福利
+                </a>
+            </h3>
+            <span>
+          </span>
+            <h3>
+                <a href="http://m.mianfeidushu.com" target="_blank">
+                    手机版
+                </a>
+            </h3>
+            <span>
+          </span>
+
+            <h3>
+                <a href="{?$jieqi_modules['pay']['url']?}/buyegold.php" target="_blank">
+                    充值
+                </a>
+            </h3>
+            <span>
+          </span>
+            <h3>
+                <a href="http://www.mianfeidushu.com/modules/client/clientdownload.html" target="_blank">
+                    客户端下载
+                </a>
+            </h3>
+            <!--<div class="headSerachBox">
+                  <form action="/modules/article/search.php" method="post">
+                   <input type="text" name="searchkey" class="search_text" placeholder="搜索一下吧！"/>
+                   <input type="submit" value="" class="search_button">
+               </form> -->
+        </div>
+
+
+
+    </div>
+    <div class="head_mainnav_bd cf">
+        <div class="subClass">
+            <!-- burn 修改 2016-12-19 -->
+            {?section name=i loop=$artileSort?}
+            <a href="{?function jieqi_geturl:article:articlelist:1:$i['key']?}">
+                {? $artileSort[i]['caption'] ?}
+            </a>
+			
+            {? if $i['key'] < $artileSortCount?}
+            <span>
+              |
+            </span>
+            {?/if?}
+
+            {?/section?}
+
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:1?}">-->
+                <!--玄test幻·魔法-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:2?}">-->
+                <!--武侠·修真-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:3?}">-->
+                <!--都市·校园-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:4?}">-->
+                <!--历史·军事-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:5?}">-->
+                <!--灵异·悬疑-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:6?}">-->
+                <!--科幻·同人-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:7?}">-->
+                <!--现代·言情-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:8?}">-->
+                <!--古代·言情-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:11?}">-->
+                <!--耽美·同人-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:9?}">-->
+                <!--幻想·言情-->
+            <!--</a>-->
+            <!--<span>-->
+              <!--|-->
+            <!--</span>-->
+            <!--<a href="{?function jieqi_geturl:article:articlelist:1:12?}">-->
+                <!--文学-->
+            <!--</a>-->
+        </div>
+    </div>
+
+</div>
+</div>
+<div class="pageCenter">
+    {?if $jieqi_top_bar != ""?}{?$jieqi_top_bar?}{?/if?}
+    {?if $jieqi_showtblock == 1?}
+    {?section name=i loop=$jieqi_tblocks?}
+    {?if $jieqi_tblocks[i].title != ""?}{?$jieqi_tblocks[i].title?}{?/if?}
+    {?$jieqi_tblocks[i].content?}
+    {?/section?}
+    {?/if?}
+
+    {?if $jieqi_clblocks|empty == false || $jieqi_crblocks|empty == false?}
+
+    {?section name=i loop=$jieqi_clblocks?}
+
+    {?if $jieqi_clblocks[i].title != ""?}{?$jieqi_clblocks[i].title?}{?/if?}
+    {?$jieqi_clblocks[i].content?}
+
+    {?/section?}
+
+    {?section name=i loop=$jieqi_crblocks?}
+
+    {?if $jieqi_crblocks[i].title != ""?}{?$jieqi_crblocks[i].title?}{?/if?}
+    {?$jieqi_crblocks[i].content?}
+
+    {?/section?}
+
+    {?/if?}
+
+
+    {?if $jieqi_showlblock == 1?}
+
+    {?section name=i loop=$jieqi_lblocks?}
+
+    {?if $jieqi_lblocks[i].title != ""?}{?$jieqi_lblocks[i].title?}{?/if?}
+    {?$jieqi_lblocks[i].content?}
+
+    {?/section?}
+
+    {?if $jieqi_showrblock == 1?}{?else?}{?/if?}
+    {?else?}
+    {?if $jieqi_showrblock == 1?}{?else?}{?/if?}
+    {?/if?}
+    {?if $jieqi_showcblock == 1?}
+    {?section name=i loop=$jieqi_ctblocks?}
+
+    {?if $jieqi_ctblocks[i].title != ""?}{?$jieqi_ctblocks[i].title?}{?/if?}
+    {?$jieqi_ctblocks[i].content?}
+
+    {?/section?}
+    {?section name=i loop=$jieqi_cmblocks?}
+
+    {?if $jieqi_cmblocks[i].title != ""?}{?$jieqi_cmblocks[i].title?}{?/if?}
+    {?$jieqi_cmblocks[i].content?}
+
+    {?/section?}
+    {?/if?}
+    {?if $jieqi_contents != ""?}{?$jieqi_contents?}{?/if?}
+    {?if $jieqi_showcblock == 1?}
+    {?section name=i loop=$jieqi_cbblocks?}
+
+    {?if $jieqi_cbblocks[i].title != ""?}{?$jieqi_cbblocks[i].title?}{?/if?}
+    {?$jieqi_cbblocks[i].content?}
+
+    {?/section?}
+    {?/if?}
+
+    {?if $jieqi_showrblock == 1?}
+
+    {?section name=i loop=$jieqi_rblocks?}
+
+    {?if $jieqi_rblocks[i].title != ""?}{?$jieqi_rblocks[i].title?}{?/if?}
+    {?$jieqi_rblocks[i].content?}
+
+    {?/section?}
+
+    {?/if?}
+
+
+    {?if $jieqi_showbblock == 1?}
+    {?section name=i loop=$jieqi_bblocks?}
+
+    {?if $jieqi_bblocks[i].title != ""?}{?$jieqi_bblocks[i].title?}{?/if?}
+    {?$jieqi_bblocks[i].content?}
+    {?/section?}
+    {?/if?}
+    {?if $jieqi_bottom_bar != ""?}{?$jieqi_bottom_bar?}{?/if?}
+
+
+    <br>
+    <a id="totop" class="go_top" href="javascript:">
+    </a>
+
+
+</div>
+<div class="footer">
+    <div class="footer_main cf">
+
+        <div class="foot">
+            <p>
+                <a href="http://www.mianfeidushu.com/modules/forum/showtopic.php?tid=27&lpage=1&page=1" target="_blank" rel="nofollow">
+                    关于本站
+                </a>
+                <a href="http://www.mianfeidushu.com/modules/forum/showtopic.php?tid=28&lpage=1&page=1" target="_blank" rel="nofollow">
+                    商务合作
+                </a>
+                <a href="http://www.mianfeidushu.com/modules/forum/showtopic.php?tid=29&lpage=1&page=1" target="_blank" rel="nofollow">
+                    我要投稿
+                </a>
+                <a href="http://www.mianfeidushu.com/modules/forum/showtopic.php?tid=30&lpage=1&page=1" target="_blank" rel="nofollow">
+                    版权声明
+                </a>
+                <a href="http://www.mianfeidushu.com/modules/forum/showtopic.php?tid=31&lpage=1&page=1" target="_blank" rel="nofollow">
+                    联系我们
+                </a>
+            </p>
+            <p>
+                Copyright&nbsp;&nbsp;&copy;&nbsp;2015&nbsp;mianfeidushu.&nbsp;All&nbsp;Rights&nbsp;Reserved
+            </p>
+            <p>
+                作者发布<a href="http://www.mianfeidushu.com" style="margin: 0px;">小说</a>作品时，请遵守国家互联网信息管理办法规定。本站所收录小说作品、社区话题、书库评论均属其个人行为，不代表本站立场。
+            </p>
+            <p>
+                我们拒绝任何色情小说，拒绝任何抄袭复制侵犯版权的小说，一经发现，即作删除!
+            </p>
+            <p>
+                免费读书&nbsp;版权所有 豫ICP备16025525号-1
+            </p>
+        </div>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"7","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </div>
+</div>
+<a id="goTopBtn" class="go_top" href="javascript:">
+</a>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!--样式-->
+<style>
+.navbar{ height:21px; margin-top:5px; padding-left:10px}
+#news_list{ padding-left:10px}
+.news_box{ margin:15px auto; clear:both}
+.list_title {font-size:14px;line-height:22px;font-weight:bold; color:#C42205}
+.list_note{ color: #666666; clear:both; font-size:12px; font-weight:normal}
+.list_poster{color:#C42205}
+.list_read{ height:30px; line-height:30px;}
+.list_summary {font-size:12px;line-height:22px; font-size:13px; margin:20px 0px;clear:both; width:600px;white-space:normal;}
+.list_foot{ background:#F2F2F2; height:25px; line-height:25px;}
+</style>
+
+<div class="navbar">
+<a href="{?$jieqi_url?}">首页</a>{?section name=i loop=$nav_list?}<img src="{?$iconpath?}icon_nav.gif" align="absmiddle" hspace="5" /><a href="{?$nav_list[i].url?}">{?$nav_list[i].title?}</a>{?/section?}
+</div>
+
+<div id="news_list">
+{?section name=j loop=$news_list?}
+<div class="news_box">
+	<div class="list_title">
+{?$news_list[j].title?}
+		<div class="list_note">发表人：<span class="list_poster">{?$news_list[j].poster?}</span> {?$news_list[j].date?}</div>
+	</div>
+	
+		<div class="list_summary">{?$news_list[j].summary?}</div>
+		<div class="list_read"><a href="{?$news_list[j].url?}" target="_blank">阅读全文 >></a></div>
+		<div class="list_foot">栏目：{?$news_list[j].category?} | 作者：{?$news_list[j].author?} | 浏览（{?$news_list[j].click?}）</div>
+</div>
+{?/section?}
+</div>
+<div class="pages">{?$url_jumppage?}</div>
+

@@ -1,0 +1,10 @@
+{?section name=i loop=$articlerows?}{?if $i['order'] == 1?}
+					<h3><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></h3>
+				
+				
+				
+					
+					<ul class="amit215Ul">
+					{?else?}
+						<li class="amit215Li marr5"><span class="215liA">[{?$articlerows[i].type?}]</span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></li>
+					{?/if?}{?/section?}

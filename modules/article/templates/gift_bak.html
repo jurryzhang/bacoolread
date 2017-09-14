@@ -1,0 +1,64 @@
+
+<script language="javascript" type="text/javascript">
+<!--
+function frmgift_validate(){
+  if(document.frmgift.num.value == ""){
+    alert("请输入赠送数量");
+    document.frmgift.num.focus();
+    return false;
+  }
+  return true;
+}
+//-->
+</script>
+<br />
+<form name="frmgift" id="frmgift" action="{?$jieqi_modules['article']['url']?}/gift.php?do=submit" method="post" onsubmit="return frmgift_validate();" enctype="mulgiftart/form-data">
+<table class="grid" align="center" style="width:60%; min-width:480px;"><caption>我要赠送</caption>
+<tr valign="middle" align="left">
+  <td width="20%">目标小说</td>
+  <td><a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}">{?$articlename?}</a></td>
+</tr>
+<tr valign="middle" align="left">
+  <td width="20%">我拥有</td>
+  <td>
+    {?$egoldnums?}{?$egoldname?}
+  </td>
+</tr>
+
+<tr valign="middle" align="left">
+ <td width="20%">赠送内容</td>
+  <td>
+{?if $gfuname == flower?}
+    {?$typeuname?} （单价：{?$flowerprice?} {?$egoldname?})
+{?elseif $gfuname == egg?}
+    {?$typeuname?} （单价:{?$eggprice?}{?$egoldname?}）
+{?elseif $gfuname == vipvote?}
+    {?$typeuname?} （现有：{?$vipvotemoney?} 张)
+{?elseif $gfuname == hurry?}
+    {?$typeuname?} （<span class="hot">至少 20 以上</span>  )
+{?/if?}
+
+	<input type="hidden" name="type" id="type" value="{?$gfuname?}" />
+  </td>
+</tr><tr valign="middle" align="left">
+  <td width="20%">赠送数量</td>
+  <td>
+  <input type="text" class="text" name="num" size="10" maxlength="10" value="1" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td width="20%">
+  &nbsp;
+  <input type="hidden" name="action" id="action" value="post" />
+  <input type="hidden" name="id" value="{?$articleid?}" />
+  </td>
+  <td>
+  {?if $ajax_request > 0?}
+  <input type="button" name="Submit" class="button" value="提 交" style="cursor:pointer;" onclick="Form.disable('frmgift');Ajax.Request('frmgift',{onComplete:function(){alert(this.response.replace(/<br[^<>]*>/g,'\n'));closeDialog();
+}});">
+  {?else?}
+  <input type="submit" class="button" name="submit"  id="submit" value="提 交" />
+  {?/if?}
+  </td>
+</tr>
+</table>
+</form>

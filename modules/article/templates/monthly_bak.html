@@ -1,0 +1,41 @@
+<br /><br />
+<form name="frmgift" id="frmgift" method="post" action="{?$jieqi_modules['article']['url']?}/monthly.php?do=submit"  onsubmit="return frmhurry_validate();" enctype="multipart/form-data">
+<table width="500" class="grid" align="center">
+<caption>购买包月会员</caption>
+  <tr>
+    <td align="right" valign="middle">当前用户：</td>
+    <td>{?$jieqi_username?}</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">包月状态：</td>
+    <td>{?if $overtime == 0?}尚未包月{?else?}{?$overtime|date:'Y-m-d'?} 到期{?/if?}</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">当前余额：</td>
+    <td>{?$useremoney?} {?$egoldname?}</td>
+  </tr>
+  <tr>
+    <td width="29%" align="right" valign="middle">包月选项：</td>
+    <td width="71%">
+	{?section name=i loop=$jieqimonthly['items']?}	
+<input type="radio" class="radio" name="buytype" id="buytype" value="{?$i['key']?}" {?if $i['key'] == $jieqimonthly['default']?} checked="checked"{?/if?}/>{?$i['key']?}个月 ({?$jieqimonthly['items'][i]?}{?$egoldname?})<br />
+	{?/section?}
+	</td>
+  </tr>
+
+
+ <tr valign="middle" align="left">
+  <td class="odd" width="20%">
+   <input type="hidden" name="action" value="post">
+<input type="hidden" name="id" id="id" value="{?$uid?}" /></td>
+<td class="even">
+    {?if $ajax_request > 0?}
+    <input type="button" name="Submit" class="button" value="提 交" style="cursor:pointer;" onclick="Form.disable('frmgift');Ajax.Request('frmgift',{onComplete:function(){alert(this.response.replace(/<br[^<>]*>/g,'\n'));closeDialog();
+}});">
+  {?else?}
+    <input type="submit" class="button" value="确认购买" name="submit">
+{?/if?}
+</td>
+  </tr>
+</table>
+</form><br /><br />

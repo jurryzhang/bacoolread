@@ -1,0 +1,109 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "topindex"?}
+{?set $jieqi_pagetitle = "礼物-{$jieqi_sitename}"?}
+			<div class="top-alert">
+				</div>
+			<h1 class="page-title">捧场</h1>
+			<form action="{?$jieqi_modules['article']['url']?}/gifts.php?do=submit" class="form form-horizontal"  method="post" id="formgift" name="formgift">
+				<div class="mod block form">
+					<div class="bd">
+						<div class="item donate-items" id="donate-items">
+							<label desc="支持作者文风醇醪，不饮自醉" for="item2" >
+									<input type="radio" id="item2" checked="checked" name="rid" value="2"/>
+									<img src="/_res/css/donate/wine.png" alt="美酒" width="24" height="24" />
+									<span class="name">美酒</span>
+									<span class="exchange"><em class="count">{?$redroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							<label desc="支持作者风流倜傥，玉树临风" for="item3" >
+									<input type="radio" id="item3" name="rid" value="3"/>
+									<img src="/_res/css/donate/fan.png" alt="扇子" width="24" height="24" />
+									<span class="name">扇子</span>
+									<span class="exchange"><em class="count">{?$yellowroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							<label desc="支持作者文思泉涌，妙笔生花" for="item4" >
+									<input type="radio" id="item4" name="rid" value="4"/>
+									<img src="/_res/css/donate/pen.png" alt="神笔" width="24" height="24" />
+									<span class="name">神笔</span>
+									<span class="exchange"><em class="count">{?$blueroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							<label desc="支持作者大杀四方，书海称雄" for="item5" >
+									<input type="radio" id="item5" name="rid" value="5"/>
+									<img src="/_res/css/donate/sword.png" alt="宝剑" width="24" height="24" />
+									<span class="name">宝剑</span>
+									<span class="exchange"><em class="count">{?$whiteroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							<label desc="支持作者文质彬彬，君子如玉" for="item6" >
+									<input type="radio" id="item6" name="rid" value="6"/>
+									<img src="/_res/css/donate/jade.png" alt="玉佩" width="24" height="24" />
+									<span class="name">玉佩</span>
+									<span class="exchange"><em class="count">{?$greenroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							<label desc="一掷千金，文冠天下！" for="item7" >
+									<input type="radio" id="item7" name="rid" value="7"/>
+									<img src="/_res/css/donate/crown.png" alt="皇冠" width="24" height="24" />
+									<span class="name">皇冠</span>
+									<span class="exchange"><em class="count">{?$blackroses?}</em> {?$eglodname?}</span><span class="unit">/个</span>
+								</label>
+							</div>
+						<div class="item">
+							<div class="item-label">
+								数量
+							</div>
+							<div class="item-control">
+								<input name="count" value="1" maxlength="10" class="text" type="text"/>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-label">
+								贺词
+							</div>
+							<div class="item-control">
+								<textarea rows="5" name="reply" class="text" id="donate-content"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="ft">
+                    <input type="hidden" name="act" value="post" />{?$jieqi_token_input?}
+					<input type="hidden" name="id" value="{?$articleid?}" />
+					<input type="submit" name="submit" value="捧场" class="btn btn-auto btn-orange" />
+
+					</div>
+				</div>
+			</form>
+
+
+    <script>
+        (function () {
+            var txt = document.getElementById("donate-content");
+            var labels = document.getElementById("donate-items").getElementsByTagName("label");
+            for (var i in labels) {
+                labels[i].onclick = function () {
+                    txt.value = this.getAttribute("desc");
+                }
+            }
+            if (txt.value == "") {
+                txt.value = labels[0].getAttribute("desc")
+            }
+        })();
+
+	</script>
+<script>
+$(function(){
+		$('#formgift').on('submit', function(e){
+		e.preventDefault();
+		 var tips = layer.open({type: 2,content: '加载中'});
+				GPage.postForm('formgift', $("#formgift").attr("action"),
+			   function(data){
+					if(data.status=='OK'){
+                        $.ajaxSetup ({ cache: false });
+					    layer.close(tips);
+                        jumpurl(data.jumpurl);
+					}else{
+					    layer.close(tips);
+		                openMsgs(data.msg);
+					}
+			   });
+//			}
+		});
+});
+</script>

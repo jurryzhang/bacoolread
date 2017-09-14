@@ -1,0 +1,18 @@
+  {?section name=i loop=$articlerows?}
+  <a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_simage?}" alt="{?$articlerows[i].articlename?}" class="chel1Img"/></a>
+				<div class="chel1R">
+						<h3>本期重磅</h3>
+						<ul class="chel1Ul">
+							<!--<li class="chel1Li"><span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></span>{?if $articlerows[i].authorid == 0?}{?$articlerows[i].author?}{?else?}<a href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}" target="_blank">{?$articlerows[i].author?}</a>{?/if?}</li>-->
+
+							<li class="chel1Li"><span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></span>{?if $articlerows[i].authorid == 0?}{?$articlerows[i].author?}{?else?}<a href="{?$function jieqi_geturl:'system':'user':$articlerows[i].authorid?}" target="_blank">{?$articlerows[i].author?}</a>{?/if?}</li>
+
+							<li class="chel1Li2"><p>{?$articlerows[i].intro|htmlclickable?}...<a href="{?$articlerows[i].url_articleindex?}" target="_blank">[阅读]</a></p></li>
+							<li>最新章节：{?if $articlerows[i].vipchapterid > 0?}<a href="{?$articlerows[i].url_vipchapter?}" target="_blank">{?$articlerows[i].vipvolume?} {?$articlerows[i].vipchapter?}</a><span class="hottext">vip</span>{?else?}<a href="{?$articlerows[i].url_lastchapter?}" target="_blank">{?$articlerows[i].lastvolume?} {?$articlerows[i].lastchapter?}</a>{?/if?}</li>
+							<li>字数：{?$articlerows[i].size?}</li>
+							<li>更新时间：{?if $_request['order'] == 'postdate'?}{?$articlerows[i].postdate|date:'Y-m-d'?}{?else?}{?$articlerows[i].lastupdate|date:'Y-m-d'?}{?/if?}</li>
+						</ul>
+				</div>
+
+  {?/section?}
+  

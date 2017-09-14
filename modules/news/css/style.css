@@ -1,0 +1,63 @@
+body{
+  background: #FFFFFF;
+  color: #000000;
+  margin: 0px;
+  padding: 0px;
+  font-family: 宋体, 新细明体, Verdana, Arial, sans-serif;
+  font-size: 13px;
+}
+
+form{
+  margin: 0px;
+  padding: 0px;
+}
+
+table{
+  text-align: center;
+}
+
+table td{
+  font-family: 宋体, 新细明体, Verdana, Arial, sans-serif;
+  font-size: 13px;
+}
+
+div {
+  text-align: left;
+}
+
+a{
+  color: #1F3A87; 
+  text-decoration: none; 
+  background-color: transparent;
+}
+
+a:hover{
+  color: #FF6600;
+}
+
+h1{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+hr{
+  height: 1px;
+  border: #83b0e1 1px solid;
+}
+
+ul{
+  margin: 0px; 
+  padding: 0px;
+  list-style-type: none; 
+  text-align: left;
+  clear: both;
+}
+
+li{
+  list-style-type: none; 
+  line-height: 150%;
+}
+
+input{
+    font-size: 12px; 
+}

@@ -1,0 +1,6 @@
+{?section name=i loop=$newsrows?}
+{?if $i['order'] == 1?}     
+<div class="notice_left"><h6><a href="{?$newsrows[i].url?}" target="_blank" title="{?$newsrows[i].title?}">{?$newsrows[i].title|truncate:40?}</a></h6><p></p></div>
+<div class="noticeList cf"><ul>{?else?}{?if $i['order'] == 4 ||$i['order'] == 6?}<ul>{?/if?}<li><span>{?$newsrows[i].category?}</span><em>|</em><a href="{?$newsrows[i].url?}" target="_blank" title="{?$newsrows[i].title?}">{?$newsrows[i].title?}</a></li>{?if $i['order'] == 3 ||$i['order'] == 5?}</ul>{?/if?}{?/if?}
+{?/section?}
+

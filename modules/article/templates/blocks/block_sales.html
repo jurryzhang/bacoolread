@@ -1,0 +1,8 @@
+<ul class="ultop">
+{?section name=i loop=$salesrows?}
+  <li>
+  <span class="fr">{?$salesrows[i].egoldnum?}</span><a href="{?function jieqi_geturl:'article':'article':$salesrows[i].articleid:'info'?}" target="_blank">{?$salesrows[i].articlename?}</a>
+  <br />
+  </li>
+{?/section?}
+</ul>

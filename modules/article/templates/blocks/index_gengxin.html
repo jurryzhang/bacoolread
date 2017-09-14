@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+<li><i>{?$articlerows[i].lastupdate|date:'Y-m-d H:i'?}</i><em>{?$articlerows[i].author?}</em><a class="classiy" href="{?function jieqi_geturl:'article':'articlelist':$articlerows[i].sortid?}" target="_blank">[{?$articlerows[i].sort?}]</a>{?if $articlerows[i].vipchapterid > 0?}<a class="chapter" href="{?$articlerows[i].url_vipchapter?}" target="_blank"></a>{?else?}<a class="chapter" href="{?$articlerows[i].url_lastchapter?}" target="_blank"></a>{?/if?}<span><a href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}" target="_blank">{?$articlerows[i].articlename?}</a></span><b>{?if $articlerows[i].isvip_n == 1 ?}VIP{?elseif $articlerows[i].isvip_n == 4 ?}ǩ{?/if?}</b></li>
+{?/section?}

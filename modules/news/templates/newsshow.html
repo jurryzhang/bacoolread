@@ -1,0 +1,46 @@
+{?set jieqi_blocks_module = "news"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+{?set $jieqi_pagetitle = "{$title}-新闻中心-{$jieqi_sitename}"?}
+<link rel="stylesheet" type="text/css" href="/sink/css/au.css"/>
+
+<!---------------------------------------新闻显示开始-------------------------------------->
+<div>
+<!--栏目导航-->
+<div class="c_nav"><a href="{?$jieqi_url?}/">首页</a> &gt; 新闻中心</div>
+
+<div class="c_title">{?$title?}</div>
+<div class="c_head" style="text-align:center">
+  <span class="c_lebel">作者：</span><span class="c_value">{?$author?}</span>
+  <span class="c_lebel">来源：</span><span class="c_value">{?$source?}</span>
+  <span class="c_lebel">发布者：</span><span class="c_value">{?$poster?}</span>
+  <span class="c_lebel">发布时间：</span><span class="c_value">{?$date?}</span>
+</div>
+<hr />
+<!--获取新闻内容-->
+<div class="c_content">
+<ul>
+<li style="width:100%;line-height:24px; padding:0px 5px 0px 5px; font-size:12px">{?$body?}</li>
+
+</ul>
+</div>
+
+<hr />
+<div class="c_foot" id="top_list"></div>
+<br />
+
+</div>
+<script language="JavaScript">
+<!--
+//获取新闻统计列表
+function geTopBar(){
+	Ajax.Update('{?$stat_url?}?method=fetch&id={?$id?}', {outid:'top_list',tipid:'top_list',onLoading:'新闻统计数据加载中...'});
+}
+
+function getRelateNewsList(){
+	Ajax.Update('{?$relt_url?}?method=fetch&id={?$id?}', {outid:'relt_list',tipid:'relt_list',onLoading:'相关新闻列表加载中...'});
+}
+geTopBar();
+
+{?if $relt_show == 1?}getRelateNewsList();{?/if?}
+//-->
+</script>

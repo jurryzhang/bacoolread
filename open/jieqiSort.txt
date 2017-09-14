@@ -1,0 +1,185 @@
+$jieqiSort = Array
+(
+    [article] => Array
+        (
+            [1] => Array
+                (
+                    [code] => xuanhuan
+                    [caption] => 玄幻魔法
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [1] => 东方玄幻
+                            [2] => 魔法校园
+                            [3] => 王朝争霸
+                            [4] => 西方奇幻
+                            [5] => 异世大陆
+                            [6] => 远古神话
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [code] => wuxia
+                    [caption] => 武侠修真
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [7] => 传统武侠
+                            [8] => 古典仙侠
+                            [9] => 现代仙侠
+                            [10] => 异世修仙
+                            [11] => 异世修真
+                            [12] => 洪荒传说
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [code] => dushi
+                    [caption] => 都市校园
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [13] => 都市男女
+                            [14] => 都市异能
+                            [15] => 都市重生
+                            [16] => 都市修真
+                            [17] => 宦海沉浮
+                            [18] => 乡土小说
+                            [19] => 职场商场
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [code] => lishi
+                    [caption] => 历史军事
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [20] => 架空历史
+                            [21] => 历史传记
+                            [22] => 现代军事
+                            [23] => 战争幻想
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [code] => alingyi
+                    [caption] => 灵异悬疑
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [24] => 现代
+                            [25] => 古代
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [code] => kehuan
+                    [caption] => 科幻同人
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [26] => 末世危机
+                            [27] => 未来世界
+                            [28] => 武侠同人
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [code] => xianyan
+                    [caption] => 现代言情
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [29] => 总裁
+                            [30] => 都市
+                            [31] => 校园
+                        )
+
+                )
+
+            [8] => Array
+                (
+                    [code] => chuanyue
+                    [caption] => 古代言情
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [32] => 宫廷
+                            [33] => 女尊
+                            [34] => 种田
+                        )
+
+                )
+
+            [9] => Array
+                (
+                    [code] => huanyan
+                    [caption] => 幻想言情
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [35] => 修真
+                            [36] => 穿越
+                            [37] => 异世
+                        )
+
+                )
+
+            [10] => Array
+                (
+                    [code] => blingyi
+                    [caption] => 灵异悬疑
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [38] => 现代
+                            [39] => 古代
+                        )
+
+                )
+
+            [11] => Array
+                (
+                    [code] => zonghe
+                    [caption] => 耽美同人
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [40] => 耽美
+                            [41] => 同人
+                        )
+
+                )
+
+            [12] => Array
+                (
+                    [code] => wenxue
+                    [caption] => 文学出版
+                    [group] => 3
+                    [types] => Array
+                        (
+                            [42] => 青春言情
+                            [43] => 灵异悬疑
+                            [44] => 玄幻武侠
+                            [45] => 幻想言情
+                            [46] => 职场商战
+                        )
+
+                )
+
+        )
+
+)

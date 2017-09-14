@@ -1,0 +1,5 @@
+<ul class="ultop">
+{?section name=i loop=$richrows?}
+  <li><span class="fr">{?$richrows[i].egoldnum?}</span><a href="{?function jieqi_geturl:'system':'user':$richrows[i].uid:'info'?}" target="_blank">{?$richrows[i].uname?}</a></li>
+{?/section?}
+</ul>

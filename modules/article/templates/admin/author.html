@@ -1,0 +1,59 @@
+<form name="frmquery" method="post" action="{?$jieqi_url?}/admin/users.php">
+<table class="grid" width="100%" align="center">
+  <tr align="center">
+	<td>
+	<a href="{?$jieqi_url?}/admin/users.php">全部会员</a>{?section name=i loop=$grouprows?} | <a href="{?$jieqi_url?}/admin/users.php?groupid={?$grouprows[i].groupid?}">{?$grouprows[i].groupname?}</a>{?/section?}
+	</td>
+  </tr>
+  <tr>
+    <td align="right">
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0" class="hide">
+      <tr>
+        <td width="30%" valign="middle"></td>
+        <td width="70%" align="right" valign="middle">
+		关键字：
+        <input name="keyword" type="text" class="text" id="keyword" size="20" maxlength="50">
+		<input name="keytype" type="radio" value="name" checked="checked" />昵称 
+		<input name="keytype" type="radio" value="uname" />用户名 
+		<input name="keytype" type="radio" value="email" />Email 
+		&nbsp;&nbsp;
+        <input type="submit" name="Submit" value="搜 索" class="button">&nbsp;&nbsp;
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</form>
+<br />
+<form action="" method="post" name="checkform" id="checkform">
+<table class="grid" width="100%" align="center">
+<caption>作者列表</caption>
+  <tr align="center" class="head">
+    <td width="18%" valign="middle">昵称(用户名)</td>
+	<td width="15%" valign="middle">最后登录</td>
+	<td width="13%" valign="middle">最后IP</td>
+    <td width="8%" valign="middle">等级</td>
+    <td width="8%" valign="middle">积分</td>
+    <td width="8%" valign="middle">{?$egoldname?}</td>
+	<td width="10%" valign="middle">VIP状态</td>
+    <td width="20%" valign="middle">操作</td>
+  </tr>
+  {?section name=i loop=$userrows?}
+{?if $userrows[i].groupid > 5?}
+  <tr valign="middle">
+    <td><a href="{?function jieqi_geturl:'system':'user':$userrows[i].uid:'info'?}" target="_blank">{?$userrows[i].name?} <span class="gray">({?$userrows[i].uname?})</span></a></td>
+	<td align="center">{?$userrows[i].lastlogin|date:'Y-m-d H:i'?}</td>
+    <td>{?if $userrows[i]['setting']['lastip'] != ''?}{?$userrows[i]['setting']['lastip']?}{?else?}{?$userrows[i]['setting']['regip']?}{?/if?}</td>
+    <td>{?$userrows[i].group?}</td>
+    <td align="center">{?$userrows[i].score?}</td>
+    <td align="center">{?$userrows[i].egold?}</td>
+	<td align="center">{?if $userrows[i].monthly > 0?}包月:{?$userrows[i].overtime|date:'Y-m-d'?}{?elseif $userrows[i].isvip > 0?}VIP会员{?else?}非VIP{?/if?}</td>
+    <td align="center"><a href="{?$jieqi_url?}/modules/article/admin/auzl.php?id={?$userrows[i].uid?}">实名资料</a>|<a href="{?$jieqi_url?}/modules/article/admin/auxgzl.php?id={?$userrows[i].uid?}">修改实名资料</a></td>
+  </tr>
+{?/if?}
+  {?/section?}
+</table>
+</form>
+<div class="pages">{?$url_jumppage?}</div>
+

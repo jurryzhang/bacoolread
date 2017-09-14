@@ -1,0 +1,168 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "authorblocks"?}
+<link href="/sink/css/au.css" type="text/css" rel="stylesheet" />
+<div class="wrap clearfix">
+{?$jieqi_pageblocks['0']['content']?}
+<div class="auzuojia col10">
+<script type="text/javascript">
+<!--
+function frmarticleedit_validate(){
+  if(document.frmarticleedit.sortid.value == ""){
+    alert("请输入类别");
+    document.frmarticleedit.sortid.focus();
+    return false;
+  }
+  if(document.frmarticleedit.articlename.value == ""){
+    alert("请输入小说名称");
+    document.frmarticleedit.articlename.focus();
+    return false;
+  }
+}
+function showsorts(obj){
+    var sortselect = document.getElementById('sortselect');
+    sortselect.innerHTML = '';
+	typeselect.innerHTML = '';
+    {?section name=i loop=$rgroup['items']?}
+	  if(obj.options[obj.selectedIndex].value == {?$i['key']?}) sortselect.innerHTML = '<select class="select" size="1" onchange="showtypes(this)" name="sortid" id="sortid">{?section name=j loop=$sortrows?}{?if $sortrows[j].group == $i['key']?}<option value="{?$j['key']?}"{?if $j['key'] == $articlevals['sortid']?} selected="selected"{?/if?}>{?$sortrows[j].caption?}</option>{?/if?}{?/section?}</select>';
+    {?/section?}
+}
+
+function showtypes(obj){
+    var typeselect=document.getElementById('typeselect');
+    typeselect.innerHTML='';
+    {?section name=i loop=$sortrows?}
+	  {?if $sortrows[i].types != ''?}
+	  if(obj.options[obj.selectedIndex].value == {?$i['key']?}) typeselect.innerHTML='<select class="select" size="1" name="typeid" id="typeid">{?section name=j loop=$sortrows[i].types?}<option value="{?$j['key']?}"{?if $j['key'] == $articlevals['typeid']?} selected="selected"{?/if?}>{?$sortrows[i]['types'][j]?}</option>{?/section?}</select>';
+	  {?/if?}
+    {?/section?}
+  }
+//-->
+</script>
+<form name="frmarticleedit" id="frmarticleedit" action="{?$url_articleedit?}" method="post" onsubmit="return frmarticleedit_validate();" enctype="multipart/form-data">
+<table width="100%" class="grid" cellspacing="1" align="center">
+<caption>编辑小说</caption>
+<tr valign="middle" align="left">
+  <td class="tdl" width="25%">类别：</td>
+  <td class="tdr">
+  <select class="select" size="1" onchange="showsorts(this)" name="rgroupid" id="rgroupid">
+  {?section name=i loop=$rgroup['items']?}
+  <option value="{?$i['key']?}"{?if $i['key'] == $articlevals['rgroup_n']?} selected="selected"{?/if?}>{?$rgroup['items'][i]?} </option>
+  {?/section?}
+  </select>
+  <span id="sortselect" name="sortselect"></span>
+  <span id="typeselect" name="typeselect"></span>
+  <script type="text/javascript">
+  showsorts(document.getElementById('rgroupid'));
+  showtypes(document.getElementById('sortid'));
+  </script>
+  
+  </td>
+</tr><tr valign="middle" align="left">
+  <td class="tdl">小说名称：</td>
+  <td class="tdr"><input type="text" class="text" name="articlename" id="articlename" size="30" maxlength="50" value="{?$articlevals['articlename']?}" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">副标题（可不填）：</td>
+  <td class="tdr"><input type="text" class="text" name="backupname" id="backupname" size="30" maxlength="100" value="{?$articlevals['backupname']?}" /> <span class="hot">一句话简介</span></td>
+</tr><tr valign="middle" align="left">
+  <td class="tdl">关键字：</td>
+  <td class="tdr"><input type="text" class="text" name="keywords" id="keywords" size="30" maxlength="50" value="{?$articlevals['keywords']?}" /> <span class="hottext">主角姓名,特定名词等,以空格分隔</span></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">责编：</td>
+  <td class="tdr"><input type="text" class="text" name="agent" id="agent" size="30" maxlength="30" value="{?$articlevals['agent']?}" /> <span class="hottext">可以指定一个本站现有编辑作为责编</span></td>
+</tr>
+{?if $allowtrans > 0?}
+<tr valign="middle" align="left">
+  <td class="tdl">作者笔名：</td>
+  <td class="tdr"><input type="text" class="text" name="author" id="author" size="30" maxlength="30" value="{?$articlevals['author']?}" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">作者绑定：</td>
+  <td class="tdr">
+  {?section name=i loop=$authorflag['items']?}
+  <input type="radio" class="radio" name="authorflag" value="{?$i['key']?}" {?if $i['key'] == $articlevals['authorflag']?}checked="checked" {?/if?}/>{?$authorflag['items'][i]?} 
+  {?/section?}
+</td>
+</tr>
+{?/if?}
+<tr valign="middle" align="left">
+  <td class="tdl">授权级别：</td>
+  <td class="tdr">
+  {?section name=i loop=$permission['items']?}
+  <input type="radio" class="radio" name="permission" value="{?$i['key']?}" {?if $i['key'] == $articlevals['permission']?}checked="checked" {?/if?}/>{?$permission['items'][i]?} 
+  {?/section?}
+</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">首发状态：</td>
+  <td class="tdr">
+  {?section name=i loop=$firstflag['items']?}
+  <input type="radio" class="radio" name="firstflag" value="{?$i['key']?}" {?if $i['key'] == $articlevals['firstflag']?}checked="checked" {?/if?}/>{?$firstflag['items'][i]?} 
+  {?/section?}
+</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">写作进度：</td>
+  <td class="tdr">
+  {?section name=i loop=$fullflag['items']?}
+  <input type="radio" class="radio" name="fullflag" value="{?$i['key']?}" {?if $i['key'] == $articlevals['fullflag']?}checked="checked" {?/if?}/>{?$fullflag['items'][i]?} 
+  {?/section?}
+</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">内容简介：</td>
+  <td class="tdr"><textarea class="textarea" name="intro" id="intro" rows="8" cols="70">{?$articlevals['intro']?}</textarea></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">本书公告：</td>
+  <td class="tdr"><textarea class="textarea" name="notice" id="notice" rows="8" cols="70">{?$articlevals['notice']?}</textarea></td>
+</tr>
+{?if $eachlinknum > 0?}
+<tr valign="middle" align="left">
+  <td class="tdl">推荐小说ID（互换链接）：</td>
+  <td class="tdr"><input type="text" class="text" name="eachlinkids" id="eachlinkids" size="30" maxlength="500" value="{?$articlevals['eachlinkids']?}" /> <span class="hottext">必须是本站小说ID，最多{?$eachlinknum?}个，用空格分开</span></td>
+</tr>
+{?/if?}
+<tr valign="middle" align="left">
+  <td class="tdl">封面小图：</td>
+  <td class="tdr"><input type="file" class="text" size="30" name="articlespic" id="articlespic" /> <span class="hottext">图片格式：600*750.jpg （须带网站logo）{?$imagetype?}</span></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">封面大图：</td>
+  <td class="tdr"><input type="file" class="text" size="30" name="articlelpic" id="articlelpic" /> <span class="hottext">图片格式：905*500.jpg （须带网站logo）{?$imagetype?}</span></td>
+</tr>
+{?if $allowmodify > 0?}
+<tr>
+  <td colspan="2" class="head">管理员修改选项</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">发表者：</td>
+  <td class="tdr"><input type="text" class="text" name="poster" id="poster" size="30" maxlength="30" value="{?$articlevals['poster']?}" /> <span class="hottext">必须是本站会员名称</span></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">点击数：</td>
+  <td class="tdr">
+  日：<input type="text" class="text" name="dayvisit" size="10" maxlength="10" value="{?$articlevals['dayvisit']?}" />
+  周：<input type="text" class="text" name="weekvisit" size="10" maxlength="10" value="{?$articlevals['weekvisit']?}" />
+  月：<input type="text" class="text" name="monthvisit" size="10" maxlength="10" value="{?$articlevals['monthvisit']?}" />
+  总：<input type="text" class="text" name="allvisit" size="10" maxlength="10" value="{?$articlevals['allvisit']?}" />
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">推荐数：</td>
+  <td class="tdr">
+  日：<input type="text" class="text" name="dayvote" size="10" maxlength="10" value="{?$articlevals['dayvote']?}" />
+  周：<input type="text" class="text" name="weekvote" size="10" maxlength="10" value="{?$articlevals['weekvote']?}" />
+  月：<input type="text" class="text" name="monthvote" size="10" maxlength="10" value="{?$articlevals['monthvote']?}" />
+  总：<input type="text" class="text" name="allvote" size="10" maxlength="10" value="{?$articlevals['allvote']?}" />
+  </td>
+</tr>
+{?/if?}
+<tr valign="middle" align="left">
+  <td class="tdl">&nbsp;<input type="hidden" name="action" id="action" value="update" /><input type="hidden" name="id" id="id" value="{?$articlevals['articleid']?}" /></td>
+  <td class="tdr"><input type="submit" class="button" name="submit"  id="submit" value="提 交" /></td>
+</tr>
+</table>
+</form>
+</div></div>

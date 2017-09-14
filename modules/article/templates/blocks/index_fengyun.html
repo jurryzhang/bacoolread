@@ -1,0 +1,18 @@
+{?section name=i loop=$articlerows?}
+              <li{?if $i['order'] == 1?} class="firstList"{?/if?}>
+                <div class="hoverHide"><em>{?$articlerows[i].visitnum?}</em>
+                  <b class="num{?if $i['order'] <= 3?}3{?/if?}">{?$i['order']?}</b>
+                  <a href='{?$articlerows[i].url_articleinfo?}' target='_blank'>{?$articlerows[i].articlename?}</a>
+                </div>
+                <div class="detailWrap">
+                  <b class="num{?if $i['order'] <= 3?}3{?/if?}">{?$i['order']?}</b>
+                  <a href='{?$articlerows[i].url_articleinfo?}' target='_blank'><img src='{?$articlerows[i].url_image?}' width='55' height='74' /></a>
+                  <div class="detailInfo"><h4><a href='{?$articlerows[i].url_articleinfo?}' target='_blank'>{?$articlerows[i].articlename?}</a></h4>
+                <!--<p>作者：{?if $articlerows[i].authorid == 0?}{?$articlerows[i].author?}{?else?}<a href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}" target="_blank">{?$articlerows[i].author?}</a>{?/if?}</p>-->
+
+                    <p>作者：{?if $articlerows[i].authorid == 0?}{?$articlerows[i].author?}{?else?}<a href="{?function jieqi_geturl:'system':'user':$articlerows[i].authorid?}" target="_blank">{?$articlerows[i].author?}</a>{?/if?}</p>
+
+                    <p>分类：{?$articlerows[i].sort?}</p></div>
+                </div>
+              </li>
+{?/section?}

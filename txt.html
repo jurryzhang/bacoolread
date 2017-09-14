@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		body{margin: 0;padding: 0;
+		}
+		#box{
+			background: gainsboro;
+			width: 1000px;	
+			margin: 0 auto;
+		}
+		#box form{
+			padding:10px 100px;
+			
+		}
+		#box form p{
+			font-weight: bold;
+			color:red;
+		}
+		#text{
+			width: 600px;
+			height:80px;
+		}
+
+	</style>
+	<body>
+			
+		<div id='box'><br /><br /><br /><br />
+		<div style="color:red; font-weight: bold;font-size: 20px;">只能输入数字和英文标点","结尾不要标点。 例如",101,102,103"。不要输入其它内容。否则不能正确生成文本</div>	
+	
+		<form action="txt.php" method="post"><p>TXT文本</p>
+			<input type="password" name="password" value="" required="required"/>输入密码<br/>
+			<textarea style="font-size:20px;" id="text" name="txt" value="" required="required" ></textarea>
+			<input type="submit" value="确定提交"/>
+		</form>
+		</div>
+	</body>
+</html>

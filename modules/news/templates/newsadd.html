@@ -1,0 +1,45 @@
+<br />
+<span class="navbar"><a href="{?$jieqi_url?}">首页</a><img src="{?$iconpath?}icon_nav.gif" align="absmiddle" hspace="5" />新闻发布</span>
+<br />
+<hr />
+<br />
+<form name="newsadd" action="{?$action?}" method="post">
+{?$formjs?}
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="12%">新闻栏目：</td>
+		<td>{?$category?} *[星号为必填项]</td>
+	</tr>
+	<tr>
+		<td>新闻标题：</td>
+		<td><input type="text" name="news_title" size="50" maxlength="50"/> *</td>
+	</tr>
+	<tr>
+		<td>新闻关键字：</td>
+		<td><input type="text" name="news_keyword" size="20" maxlength="50" onKeyUp="this.value=this.value.replace(/[\uFF1B]/g,';');" /> 最多允许{?$maxkeyword?}个关键字，多个关键字请用分号分隔</td>
+	</tr>
+	<tr>
+		<td>新闻来源：</td>
+		<td><input type="text" name="news_source" size="20" maxlength="20"/></td>
+	</tr>
+	<tr>
+		<td>新闻作者：</td>
+		<td><input type="text" name="news_author" size="20" maxlength="20"/></td>
+	</tr>
+	<tr>
+	<tr>
+		<td>新闻图片：</td>
+		<td><select name="news_image" onFocus="fetchImagesPath()"><option value="">请选择默认图片</option></select></td>
+	</tr>
+		<td colspan="2"><textarea name="news_body" cols="90" rows="28" mce_editable="true"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="hidden" name="method" value="add"/></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" name="submit" value="添加新闻" onclick="return checkFormsInput();"/></td>
+	</tr>
+</table>
+</form>
+<br />
+<br />

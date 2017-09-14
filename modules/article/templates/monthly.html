@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>开通包月</title>
+<link href="/sink/css/pop.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/sink/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/sink/js/layer.js"></script>
+<script type="text/javascript" src="/sink/js/page.js"></script>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<body class="bg7">
+<!--pop2 begin-->
+<div class="pop2 fix">
+  <a href="javascript:;" id="close" class="close" title="关闭"></a>
+  <div class="pop_t">
+    <h3 class="p5"></h3>    
+  </div>
+  <ul class="tab2 fix f14" id="tabs100">
+   <li><a href="" ><em class="recom" style="cursor:pointer">开通包月</em></a></li>
+  </ul>  
+  <ul id="tab_conbox100">
+  <li>
+    <div class="po_box auto p20">
+	<form name="frmgift" id="frmgift" action="{?$jieqi_modules['article']['url']?}/monthly.php?do=submit" method="post" ">
+<table width="500" class="grid" cellspacing="1" align="center">
+       <div class="not">
+        <p class="b"></p>
+        </div>
+		<div class="rdo3 f12"><em class="f14 g6">当前用户：</em>{?$jieqi_username?}</div>
+		<div class="rdo3 f12"><em class="f14 g6">包月状态：</em>{?if $overtime == 0?}尚未包月{?elseif $overtime < $time ?}已经到期{?else?}{?$overtime|date:'Y-m-d'?} 到期{?/if?}</div>
+        <div class="rdo3 f12"><em class="f14 g6">当前余额：</em>{?$emoney?} {?$egoldname?}</div>
+<div class="rdo f12"><em class="f14 g6">选项：</em>   
+{?section name=i loop=$jieqimonthly['items']?}	
+<input type="radio" class="radio" name="buytype" id="buytype" value="{?$i['key']?}" {?if $i['key'] == $jieqimonthly['default']?} checked="checked"{?/if?}/><label>{?$i['key']?}个月 ({?$jieqimonthly['items'][i]?}{?$egoldname?})</label>
+	{?/section?}		
+
+       </div>
+
+   <input type="hidden" name="action" value="post">
+   <input type="hidden" name="id" id="id" value="{?$uid?}" /></td>
+  <p class="auto tc p20"><input type="submit"  class="btn4" name="submit"  id="submit" value="提 交" /></p>
+</form>
+
+     </div>
+   </li>
+   
+  </ul>     
+</div><!--pop2 end-->
+<script type="text/javascript">
+layer.ready(function(){
+		$('#frmgift').on('submit', function(e){
+		e.preventDefault();
+		var i = layer.load(0);
+				GPage.postForm('frmgift', $("#frmgift").attr("action"),
+			   function(data){
+					if(data.status=='OK'){loadheader();
+						layer.msg(data.msg,2,{type:1,shade:false});
+						picTimer = setInterval(function() {
+						    clearInterval(picTimer);
+							parent.layer.close(parent.layer.getFrameIndex(window.name));
+						},2000); //此3000代表自动播放的间隔，单位：毫秒
+//					{
+//						layer.msg(data.msg,1,{type:1,shade:false},function(){});
+//						$.ajaxSetup ({ cache: false });
+//						layer.close(i);
+					}else{
+					    layer.close(i);
+						layer.alert(data.msg, 8, !1);
+					}
+			   });
+//			}
+		});
+});
+$('#recode').click(function(){
+	$('#checkcode').attr('src','{?$jieqi_url?}/checkcode.php?rand='+Math.random());
+});
+</script>
+
+</body>
+</html>

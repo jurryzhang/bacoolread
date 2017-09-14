@@ -1,0 +1,20 @@
+<table class="grid" width="100%" align="center">
+<caption>销售报表</caption>
+  <tr align="center">
+	<td width="10%" class="head">统计月份</td>
+    <td width="35%" class="head">共享销售统计</td>
+	<td width="35%" class="head">代理销售统计</td>
+	<td width="10%" class="head">充值金额</td>
+    <td width="10%" class="head">状态</td>
+  </tr>
+  {?section name=i loop=$saleformrows?}
+  <tr>
+	<td align="center">{?$saleformrows[i].addmonth?}</td>
+    <td align="center">订阅：{?$saleformrows[i].shareegold|fen2yuan?} + 打赏：{?$saleformrows[i].sharetip|fen2yuan?} = 合计：{?$saleformrows[i].shareemoney|fen2yuan?}</td>
+	<td align="center">订阅：{?$saleformrows[i].getegold|fen2yuan?} + 打赏：{?$saleformrows[i].gettip|fen2yuan?} = 合计：{?$saleformrows[i].getemoney|fen2yuan?}</td>
+	<td align="center">{?$saleformrows[i].getinegold|fen2yuan?}</td>
+	<td align="center">{?if $saleformrows[i].ispaid > 0?}已结算{?else?}未结算{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

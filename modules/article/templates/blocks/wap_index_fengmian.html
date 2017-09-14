@@ -1,0 +1,10 @@
+{?section name=i loop=$articlerows?}
+ <li>
+        <div class="zl_book_one"> 
+          <a href="{?$jieqi_wap_url?}/info.php?id={?$articlerows[i].articleid?}" title="{?$articlerows[i].articlename?}">
+            <img src="{?$articlerows[i].url_image?}" height="120" width="90" alt="{?$articlerows[i].articlename?}"> 
+          </a> 
+        </div>
+        <div class="zl_book_name"><a style="color:#000000" href="{?$jieqi_wap_url?}/info.php?id={?$articlerows[i].articleid?}" >{?$articlerows[i].articlename?}</a></div>
+      </li>
+{?/section?}

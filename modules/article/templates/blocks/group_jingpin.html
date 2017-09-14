@@ -1,0 +1,17 @@
+<ul class="cheUl">
+{?section name=i loop=$articlerows?}
+					<li class="chelLi" {?if $i.order == 4&&8?} style="margin-right:0" {?/if?}>
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_simage?}" alt="{?$articlerows[i].articlename?}"/></a>
+						<div class="imgBlok"></div>
+						<div class="imgFont">
+							<div class="imgSpan">{?$articlerows[i].intro|htmlclickable?}...</div>
+							<div class="imgF2"><a href="{?$articlerows[i].url_articleindex?}" target="_blank">Á¢¼´ÔÄ¶Á</a></div>
+						</div>
+						<span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></span><p>×÷Õß£º{?if $articlerows[i].authorid == 0?}{?$articlerows[i].author?}{?else?}<a href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}" target="_blank">{?$articlerows[i].author?}</a>{?/if?}</p>
+					</li>
+					
+  {?/section?}
+					
+				</ul>
+
+  

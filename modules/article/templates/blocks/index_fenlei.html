@@ -1,0 +1,11 @@
+{?section name=i loop=$articlerows?}
+{?if $i['order'] <= 3?}               <div class="recBookBox">
+                  <a href='{?$articlerows[i].url_articleinfo?}' target='_blank'><img src='{?$articlerows[i].url_image?}'width='78' height='113' /></a><div class="recBookInfo"><h3><a href='{?$articlerows[i].url_articleinfo?}' target='_blank'>{?$articlerows[i].articlename?}</a></h3><p>{?$articlerows[i].intro|truncate:200?}..</p><a href='{?$articlerows[i].url_articleinfo?}' class='read' target='_blank'>[µã»÷ÔÄ¶Á]</a></div></div>{?/if?}
+{?/section?}				
+			</div><div class="moreBookRec">
+                <ul class="moreList">
+{?section name=i loop=$articlerows?}
+{?if $i['order'] >= 4?}                  <li>
+                    <a href='{?$articlerows[i].url_articleinfo?}' target='_blank'>{?$articlerows[i].articlename?}</a>
+                  </li>{?/if?}
+{?/section?}

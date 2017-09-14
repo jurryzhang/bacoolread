@@ -1,0 +1,82 @@
+
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta name="keywords" content="{?$articlename?} {?$chaptername?} {?$author?} {?$sort?} {?$jieqi_sitename?}" />
+<meta name="description" content="{?$summary|truncate:500:'..'?}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{?$articlename?}-{?$chaptername?}-{?$author?}-{?$sort?}-{?$jieqi_sitename?}</title>
+<link rel="stylesheet" href="{?$jieqi_modules['article']['url']?}/css/page.css" type="text/css" media="all"  />
+<!--[if lt IE 9]><script type="text/javascript" src="{?$jieqi_url?}/scripts/html5.js"></script><![endif]-->
+<script type="text/javascript" src="/sink/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{?$jieqi_url?}/scripts/common.js"></script>
+<script type="text/javascript" src="{?$jieqi_url?}/scripts/theme.js"></script>
+<script type="text/javascript" src="/sink/js/base.js"></script>
+<script type="text/javascript" src="/sink/js/layer.js"></script>
+<script type="text/javascript" src="/sink/js/page.js"></script>
+<script type="text/javascript">
+<!--
+var url_previous = "{?$url_previous?}";
+var url_next = "{?$url_next?}";
+var url_index = "{?$url_index?}";
+var articleid = "{?$articleid?}";
+var chapterid = "{?$chapterid?}";
+
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) location = url_previous;
+  if (event.keyCode == 39) location = url_next;
+  if (event.keyCode == 13) location = url_index;
+}
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+<body>
+<div class="toplink">
+	<div class="main cf">
+			<ul class="topleft">
+			<li><a href="{?$jieqi_url?}/">首页</a></li>
+                        <li><a href="{?$jieqi_modules['article']['url']?}/group.php?id=1">男频</a></li>
+                        <li><a href="{?$jieqi_modules['article']['url']?}/group.php?id=2">女频</a></li>
+			<li><a href="{?$jieqi_modules['article']['url']?}/articlefilter.php">书库</a></li>
+			<li><a href="{?$jieqi_modules['pay']['url']?}/buyegold.php">充值</a></li>
+			</ul>
+			<div class="readsearch">
+			<form action="{?$jieqi_modules['article']['url']?}/search.php" name="frmreadsearch" method="post" target="_blank">
+				<input name="searchkey" type="text" class="rs_searchkey"  value="" size="10" />	
+				<input name="rs_submit" type="submit"  class="rs_submit"  value="搜索" />
+			</form>
+			</div>
+		<div class="fr">
+			<script type="text/javascript" src="{?$jieqi_url?}/scripts/readtop.js"></script>
+		</div>
+	</div>
+</div>
+
+<div class="headlink cf">
+<div class="linkleft"><a href="{?$jieqi_main_url?}/">{?$jieqi_sitename?}</a>-&gt;<a href="{?$jieqi_modules['article']['url']?}/">书库首页</a>-&gt;<a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}">{?$articlename?}</a></div>
+
+<div class="linkright"><a href="{?$url_previous?}">上一页</a> | <a href="{?$url_index?}">返回书目</a> | <a href="{?$url_next?}">下一页</a> | <a id="a_addbookcase" ]['url']?}/addbookcase.php?bid={?$articleid?}&cid={?$chapterid?}', {method: 'POST'});"href="javascript:;" onclick="GPage.addbook('{?$jieqi_modules['article']['url']?}/addbookcase.php?bid={?$articleid?}&cid={?$chapterid?}');">加入书签</a> | <a id="a_uservote"  href="javascript:;" onclick="GPage.addbook('{?$jieqi_modules['article']['url']?}/uservote.php?id={?$articleid?}');">推荐本书</a> | <a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}">返回书页</a></div>
+</div>
+<div id="abg" class="main cf">
+
+<div class="fullbar"><script type="text/javascript" src="{?$jieqi_modules['article']['url']?}/scripts/pagetop.js"></script></div>
+
+<div class="atitle">{?$chaptername?}</div>
+
+<div class="ainfo">作者：<a href="{?function jieqi_geturl:'article':'author':$authorid:$author?}" target="_blank">{?$author?}</a> &nbsp;&nbsp;&nbsp;&nbsp; 更新：{?$chaptertime|date:'Y-m-d H:i'?} &nbsp;&nbsp;&nbsp;&nbsp; 字数：{?$chaptersize_c?}</div>
+
+<div id="acontent" class="acontent">{?$jieqi_content?}</div>
+
+<div class="footlink cf">
+	<a href="{?$url_previous?}">上一页</a>
+	<a class="light" href="{?$url_index?}">返回目录</a>
+	<a href="{?$url_next?}">下一页</a>
+</div>
+
+<div class="fullbar"><script type="text/javascript" src="{?$jieqi_modules['article']['url']?}/scripts/pagebottom.js"></script></div>
+</div>
+</div>
+</body>
+</html>

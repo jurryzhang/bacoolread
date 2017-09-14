@@ -1,0 +1,7 @@
+{?if $ajax_request > 0?}
+{?$c?}("{?$logs?}   \r\n   <input type=\"hidden\" name=\"loadreview_has_next_page\"   value=\"{?$pages?}\" \/>");
+{?else?}
+{?$logs?} 
+<input type="hidden" name="loadreview_has_next_page"   value="{?$pages?} " />
+
+{?/if?}

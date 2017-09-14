@@ -1,0 +1,29 @@
+stdClass Object
+(
+    [articleid] => 206
+    [postdate] => 1458527773
+    [lastupdate] => 1470131137
+    [articlename] => 透视小农民
+    [authorid] => 678
+    [author] => 码字狗
+    [keywords] => 透视 小农民
+    [intro] => 得到了透视眼的小农民，在都市中游走花丛，性感的老师，温柔的邻家女孩，还有可人的警花，在来几个空姐，喝最烈的酒，做牛叉的透视小农民！
+    [notice] => 
+    [fullflag] => 0
+    [chapters] => 1434
+    [words] => 4442336
+    [isvip] => 4
+    [rgroup] => 1
+    [category] => 都市校园
+    [type] => 都市异能
+    [cover] => http://www.ytread.com/files/article/image/0/206/206s.jpg
+    [bigcover] => 
+    [freechapterid] => 7228
+    [freechapter] => 第３０章
+    [freevolume] => 
+    [freetime] => 1460637776
+    [vipchapterid] => 58319
+    [vipchapter] => 第1433章
+    [vipvolume] => 
+    [viptime] => 1470131137
+)

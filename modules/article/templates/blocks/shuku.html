@@ -1,0 +1,7 @@
+{?section name=i loop=$articlerows?}
+<li{?if $i['order'] == 1?} class="firstList"{?/if?}>
+<div class="hoverHide">
+<em>{?$articlerows[i].visitnum?}</em>
+<span{?if $i['order'] == 1||$i['order'] == 2||$i['order'] == 3?} class="num3"{?/if?}>{? $i['order']?}</span><a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a></div>
+<div class="detailWrap"><span{?if $i['order'] == 1||$i['order'] == 2||$i['order'] == 3?} class="num3"{?/if?}>{? $i['order']?}</span><a href="{?$articlerows[i].url_articleinfo?}"><img width="55" height="74" alt="" src="{?$articlerows[i].url_image?}"></a><div class="detailInfo"><h4><a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a></h4><p>作者：<a href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}">{?$articlerows[i].author?}</a></p><p>分类：<i>{?$articlerows[i].sortname?}</i></p></div></div></li>
+{?/section?}	

@@ -1,0 +1,93 @@
+
+<script type="text/javascript" src="/sink/js/jquery.cookie.js"></script> 
+<!--logined2  begin-->
+<div class="logined2">
+    <ul class="topmenu" clearfix="" id="jq_topmenu">
+     <li class="webnav" qxpp="" style="background:none">
+      <span class="icon_arr2"><a class="v0 vs" title="VIP0级会员" href="http://www.shuhai.com/user/uservip"></a><em>huaquan1</em></span>
+      <div class="jq_hidebox" id="jq_hidebox" style="display: none; " block;="">
+        <dl class="jq2">
+          <dd class="dd1"><a href="http://www.shuhai.com/user/" class="f_black">个人中心</a></dd>
+          <dd><a href="http://www.shuhai.com/user/usereditView" class="f_black">账号管理</a></dd>
+          <dd><a href="http://www.shuhai.com/user/upaView" class="f_black">修改头像</a></dd>
+          <dd><a href="http://www.shuhai.com/user/pwdview" class="f_black">修改密码</a></dd>
+          <dd><a href="http://www.shuhai.com/pay/" class="f_black">充值</a></dd>
+          <dd class="dd2"><a href="http://www.shuhai.com/user/logout" class="f_black">退出</a></dd>
+        </dl>
+      </div>     
+     </li>
+     <li class="webnav" qxpp="" style="background:none">
+      <span class="icon_arr2">消息<em class="org">(1)</em></span>
+      <div class="jq_hidebox" id="jq_hidebox" style="display: none; " block;="">
+        <dl class="jq1">
+          <dd><a href="http://www.shuhai.com/user/inbox" class="f_black">查看私信</a></dd>
+          <dd><a href="http://www.shuhai.com/user/?my=aname" class="f_black">查看通知</a><em class="g9">您有<em class="org">1</em>条通知</em></dd>
+          <dd><a href="http://www.shuhai.com/user/friend?fans=aname" class="f_black">查看粉丝</a></dd>
+        </dl>
+      </div>   
+     </li>
+     <li class="webnav" qxpp="" style="background:none">
+      <span class="icon_arr2">我的书架</span>
+      <div class="jq_hidebox" id="jq_hidebox" style="display: none; " block;="">
+       <div class="jq3 fix">
+        <ul id="tabs9" class="tabmenu2 fix" >
+          <li id="arl" class="brdl"><a href="javascript:;">书架记录</a></li>
+          <li id="list"><a href="javascript:;">最近阅读</a></li>
+        </ul>
+        <ul id="tab_conbox9">
+         <li style="display:none;" id="am">
+			          <dl class="lisd fix">
+		  
+           <dd class="fix"><em class="nam"><a href="http://mm.shuhai.com/book/24669.htm" target="_blank" class="f_black">《王妃许三贪》</a></em><em class="nam2"><a href="http://mm.shuhai.com/book/24669.htm" target="_blank" class="f_blue1">开始阅读</a></em>
+           
+           </dd>
+		    
+           <dd class="fix g9 noline tr"><a href="http://www.shuhai.com/article/bcView" class="f_blue1">查看更多&gt;&gt;</a></dd>
+          </dl>
+
+         </li>
+         <li>
+          <dl class="lisd fix" id="list2">
+          </dl>
+         </li>
+        </ul>
+       </div>
+      </div>     
+     </li>
+     <li>|<a href="http://www.shuhai.com/user/logout" class="f_black">退出</a></li>
+    </ul>
+</div><!--logined2 end-->
+<script type="text/javascript">
+$(document).ready(function(){
+	$("li.webnav").hover(function(){
+		$(this).addClass("hover").find("div#jq_hidebox").show();},function(){$(this).removeClass("hover").find("div.jq_hidebox").hide();
+	});
+	$.jqtab("#tabs9","#tab_conbox9","mouseenter");
+	
+	$("#list").on({mouseenter:function(){
+	    printCookie();
+	}});
+});
+
+ function printCookie(){
+   var list ="";  
+   if($.cookie("history")){
+		var json = eval("("+$.cookie("history")+")");
+		for(var i = json.length-1; i >= json.length-5 && i >=0; i--)
+		{
+			list = list + "<dd class='fix'><em class='nam'><a href='"+json[i].art_url+"' target='_blank' class='f_black' title='"+json[i].art_tit+"'>《"+json[i].art_tit+"》</a></em><em class='nam2'><a href='"+json[i].chp_url+"' target='_blank' class='f_blue1'>继续阅读</a></em><p class='nam3'>上次您阅读到：<a href='"+json[i].chp_url+"' target='_blank' class='f_black' title='"+json[i].chp_tit+"'>"+json[i].chp_tit+"</a></p></dd>";
+		}
+		list = list + "<dd class='noline'><a href='javascript:;' class='f_blue1' id='clear' onclick='addclear();'>清除记录</a></dd>";
+   } else{
+   	list = "<dd class='fix f14 g9 noline tc'>您最近没有阅读历史<a class='f_blue5' href='/shuku'>点击阅读</a></dd>";
+   }
+    $("#list2").html(list);
+  }
+
+function addclear(){
+	$.cookie("history", null,{path:"/"});
+    var list = "<dd class='fix f14 g9 noline tc'>您最近没有阅读历史<a class='f_blue5' href='/shuku'>点击阅读</a></dd>";
+    $("#list2").html(list);
+}
+
+</script>

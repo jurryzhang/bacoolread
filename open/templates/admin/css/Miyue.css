@@ -1,0 +1,136 @@
+.Tips-success .gritter-item {
+	background: #00c600;
+}
+.pageloading {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=2, MakeShadow=false);
+  position: fixed !important;
+  top: 80px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.ajaxloading{
+  background-color: rgba(255,255,255,0.8);
+  width: 200px !important;
+  left: 45%;
+  border-radius: 10px;
+  padding: 10px 10px;
+  box-shadow: 0px 0px 150px 50px #ddd;
+}
+.spinner {
+  margin: 100px <span id="9_nwp" style="width: auto; height: auto; float: none;"><a id="9_nwl" href="http://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1001&ch=0&di=128&fv=18&is_app=0&jk=be979d14eb1ca546&k=auto&k0=auto&kdi0=0&luki=4&n=10&p=baidu&q=06011078_cpr&rb=0&rs=1&seller_id=1&sid=46a51ceb149d97be&ssp2=1&stid=0&t=tpclicked3_hc&tu=u1922429&u=http%3A%2F%2Fwww%2Eadmin10000%2Ecom%2Fdocument%2F3601%2Ehtml&urlid=0" target="_blank" mpid="9" style="text-decoration: none;"><span style="color:#0000ff;font-size:14px;width:auto;height:auto;float:none;">auto</span></a></span>;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 10px;
+}
+.loadingbar {
+  position: fixed;
+  top: 45%;
+}
+.spinner > div {
+  background-color: #ddd;
+  height: 100%;
+  width: 12px;
+  display: inline-block;
+  margin-right: 5px;   
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+  border-radius: 500px;
+}
+ 
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.spinner .rect6 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+.spinner .rect7 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.spinner .rect8 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.spinner .rect9 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+.spinner .rect10 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+ 
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+ 
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+#dome {
+  font-size: 12px;
+}
+.nomargin{
+	margin:0 !important;
+}
+.sortlistinput input{
+    text-align:center;
+}
+.widget-title h5{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.widget-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.fixbtn {
+    clear:both;
+    position: absolute;
+    top: 4rem;
+    right: 1.5rem;
+    z-index: 10;
+    box-shadow: 0px 0px 5px 1px #ddd;
+    color: #fff;
+}
+.disabledbtn{
+    background-color: #999;
+}
+.progress {
+    margin: 0rem 1rem 0rem 0rem;
+}
+.accordion-heading h5 {
+    width: 90%;
+}

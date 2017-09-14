@@ -1,0 +1,48 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.73
+
+RewriteEngine on
+RewriteBase / 
+RewriteRule ^user/myDynamic$ user/myDynamic.php
+RewriteRule ^user/showSignView$ user/showSignView.php
+RewriteRule ^user/signin$ user/signin.php
+RewriteRule ^reviews/([0-9]+)/$ modules/article/reviews_js.php?aid=$1&ajax_request
+RewriteRule ^reviews/$ modules/article/reviews_js.php
+RewriteRule ^showReplies/$ modules/article/showReplies.php
+#小说连载
+RewriteRule ^info/(.*).html$ modules/article/articleinfo.php?id=$1
+RewriteRule ^read_(.*).html$ modules/article/articleread.php?id=$1
+RewriteRule ^user/bookcase$ modules/article/bookcase.php
+RewriteRule ^sort/(.*)/(.*).html$ modules/article/articlelist.php?sortid=$1&page=$2
+RewriteRule ^fullsort/(.*)/(.*).html$ modules/article/articlelist.php?fullflag=1&sortid=$1&page=$2
+RewriteRule ^initial/(.*)/(.*).html$ modules/article/articlelist.php?initial=$1&page=$2
+RewriteRule ^top/(.*)/(.*).html$ modules/article/toplist.php?order=$1&page=$2
+RewriteRule ^fulltop/(.*?)/([0-9]+).html$ modules/article/toplist.php?fullflag=1&order=$1&page=$2
+RewriteRule ^read/(.*)_(.*).html$ modules/article/reader.php?aid=$1&cid=$2
+RewriteRule ^(.*)_(.*)_(.*)_(.*)_(.*)_(.*)_(.*)_(.*)_(.*)_(.*).html$ modules/article/articlefilter.php?order=$1&sortid=$2&size=$3&update=$4&initial=$5&isfull=$6&isvip=$7&tag=$8&rgroup=$9&page=$10
+RewriteRule ^html(.*)/(.*)/index.html$ modules/article/reader.php?aid=$2
+RewriteRule ^author/(.*).html$ modules/article/authorpage.php?id=$1
+RewriteRule ^read/([0-9]+)_([0-9]+).html$ modules/article/reader.php?aid=$1&cid=$2
+RewriteRule ^read/vip/([0-9]+)_([0-9]+).html$ modules/obook/reader.php?aid=$1&cid=$2
+#个人中心
+RewriteRule ^user/(.*).html$ userinfo.php?id=$1
+RewriteRule ^page/(.*).html$ userpage.php?id=$1
+RewriteRule ^users/login.html$ login.php
+RewriteRule ^users/register.html$ register.php
+RewriteRule ^users/logout.html$ logout.php
+RewriteRule ^users/useredit.html$ useredit.php
+RewriteRule ^users/setavatar.html$ setavatar.php
+RewriteRule ^users/passedit.html$ passedit.php
+#订阅
+RewriteRule ^vip_([0-9]+).html$ modules/obook/buychapter.php?cid=$1
+#新闻
+RewriteRule ^news/([0-9]+).html$  /modules/news/newshow.php?id=$1
+
+
+RewriteRule ^book/list /api/iqiyi/?method=list&%{QUERY_STRING} [NC,L,O]
+RewriteRule ^book/info /api/iqiyi/?method=info&%{QUERY_STRING} [NC,L,O]
+RewriteRule ^book/structure /api/iqiyi/?method=structure&%{QUERY_STRING} [NC,L,O]
+RewriteRule ^book/volume/chapter/info /api/iqiyi/?method=chapterinfo&%{QUERY_STRING} [NC,L,O]
+
+
+

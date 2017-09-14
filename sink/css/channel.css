@@ -1,0 +1,212 @@
+.channel{}
+.channel .leftBar{width: 200px;float: left;}
+.channel .rightBar{width: 200px;float: right;}
+.channel .middleContent{margin: 0 208px;}
+.channel .sideBar{border-top: 2px solid #50ADAD;font-size: 12px;}
+.channel .sideBar.mt{margin-top: 20px;}
+.channel .sideBar .sideBarContent{border: 1px solid #ebebeb;border-top: none;background: #ffffff;overflow: hidden;}
+.channel .sideBar .barTitle{height: 34px;line-height: 34px;background: #f7f7f7;}
+.channel .sideBar .barTitle span{line-height: 100%;font-size: 16px;border-left: 4px solid #50ADAD;padding-left: 10px;float: left;margin: 9px 0 0 17px;}
+.channel .sideBar .barTabBox{width: 202px;margin-left: -1px;}
+.channel .sideBar .barTabBox a{border: 1px solid #e6e6e6;border-right:none;background: #fbfbfb;width: 66px;float: left;display: inline-block;height: 32px;line-height: 32px;text-align: center;font-size: 14px;}
+.channel .sideBar .barTabBox a:hover{text-decoration: none;}
+.channel .sideBar .barTabBox a.current{background: #ffffff;border-bottom: 1px solid #ffffff;}
+.channel .sideBar .barTabBox2{width: 202px;margin-left: -1px;}
+.channel .sideBar .barTabBox2 a{border: 1px solid #e6e6e6;border-right:none;background: #fbfbfb;width: 99px;float: left;display: inline-block;height: 32px;line-height: 32px;text-align: center;font-size: 14px;}
+.channel .sideBar .barTabBox2 a:hover{text-decoration: none;}
+.channel .sideBar .barTabBox2 a.current{background: #ffffff;border-bottom: 1px solid #ffffff;}
+.channel .sideBar .refreshBox{height: 36px;line-height: 36px;}
+.channel .sideBar .refreshBox .refreshBtn{color: #50ADAD;float: left;margin-left: 13px;cursor: pointer;}
+.channel .sideBar .refreshBox .refreshBtn{color: #50ADAD;float: left;margin-left: 13px;cursor: pointer;}
+.channel .sideBar .refreshBox .refreshBtn em{margin-top: 7px;display: inline-block;width: 25px;height: 25px;background: url("../images/bookDetailIcon.png") -25px -125px no-repeat;float: left;}
+.channel .sideBar .refreshBox .more{color: #50ADAD;float: right;margin-right: 15px;}
+.channel .sideBar .refreshBox .listDes{color: #50ADAD;float: left;margin-left: 15px;}
+
+
+
+
+.channel .pushList{margin: 0 10px;}
+.channel .pushList.mb{margin-bottom: -1px;}
+.channel .pushList li{height: 36px;line-height: 36px;border-bottom: 1px solid #ebebeb;}
+.channel .pushList.lil li{height: 38px;line-height: 38px;}
+.channel .pushList li .classify{color: #666666;margin: 0 5px 0 5px;}
+.channel .pushList li .bookName{}
+.channel .rankLists{margin: 4px 10px 0;}
+.channel .rankLists li{height: 38px;line-height: 38px;border-bottom: 1px solid #ebebeb;padding-left: 5px;}
+.channel .rankLists li em{margin: 10px 9px 0 0px;display: inline-block;float: left;font-style: normal;text-align: center;font-size: 12px;height: 17px;line-height: 17px;width: 17px;background: #cccccc;color: #ffffff;}
+.channel .rankLists li.top3 em{background: #50ADAD;}
+.channel .rankLists li .bookName{}
+.channel .rankLists li .num{color: #50ADAD;float: right;margin-right: 11px;}
+
+
+
+.channel .editorRecommend{padding: 10px;}
+.channel .editorRecommend img{width: 176px;height: 76px;border: 1px solid #40151c;}
+.channel .editorRecommend .editorRecommendContent{margin-top: 8px;border: 1px solid #ebebeb;background: #f8f8f8;padding: 6px 12px;}
+.channel .editorRecommend .editorRecommendContent p{line-height: 25px;color: #666666;height: 197px;overflow: hidden;}
+.channel .editorRecommend .editorRecommendContent a.more{color: #50ADAD;line-height: 20px;float: right;}
+.channel .noticeList{margin: 0 10px;padding-bottom: 2px;}
+.channel .noticeList li{height: 33px;line-height: 33px;border-bottom: 1px solid #ebebeb;}
+.channel .noticeList li em{display: inline-block;height: 5px;width: 5px;float: left;margin: 16px 6px 0 6px;background: #50ADAD;}
+
+.channel .scrollBox{border: 1px solid #ebebeb;background: #ffffff;height: 348px;position: relative;}
+.channel .scrollBookInfoBox{background: #606060;margin-top: 1px;padding: 16px 0;}
+.channel .scrollBookInfoBox .bookInfoWrapper{height: 40px;border-left: 6px solid #50ADAD;padding-left: 18px;}
+.channel .scrollBookInfoBox .bookInfoWrapper h3{font-size: 20px;color: #ffffff;line-height: 100%;}
+.channel .scrollBookInfoBox .bookInfoWrapper h3 a{color: #ffffff;}
+.channel .scrollBookInfoBox .bookInfoWrapper h3 span.author{font-size: 14px;font-weight: normal;margin-left: 22px;}
+.channel .scrollBookInfoBox .bookInfoWrapper p{color: #c5c5c5;font-size: 14px;line-height: 100%;margin-top: 3px;}
+.channel .scrollBookInfoBox .bookInfoWrapper p a{color: #c5c5c5;}
+
+.channel .staticLinks{border: 1px solid #ebebeb;background: #ffffff;margin-top: 20px;}
+.channel .staticLinks ul{font-size: 14px;}
+.channel .staticLinks li{height: 36px;line-height: 36px;width: 50%;float: left;}
+.channel .staticLinks li.bg{background: #f7f7f7;}
+.channel .staticLinks li .classify{margin: 0 5px 0 24px;color: #666666;}
+
+.channel .ad{height: 80px;margin: 20px 0;border: 1px solid #ebebeb;}
+.channel .ad img{height: 80px;width: 100%;}
+
+.channel .allPushListBox{border: 1px solid #ebebeb;background: #ffffff;}
+.channel .allPushList{width: 585px;margin-bottom: -3px;}
+.channel .allPushList > li{width: 291px;border-right: 1px solid #ebebeb;border-bottom: 1px solid #ebebeb;float: left;height: 340px;}
+.channel .allPushList > li h3{height: 48px;line-height: 48px;font-size: 16px;}
+.channel .allPushList > li h3 span{float: left;line-height: 100%;border-left: 6px solid #50ADAD;padding-left: 17px;margin-top: 19px;}
+.channel .allPushList > li h3 a{font-weight: normal;float: right;color: #50ADAD;margin-right: 23px;font-size: 14px;}
+.channel .allPushList > li .pushBook{height: 170px;overflow: hidden;}
+.channel .allPushList > li .pushBook img{height: 158px;width: 112px;border: 1px solid #ebebeb;float: left;margin-left: 23px;}
+.channel .allPushList > li .pushBook p{margin-left: 150px;margin-right: 23px;font-size: 12px;}
+.channel .allPushList > li .pushBook p a{color: #666666;}
+.channel .allPushList > li .pushBook .bookName{font-size: 16px;line-height: 20px;}
+.channel .allPushList > li .pushBook .bookName a{color: #000000;}
+.channel .allPushList > li .pushBook .author{line-height: 18px;margin-top: 8px;}
+.channel .allPushList > li .pushBook .brief{line-height: 18px;margin-top: 8px;}
+.channel .allPushList > li .morePushList{padding-bottom: 10px;}
+.channel .allPushList > li .morePushList li{font-size: 14px;height: 28px;line-height: 28px;padding-left: 23px;}
+.channel .allPushList > li .morePushList li .classify{color: #50ADAD;margin-right: 5px;}
+.channel .allPushList > li .morePushList li .bookName{}
+
+
+.channel .goodBookRecommendBox{background: #ffffff;border-top: 2px solid #50ADAD;}
+.channel .goodBookRecommendBox .boxTitle{height: 34px;line-height: 34px;background: #f7f7f7;}
+.channel .goodBookRecommendBox .boxTitle span{line-height: 100%;font-size: 16px;border-left: 4px solid #50ADAD;padding-left: 10px;float: left;margin: 9px 0 0 17px;}
+.channel .goodBookRecommendBox .goodBookRecommendList{width: 585px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li{width: 291px;border-right: 1px solid #ebebeb;border-bottom: 1px solid #ebebeb;float: left;height: 370px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook{height: 170px;overflow: hidden;margin-top: 27px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook img{height: 158px;width: 112px;border: 1px solid #ebebeb;float: left;margin-left: 23px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook p{color: #666666;margin-left: 150px;margin-right: 23px;font-size: 12px;line-height: 25px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook p a{color: #666666;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook .bookName{font-size: 16px;line-height: 20px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook .bookName a{color: #000000;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook .author{margin-top: 10px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook .publisher{}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .pushBook .publishTime{}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .morePushList{padding-bottom: 10px;padding-top: 10px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .morePushList li{font-size: 14px;height: 28px;line-height: 28px;padding-left: 23px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .morePushList li .classify{color: #50ADAD;margin-right: 5px;}
+.channel .goodBookRecommendBox .goodBookRecommendList > li .morePushList li .bookName{}
+
+
+.channel .bookWormBox{background: #ffffff;border-top: 2px solid #50ADAD;margin-top:20px;}
+.channel .bookWormBox .boxTitle{height: 34px;line-height: 34px;background: #f7f7f7;}
+.channel .bookWormBox .boxTitle span{line-height: 100%;font-size: 16px;border-left: 4px solid #50ADAD;padding-left: 10px;float: left;margin: 9px 0 0 17px;}
+.channel .bookWormBox .bookWormList{width: 585px;}
+.channel .bookWormBox .bookWormList > li{width: 291px;border-right: 1px solid #ebebeb;border-bottom: 1px solid #ebebeb;float: left;}
+.channel .bookWormBox .bookWormList > li .title{padding: 16px 0 10px 23px;}
+.channel .bookWormBox .bookWormList > li .title span{color: #ffffff;background: #d5553e;font-size: 14px;border-radius: 2px;line-height: 20px;padding: 0 4px;}
+.channel .bookWormBox .bookWormList > li .pushBook{height: 178px;overflow: hidden;}
+.channel .bookWormBox .bookWormList > li .pushBook img{height: 158px;width: 112px;border: 1px solid #ebebeb;float: left;margin-left: 23px;}
+.channel .bookWormBox .bookWormList > li .pushBook p{color: #666666;margin-left: 150px;margin-right: 23px;font-size: 12px;line-height: 25px;}
+.channel .bookWormBox .bookWormList > li .pushBook p a{color: #666666;}
+.channel .bookWormBox .bookWormList > li .pushBook p.brief a{font-size: 12px;}
+.channel .bookWormBox .bookWormList > li .pushBook p.bookName{font-size:16px;}
+.channel .bookWormBox .bookWormList > li .pushBook p.bookName a{color:#000000;}
+.channel .bookWormBox .bookWormList > li .pushBook .readerName{font-size: 16px;line-height: 20px;}
+.channel .bookWormBox .bookWormList > li .pushBook .readerName a{color: #000000;}
+.channel .bookWormBox .bookWormList > li .pushBook .time{margin-top: 10px;}
+.channel .bookWormBox .bookWormList > li .pushBook .num{}
+.channel .bookWormBox .bookWormList > li .pushBook .publishTime{}
+.channel .bookWormBox .bookWormList > li .morePushList{padding-bottom: 16px;padding-top: 16px;}
+.channel .bookWormBox .bookWormList > li .morePushList li{font-size: 14px;height: 28px;line-height: 28px;padding-left: 23px;}
+.channel .bookWormBox .bookWormList > li .morePushList li .classify{color: #50ADAD;margin-right: 5px;}
+.channel .bookWormBox .bookWormList > li .morePushList li .bookName{}
+
+.channel .updateListBox{background: #ffffff;border-top: 2px solid #50ADAD;}
+.channel .updateListBox .boxTitle{height: 34px;line-height: 34px;background: #f7f7f7;}
+.channel .updateListBox .boxTitle span{float: left;font-size: 16px;}
+.channel .updateListBox .boxTitle span em{float: left;margin: 5px 5px 0 7px;;display: inline-block;width: 22px;height: 22px;background: url("../images/channelIcon.png") 0 -22px no-repeat;}
+.channel .updateListBox .boxTitle .tabBox{font-weight: normal;font-size: 14px;width: 319px;float: right;}
+.channel .updateListBox .boxTitle .tabBox a{line-height: 33px;;background:#fbfbfb;display: inline-block;width: 105px;text-align: center;border-left: 1px solid #ebebeb;border-bottom: 1px solid #ebebeb;}
+.channel .updateListBox .boxTitle .tabBox a:hover{text-decoration: none;}
+.channel .updateListBox .boxTitle .tabBox a.current{border-bottom: 1px solid #ffffff;background: #ffffff;color: #50ADAD}
+.channel .updateListBox .updateList{margin-top: 2px;}
+.channel .updateListBox .updateList li{height: 36px;line-height: 36px;font-size: 12px;}
+.channel .updateListBox .updateList li.bg{background: #f7f7f7;}
+.channel .updateListBox .updateList li a{float: left;}
+.channel .updateListBox .updateList li span{float: right;margin-right: 25px;color: #333333;}
+.channel .updateListBox .updateList li a.author{float: right;margin-right: 14px;color: #333333;}
+.channel .updateListBox .updateList li a.classify{font-size: 14px;color: #50ADAD;margin: 0 5px 0 24px;}
+.channel .updateListBox .updateList li a.bookName{font-size: 14px;}
+.channel .updateListBox .updateList li a.chapterName{margin-left: 10px;color: #666666;}
+.channel .updateListBox .updateList li .isSign{width: 14px;height: 14px;float: left;margin: 12px 0 0 3px;}
+.channel .updateListBox .other{height: 36px;line-height: 36px;font-size: 14px;}
+.channel .updateListBox .other .more{float: right;color: #50ADAD;margin-right: 21px;}
+
+
+.channel .customService{height: 34px;line-height: 34px;background: #f7f7f7;}
+.channel .customService span{font-size: 16px;}
+.channel .customService span em{margin: 6px 6px 0 11px;float: left;display: inline-block;width: 22px;height: 22px;background: url("../images/channelIcon.png") 0 -44px no-repeat;}
+.channel .contactWay{font-size: 12px;line-height: 30px;padding: 8px 0 22px 14px;}
+
+.roundabout-holder {
+	padding: 0;
+	height: 260px;
+	position: absolute;
+	width: 446px;
+	left: 65px;
+	top: 42px;
+}
+.roundabout-moveable-item {
+	list-style: none;
+	width: 163px;
+	height: 220px;
+	-moz-box-shadow: 0px 20px 20px -10px #000000;
+	box-shadow: 0px 20px 20px -10px #000000;
+	-webkit-box-shadow: 0px 20px 20px -10px #000000;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#ccc', Direction=180, Strength=20);/*for ie6,7,8*/
+}
+.roundabout-moveable-item img {
+	width: 100%;
+	height: 100%;
+}
+
+.round_conrol {
+	position: relative;
+	width: 198px;
+	margin: 0 auto;
+	height: 34px;
+	padding: 0 0 0 0;
+}
+
+.reflection {
+	-webkit-transform: scaleY(-1);
+	-moz-transform: scaleY(-1);
+	-ms-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	transform: scaleY(-1);
+	opacity: 0.4;
+	filter: flipv alpha(opacity = '50');
+}
+
+@media all and (min-width:0) {
+	.reflection {
+		filter: alpha(opacity = '50') \0/;
+	} /*IE9*/
+}
+.content{width: 1000px;margin: 0 auto 30px;}
+/* clearfix */
+.clearfix { *zoom: 1;overflow: hidden}
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+a{text-decoration:none;color:#404040;cursor:pointer;}
+a:hover{text-decoration:underline;}

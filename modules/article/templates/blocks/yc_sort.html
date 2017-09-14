@@ -1,0 +1,21 @@
+{?section name=i loop=$articlerows?}
+{?if $i['order'] == 1?}
+					<div class="manLeft1">
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}"/></a>
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank" class="mainLeftA">{?$articlerows[i].articlename?}</a>
+						<p class="mainLeftP">{?$articlerows[i].intro|truncate:80?}...</p>
+					</div>
+
+{?else?}						
+					<div class="manLeft1  marr55">
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}"/></a>
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank" class="mainLeftA">{?$articlerows[i].articlename?}</a>
+						<p class="mainLeftP">{?$articlerows[i].intro|truncate:80?}...</p>
+					</div>
+{?/if?}{?/section?}								
+
+						
+					
+			
+					
+						

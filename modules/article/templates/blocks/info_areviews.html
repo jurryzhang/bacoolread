@@ -1,0 +1,19 @@
+					<ul class="read1">
+					{?section name=i loop=$reviewrows?}
+                        <li>
+                        	<h2>{?if $reviewrows[i].istop == 1?}<span class="hottext">[顶]</span>{?/if?}{?if $reviewrows[i].isgood == 1?}<span class="hottext">[精]</span>{?/if?}<a class="hottext" href="{?$jieqi_modules['article']['url']?}/reviewshow.php?rid={?$reviewrows[i].topicid?}" target="_blank">{?$reviewrows[i].title|str_replace:"<br />":" "|truncate:50:'..'?}</a></h2>
+                            <dl>
+                                <dt>
+									{?if $reviewrows[i].posterid > 0?}<a href="{?function jieqi_geturl:'system':'user':$reviewrows[i].posterid?}" target="_blank"><img src="{?function jieqi_geturl:'system':'avatar':$reviewrows[i].posterid:'s'?}" /></a>{?else?}<img src="{?$jieqi_url?}/images/nocovers.jpg" />{?/if?}
+                                    {?if $reviewrows[i].posterid > 0?}<a href="{?function jieqi_geturl:'system':'user':$reviewrows[i].posterid?}" target="_blank">{?$reviewrows[i].poster?}</a>{?else?}游客{?/if?}
+                                </dt>
+                                <dd>{?$reviewrows[i].posttext?}</dd>
+                            </dl>
+                            <div class="t3">
+                                <span class="i3">时间：{?$reviewrows[i].replytime|date:m-d H:i?}</span>
+                                <span class="i2">查看[{?$reviewrows[i].views?}]</span>
+                                <span class="i1">回复[{?$reviewrows[i].replies?}]</span>
+                            </div>
+                        </li>
+					{?/section?}
+					</ul>

@@ -1,0 +1,13 @@
+<!--
+        		<div class="intrBookFans mb20">
+        	<h3 class="intrTitle1 cf"><a href="{?$jieqi_modules['article']['url']?}/creditlist.php?id={?$articleid?}" target="_blank">+更多</a>本书粉丝排行</h3>
+            <ul class="BookFansUl">
+            	{?section name=i loop=$creditrows?}
+            	<li class="cf"><b class="orange">{?$i['order']?}</b><span><a href="{?function jieqi_geturl:'system':'user':$creditrows[i].uid:'info'?}" target="_blank">{?$creditrows[i].uname?}</a><em>{?$creditrows[i].rank?}</em></span></li>
+{?/section?}
+            </ul>
+            <div class="clear"></div>
+        </div> -->
+{?section name=i loop=$creditrows?}
+<dd{?if $i['order'] % 2 == 0?} class="bj"{?else?}{?/if?}><span class="name"><a href="{?function jieqi_geturl:'system':'user':$creditrows[i].uid:'info'?}" title="{?$articlerows[i].articlename?}">{?$creditrows[i].uname?}</a></span><span class="chapter">{?$creditrows[i].rank?}</span></dd>
+{?/section?}

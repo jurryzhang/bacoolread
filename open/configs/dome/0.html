@@ -1,0 +1,11 @@
+列表总条数：<{$TotalItem}>
+列表总页数：<{$TotalPage}>
+当前页码：<{$PageIndex}>
+一页显示条数：<{$PageSize}>
+返回请求状态：<{$Success}>
+返回失败/成功原因：<{$Msg}>
+/*下面参数为循环参数，循环输出小说列表*/
+<{section name=a loop=$Data}>//循环开始
+	分类ID：<{$Data[a].sortid}>
+	分类标题：<{$Data[a].sortname}>
+<{/section}>//循环结束

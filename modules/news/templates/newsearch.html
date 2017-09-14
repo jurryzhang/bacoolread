@@ -1,0 +1,18 @@
+<!--样式-->
+<style>
+.navbar{ height:21px; margin-top:5px;border-bottom:1px #cccccc solid}
+.news_list{ padding-left:10px}
+</style>
+<div class="navbar">
+<a href="{?$jieqi_url?}">首页</a><img src="{?$iconpath?}icon_nav.gif" align="absmiddle" hspace="5" />搜索结果
+</div>
+<div class="news_list">
+<ul  class="ulrow">
+{?section name=i loop=$news_list?}
+<li><img src="{?$iconpath?}icon_newslist_block.gif" align="absmiddle" vspace="6" /> [{?$news_list[i].category?}] {?$news_list[i].title?} 发布日期：{?$news_list[i].date?} 点击：{?$news_list[i].click?}
+
+</li>
+{?/section?}
+</ul>
+</div>
+<div class="pages">{?$url_jumppage?}</div>

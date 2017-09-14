@@ -1,0 +1,64 @@
+<br />
+<form action="{?$form_url_action?}" method="post" name="checkform" id="checkform">
+<table class="grid" width="100%" align="center">
+<caption>栏目管理</caption>
+  <tr align="center">
+	<th width="5%">选择</td>
+    <th width="70%">栏目名称</td>
+    <th width="25%">操作</td>
+  </tr>
+ {?section name=i loop=$category_list?}
+ {?if $category_list[i].pid == 0?}
+  <tr>
+    <td class="odd" align="center"> 
+		<input type="hidden" name="id" value="{?$category_list[i].cid?}" />{?$category_list[i].checkbox?}
+	</td>
+    <td class="even" onclick="displayItems('{?$category_list[i].cid?}');" style="cursor:pointer;"> 
+		<img src="{?$jieqi_news_url?}/images/explode.gif" height="11" width="11" border="0" align="absmiddle" />
+		{?$category_list[i].cname?}[ID:{?$category_list[i].cid?}]
+	</td>
+	<td class="odd" align="center">
+		<a href="{?$category_list[i].addurl?}">增加二级栏目</a>|
+		<a href="{?$category_list[i].editurl?}">编辑</a>|
+		<a href="{?$category_list[i].delurl?}">删除</a>| 
+		<a href="{?$category_list[i].taxurl?}">排序</a>
+	</td>
+  </tr>
+ {?else?}
+  <tr name="{?$category_list[i].pid?}" id="{?$category_list[i].pid?}" style="display:none;">
+    <td class="odd" align="center">
+		<input type="hidden" name="id" value="{?$category_list[i].cid?}" />{?$category_list[i].checkbox?}
+	</td>
+    <td class="even">└
+		{?$category_list[i].cname?}[ID:{?$category_list[i].cid?}]
+	</td>
+	<td class="odd" align="center">
+		<a href="{?$category_list[i].editurl?}">编辑</a>|
+		<a href="{?$category_list[i].delurl?}">删除</a>
+	</td>
+  </tr>
+  {?/if?}
+  {?/section?}
+  <tr>
+    <td colspan="3" align="right" class="odd">
+		<input type="button" value="增加顶级栏目" class="button" onclick="document.location='{?$category_add_root_url?}'" />
+		<input type="button" value="顶级栏目排序" class="button" onclick="document.location='{?$category_tax_root_url?}'" />
+		<input type="button" name="allcheck" value="全部选中" class="button" onclick="javascript: for (var i=0;i<this.form.elements.length;i++){ this.form.elements[i].checked = true; }" />
+		<input type="button" name="nocheck" value="全部取消" class="button" onclick="javascript: for (var i=0;i<this.form.elements.length;i++){ this.form.elements[i].checked = false; }" />
+		<input type="submit" name="delcheck" value="删除选中记录" class="button" onclick="javascript:if(confirm('确实要删除选中的栏目吗？\n\r\n\r该操作将删除此栏目（包括二级栏目）下所有数据！')){ this.form.checkaction.value='1';this.form.submit();}else{return false;}" />
+		<input name="checkaction" type="hidden" id="checkaction" value="0" />
+	</td>
+  </tr>
+</table>
+</form>
+<script language="JavaScript">
+<!--
+function displayItems(elementID)	{
+	var tTank = document.getElementsByName(elementID);
+	for(i=0;i<tTank.length;i++){
+		if (tTank[i].style.display == 'inline') {tTank[i].style.display = 'none';}
+		else {tTank[i].style.display = 'inline';}
+	}
+}
+//-->
+</script>

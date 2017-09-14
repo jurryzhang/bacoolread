@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="qc:admins" content="2621537371377425146375" />
+    <title>{?$jieqi_pagetitle?}</title>
+    <meta name="keywords" content="{?$meta_keywords?}" />
+    <meta name="description" content="{?$meta_description?}" />
+  
+  
+  <link rel="stylesheet" href="{?$jieqi_wap_url?}/tpl/css/css.css">
+  
+   <link rel="stylesheet" href="{?$jieqi_wap_url?}/tpl/css/share.css">
+   
+   <link rel="stylesheet" href="{?$jieqi_wap_url?}/tpl/css/add_style.css">
+  
+</head>
+<body>
+<!--屏幕自适应开始-->
+<div class="zlbody">
+  <div id="wrapper" class="zlwrapper">
+    
+    <header class="mian_box">
+  <!--头部-->
+  <div class="zl_header">
+    <div class="logo">
+
+      
+      <div class="aa"> 
+        <a id="zlmenu" class="nav">
+          <img src="{?$jieqi_wap_url?}/tpl/images/left_menu.png" width="22" height="17">
+        </a> 
+      </div>
+
+      
+      <div class="bb"> 
+        <a class="logo_bg" href="{?$jieqi_wap_url?}/"> 
+          <img src="{?$jieqi_wap_url?}/tpl/images/logo.png" width="63" height="26">
+        </a> 
+      </div>
+
+      
+           
+      <div class="cc"> 
+        <a {?if $jieqi_userid == 0?}href="{?$jieqi_wap_url?}/login.php"{?else?}id="zlsearch"{?/if?} class="member">
+          <img src="{?$jieqi_wap_url?}/tpl/images/right_menu.png" width="25" height="25">
+          
+          
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <!--nav-->
+  <ul class="nav_s" >
+    <li class="nav_one"><a href="{?$jieqi_wap_url?}/">首页</a> </li>
+    <li class="nav_one"><a href="{?$jieqi_wap_url?}/top.php"> 排行</a> </li>
+    <li class="nav_one"><a href="{?$jieqi_wap_url?}/top.php?sortid=1&fullflag=1">完本</a> </li>
+ <-----li class="nav_one"><a href="{?$jieqi_wap_url?}/class.php?sortid=1&fullflag=1">分类</a> <----/li>
+    <li class="nav_one"><a href="{?$jieqi_wap_url?}/buyegold.php?t=weixinpay">充值</a> </li>
+    <li class="nav_one">
+      <a href="{?$jieqi_wap_url?}/search.php" class="zlsearch"><img src="{?$jieqi_wap_url?}/tpl/images/search.png" width="21" height="21" alt="搜书"></a>
+    </li>
+  </ul>
+</header>
+<form method="get" action="{?$jieqi_wap_url?}/search.php" class="sch-form">
+      <div class="sch-bdr">
+	  <input type="text" name="searchtype" value="all" style="display:none;">
+            <input type="text" name="searchkey" value="" placeholder="请输入您喜欢的小说或作者" autocomplete="off">
+            <span class="sp"></span>
+            <button name="t_btnsearch" type="submit" title="搜索">&nbsp;</button>
+        </div>
+    </form>
+{?if $jieqi_top_bar != ""?}<div class="main">{?$jieqi_top_bar?}</div>{?/if?}
+{?if $jieqi_showtblock == 1?}
+{?section name=i loop=$jieqi_tblocks?}
+  <div class="main">
+  <div class="block">
+  {?if $jieqi_tblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_tblocks[i].title?}</div>{?/if?}
+  <div class="blockcontent">{?$jieqi_tblocks[i].content?}</div>
+  </div>
+  </div>
+{?/section?}
+{?/if?}
+
+{?if $jieqi_clblocks|empty == false || $jieqi_crblocks|empty == false?}
+<div class="main" id="topm">
+<div id="cleft">
+{?section name=i loop=$jieqi_clblocks?}
+  <div class="block">
+  {?if $jieqi_clblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_clblocks[i].title?}</div>{?/if?}
+  <div class="blockcontent">{?$jieqi_clblocks[i].content?}</div>
+  </div>
+{?/section?}
+</div>
+<div id="cright">
+{?section name=i loop=$jieqi_crblocks?}
+  <div class="block">
+  {?if $jieqi_crblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_crblocks[i].title?}</div>{?/if?}
+  <div class="blockcontent">{?$jieqi_crblocks[i].content?}</div>
+  </div>
+{?/section?}
+</div>
+</div>
+{?/if?}
+
+<div class="main">
+{?if $jieqi_showlblock == 1?}
+<div id="left">
+{?section name=i loop=$jieqi_lblocks?}
+<div class="block">
+{?if $jieqi_lblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_lblocks[i].title?}</div>{?/if?}
+<div class="blockcontent">{?$jieqi_lblocks[i].content?}</div>
+</div>
+{?/section?}  
+</div>
+  {?if $jieqi_showrblock == 1?}<div id="centers">{?else?}<div id="centerm">{?/if?}
+{?else?}
+  {?if $jieqi_showrblock == 1?}<div id="centerm">{?else?}<div id="centerl">{?/if?}
+{?/if?}
+{?if $jieqi_showcblock == 1?}
+{?section name=i loop=$jieqi_ctblocks?}
+<div class="block">
+{?if $jieqi_ctblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_ctblocks[i].title?}</div>{?/if?}
+<div class="blockcontent">{?$jieqi_ctblocks[i].content?}</div>
+</div>
+{?/section?}
+{?section name=i loop=$jieqi_cmblocks?}
+<div class="block">
+{?if $jieqi_cmblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_cmblocks[i].title?}</div>{?/if?}
+<div class="blockcontent">{?$jieqi_cmblocks[i].content?}</div>
+</div>
+{?/section?}
+{?/if?}
+{?if $jieqi_contents != ""?}<div id="content">{?$jieqi_contents?}</div>{?/if?}
+{?if $jieqi_showcblock == 1?}
+{?section name=i loop=$jieqi_cbblocks?}
+<div class="block">
+{?if $jieqi_cbblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_cbblocks[i].title?}</div>{?/if?}
+<div class="blockcontent">{?$jieqi_cbblocks[i].content?}</div>
+</div>
+{?/section?}
+{?/if?}
+</div>
+{?if $jieqi_showrblock == 1?}
+<div id="right">
+{?section name=i loop=$jieqi_rblocks?}
+<div class="block">
+{?if $jieqi_rblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_rblocks[i].title?}</div>{?/if?}
+<div class="blockcontent">{?$jieqi_rblocks[i].content?}</div>
+</div>
+{?/section?}
+</div>
+{?/if?}
+</div>
+
+{?if $jieqi_showbblock == 1?}
+{?section name=i loop=$jieqi_bblocks?}
+  <div class="main">
+  <div class="block">
+  {?if $jieqi_bblocks[i].title != ""?}<div class="blocktitle">{?$jieqi_bblocks[i].title?}</div>{?/if?}
+  <div class="blockcontent">{?$jieqi_bblocks[i].content?}</div>
+  </div>
+  </div>
+{?/section?}
+{?/if?}
+{?if $jieqi_bottom_bar != ""?}<div class="main">{?$jieqi_bottom_bar?}</div>{?/if?}
+    <!--底部-->
+<div class="zl_k_error">
+<footer>
+  <ul>
+        <p>联系客服</p>
+	  <!--<p>微信搜索“<font color="#00FF00">免费读书</font>”关注公众号, 好书免费看!</p>-->
+          <p>微信内浏览可长按以下二维码关注公众号, <font color="#FF0000">好书免费看!</font></p> 
+	<p><img src="weixingz/Picture/qrcode.jpg" width="150px" height="150px"/></p> 
+       <p>扫码没反应？请直接戳<a style="color: red;" href="http://m.mianfeidushu.com/weixingz/weixingz.html"><font size="3px";><strong>这里</strong></font> </a></p>
+      <p>小说阅读就上{?$jieqi_sitename?}</p>
+ <p class="link"><a href="{?$jieqi_wap_url?}/" target="_self">首页</a>/<a href="{?$jieqi_wap_url?}/register.php"target="_self">注册</a> / <a href="{?$jieqi_wap_url?}/login.php" target="_self">登录</a> / <a href="{?$jieqi_wap_url?}/buyegold.php?t=weixinpay" target="_self"><font color="#FF0000";>充值</font>/ </a><a id="dowebtop" href="javascript:;">回到顶部 ↑</a> </p> 
+  <p>免费读书@豫ICP备16025525号-1</p> 
+  </ul>
+
+
+
+
+</footer>
+</div>
+  </div>
+</div>
+
+  
+  <div class="L_sidr_c" >
+  <ul>
+    <li class="active">
+      <a style="color:#FFFFFF;" href="/">首页</a>
+    </li>
+    <li >
+      <a href="{?$jieqi_wap_url?}/top.php">排行</a>
+    </li>
+    <li >
+      <a href="{?$jieqi_wap_url?}/search.php">搜书</a>
+    </li>
+    <li >
+      <a href="{?$jieqi_wap_url?}/top.php?order=allvisit&fullflag=1&page=1">完本</a>
+    </li>
+	<li><a href="{?$jieqi_url?}//modules/article/myarticle.php">作者专区</a> </li>
+	<li class="nav_one"><a href="{?$jieqi_wap_url?}/buyegold.php?t=alipay"> 充值</a> </li>
+    <!--分类明细-->
+    <li >
+      <a href="javascript:;">分类</a>
+    </li>
+    <ol >
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=1&page=1">玄幻·魔法</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=2&page=1">武侠·修真</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=3&page=1">都市·言情</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=4&page=1">历史·军事</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=5&page=1">穿越·架空</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=6&page=1">游戏·竞技</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=7&page=1">科幻·灵异</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=8&page=1">同人·动漫</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=9&page=1">社会·文学</a></li>
+  <li><a href="{?$jieqi_wap_url?}/list.php?sortid=10&page=1">综合·其他</a></li>
+          </ol>
+  </ul>
+</div>
+
+  
+  <div class="R_sidr_c" >
+  <ul>
+    <li><a href="/">返回首页</a></li>
+	<li><a href="{?$jieqi_wap_url?}/user.php">个人中心</a></li>
+	<li><a href="{?$jieqi_wap_url?}/shujia.php">我的书架</a></li>
+    <li ><a href="{?$jieqi_wap_url?}/user.php"> 账户余额</a></li>
+  </ul>
+  <ol>
+    <li><a href="{?$jieqi_wap_url?}/buyegold.php?t=alipay">我要充值</a></li>
+    <li><a href="{?$jieqi_wap_url?}/tiprecord.php">消费记录</a></li>
+    <li><a href="{?$jieqi_wap_url?}/payrecord.php">充值记录</a></li>
+  </ol>
+  
+  <ul class="dd">
+        
+    <li><a href="{?$jieqi_wap_url?}/logout.php">退出</a></li>
+  </ul>
+  </div>
+
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/jquery.js"></script>
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/zlang.util.js"></script>
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/index.js"></script>
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/common.js"></script>
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/history.js"></script>
+  <script type="text/javascript" src="{?$jieqi_wap_url?}/tpl/js/zlang.read.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{?section name=i loop=$articlerows?}
+		{?if $i['order'] == 1?}
+							<div class="manLeft">
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}"/></a>
+						<a href="{?$articlerows[i].url_articleinfo?}" target="_blank" class="mainLeftA">{?$articlerows[i].articlename?}</a>
+						<p class="mainLeftP">{?$articlerows[i].intro|truncate:80?}...</p>
+					</div>
+					
+					
+					
+						
+						<div class="manTop">
+							<ul>
+	{?else?}
+	<li class="manTopli{?if $i['order'] == 2?} marr35{?else?}{?/if?}{?if $i['order'] == 4?} marr35 mart25{?else?}{?/if?}{?if $i['order'] == 5?} mart25{?else?}{?/if?}">
+								<a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}" class="mantopImg"></a>
+								<a href="{?$articlerows[i].url_articleinfo?}" target="_blank" class="mantopA">{?$articlerows[i].articlename?}</a>
+								<p class="mantopP">{?$articlerows[i].intro|truncate:40?}...<a href="/html/0/93/index.html" target="_blank">[ÔÄ¶Á]</a></p>
+								</li>
+	{?/if?}{?/section?}

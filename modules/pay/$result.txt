@@ -1,0 +1,14 @@
+Array
+(
+    [return_code] => SUCCESS
+    [return_msg] => OK
+    [appid] => wxb36c0f7d7456392f
+    [mch_id] => 1422332502
+    [device_info] => WEB
+    [nonce_str] => rJ9oXUMmSaAtuQLw
+    [sign] => F073B945AB51C0B944AF5BDFD1DB85F6
+    [result_code] => SUCCESS
+    [prepay_id] => wx20170719171617587816ccf70959697648
+    [trade_type] => NATIVE
+    [code_url] => weixin://wxpay/bizpayurl?pr=f22gnSr
+)

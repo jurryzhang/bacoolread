@@ -1,0 +1,49 @@
+<br />
+<table class="grid" width="100%" align="center">
+  <caption>动作参数管理</caption>
+  <tr align="center">
+    <th width="3%">序号</th>
+    <th width="10%">动作名称</th>
+    <th width="6%">积分执行</th>
+    <th width="6%">发书评</th>
+	<th width="6%">VIP动作</th>
+	<th width="6%">是否有消费</th>
+	<th width="10%">消费名称</th>
+	<th width="6%">消费基数值</th>
+	<th width="6%">获得积分</th>
+	<th width="6%">获得贡献值</th>
+	<th width="6%">获得月票</th>
+	<th width="6%">注册最小值</th>
+	<th width="6%">注册最大值</th>
+	<th width="6%">操作</th>
+
+	
+  </tr>
+  {?section name=i loop=$action?}
+  <tr>
+    <td align="center">{?$action[i].actionid?}</td>
+    <td align="center">{?$action[i].acttitle?}</td>
+    <td align="center">{?$action[i].minscore?}</td>
+	<td align="center">{?$action[i].islog?}</td>
+	<td align="center">{?$action[i].isvip?}</td>
+	<td align="center">{?$action[i].ispay?}</td>
+	<td align="center">{?$action[i].paytitle?}</td>
+	<td align="center">{?$action[i].paybase?}</td>
+	<td align="center">{?$action[i].earnscore?}</td>
+	<td align="center">{?$action[i].earncredit?}</td>
+	<td align="center">{?$action[i].earnvipvote?}</td>
+	<td align="center">{?$action[i].lenmin?}</td>
+	<td align="center">{?$action[i].lenmax?}</td>
+    <td align="center"><a href="{?$jieqi_url?}/admin/action.php?id={?$action[i].actionid?}&action=edit">编辑</a>{?if $action[i].actiontype == 0?}  <a href="javascript:if(confirm('确实要删除该头衔么？')) document.location='{?$jieqi_url?}/admin/action.php?id={?$action[i].actionid?}&action=delete';">删除</a>{?/if?}</td>
+  </tr>
+  {?/section?}
+  <tr>
+    <td colspan="16" style="color:#FF4500;font-size:16px;">&nbsp;提示：本页参数：0表示否，1表示是。<br/></td>
+  </tr>
+</table>
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center">{?$form_addhonor?}</td>
+  </tr>
+</table>

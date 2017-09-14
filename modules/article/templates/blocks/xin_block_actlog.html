@@ -1,0 +1,47 @@
+{?section name=i loop=$actlogrows?}{?if $actlogrows[i].actname == 'redrose' || $actlogrows[i].actname == 'yellowrose' || $actlogrows[i].actname == 'greenrose' || $actlogrows[i].actname == 'bluerose' || $actlogrows[i].actname == 'whiterose' || $actlogrows[i].actname == 'blackrose'?}
+				<li>
+				<div class="photo">
+					<a href="{?function jieqi_geturl:'system':'user':$actlogrows[i].uid:'info'?}" target="_blank">
+					<img style="width: 48px; height: 48px; display: inline;" sign="lazy" src="{?$jieqi_url?}/avatar.php?uid={?$actlogrows[i].uid?}" data-original="{?$jieqi_url?}/images/noavatar.jpg">
+					</a>
+				</div>
+				<div class="name">
+					<a href="{?function jieqi_geturl:'system':'user':$actlogrows[i].uid:'info'?}" target="_blank">{?$actlogrows[i].uname?}</a>
+				</div>{?if $actlogrows[i].actname == 'redrose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nan-giv01.png" data-original="{?$jieqi_url?}/images/liwu/nan-giv01.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?elseif $actlogrows[i].actname == 'yellowrose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nan-giv02.png" data-original="{?$jieqi_url?}/images/liwu/nan-giv02.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?elseif $actlogrows[i].actname == 'greenrose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nan-giv05.png" data-original="{?$jieqi_url?}/images/liwu/nan-giv05.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?elseif $actlogrows[i].actname == 'bluerose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nv-giv01.png" data-original="{?$jieqi_url?}/images/liwu/nv-giv01.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?elseif $actlogrows[i].actname == 'whiterose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nan-giv03.png" data-original="{?$jieqi_url?}/images/liwu/nan-giv03.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?elseif $actlogrows[i].actname == 'blackrose'?}
+				<div class="prop">
+					<img sign="lazy" src="{?$jieqi_url?}/images/liwu/nan-giv04.png" data-original="{?$jieqi_url?}/images/liwu/nan-giv04.png" style="display: inline;">
+				</div>
+				<div class="prop-num">
+					X{?$actlogrows[i].actnum?}
+				</div>{?/if?}
+				</li>{?/if?}{?/section?}

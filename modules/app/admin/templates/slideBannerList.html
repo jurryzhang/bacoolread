@@ -1,0 +1,48 @@
+<!--burn 添加 2016-12-28-->
+<form>
+    <table class="grid" width="100%" align="center">
+        <caption style="height: 60px">
+            APP后台--频道轮播图列表
+            <a  href="{?$jieqi_modules['app']['url']?}/admin/editSlideBanner.php?id=-1&action=show">
+                + 增加频道轮播图
+            </a>
+
+            <p style="color: white" >注意：修改轮播图时候，需要先删除当前的轮播图设置，在进行添加，不能直接进行修改！</p>
+
+        </caption>
+
+        <tr align="center" class="head">
+            <td width="15%" valign="middle">所属频道</td>
+            <td width="18%" valign="middle">booksID</td>
+            <td width="13%" valign="middle">操作</td>
+        </tr>
+
+        {?section name=i loop=$slideBannerList ?}
+        <tr valign="middle">
+            <td align="center">
+                {? if $slideBannerList[i]['channel'] == 0 ?}
+                精选
+                {?elseif $slideBannerList[i]['channel'] == 1 ?}
+                男频
+                {?elseif $slideBannerList[i]['channel'] == 2 ?}
+                女频
+                {?/if?}
+            </td>
+
+            <td align="center">
+                {? $slideBannerList[i]['booksID'] ?}
+            </td>
+
+            <td align="center">
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editSlideBanner.php?id={?$slideBannerList[i]['id']?}&action=show">修改
+                </a>
+                |
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editSlideBanner.php?id={?$slideBannerList[i]['id']?}&action=delete">删除
+                </a>
+            </td>
+
+        </tr>
+        {?/section?}
+    </table>
+</form>
+

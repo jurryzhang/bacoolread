@@ -1,0 +1,35 @@
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd" align="center">
+		{?section name=i loop=$btyperows?} [<a href="{?$jieqi_modules['badge']['url']?}/admin/badgelist.php?btypeid={?$btyperows[i].btypeid?}">{?$btyperows[i].title?}</a>] {?/section?}
+		</td>
+    </tr>
+</table>
+<div class="gridtop">{?$badgetitle?}{?if $sysflag != 1?} | <a href="{?$jieqi_modules['badge']['url']?}/admin/badgenew.php?btypeid={?$btypeid?}">增加徽章</a>{?/if?}</div>
+<table class="grid" width="100%" align="center">
+  <tr align="center">
+    <th width="8%">勋章ID</th>
+	<th width="16%">标志</th>
+    <th width="16%">勋章名称</th>
+    <th width="10%">关联ID</th>
+    <th width="10%">上传日期</th>
+	<th width="8%">徽章数</th>
+	<th width="8%">已颁发</th>
+    <th width="24%">操作</th>
+  </tr>
+  {?section name=i loop=$badgerows?}
+  <tr>
+    <td class="odd" align="center">{?$badgerows[i].badgeid?}</td>
+	<td class="even" align="center">{?if $badgerows[i].uptime > 0?}<img src="{?$badgerows[i].url_image?}" border="0" />{?/if?}</td>
+    <td class="odd">{?$badgerows[i].caption?}</td>
+    <td class="even" align="center">{?$badgerows[i].linkid?}</td>
+    <td class="odd" align="center">{?if $badgerows[i].uptime > 0?}{?$badgerows[i].uptime|date:"Y-m-d"?}{?else?}未上传{?/if?}</td>
+	<td class="even" align="center">{?$badgerows[i].maxnum?}</td>
+    <td class="odd" align="center">{?$badgerows[i].usenum?}</td>
+    <td class="even" align="center"><a href="{?$jieqi_modules['badge']['url']?}/admin/badgeedit.php?btypeid={?$btypeid?}&badgeid={?$badgerows[i].badgeid?}&linkid={?$badgerows[i].linkid?}&page={?$page?}">编辑</a>{?if $sysflag != 1?} | <a href="javascript:if(confirm('删除徽章将同时删除已授予的徽章记录，确认要继续么？')) document.location='{?$jieqi_modules['badge']['url']?}/admin/badgelist.php?action=delete&btypeid={?$btypeid?}&badgeid={?$badgerows[i].badgeid?}&page={?$page?}';">删除</a> | <a href="{?$jieqi_modules['badge']['url']?}/admin/badgeconfer.php?btypeid={?$btypeid?}&badgeid={?$badgerows[i].badgeid?}&linkid={?$badgerows[i].linkid?}">授予</a> | <a href="{?$jieqi_modules['badge']['url']?}/admin/badgeaward.php?badgeid={?$badgerows[i].badgeid?}">记录</a>{?/if?}</td>
+  </tr>
+  {?/section?}
+  <tr>
+    <td colspan="8" class="foot">&nbsp;{?$url_jumppage?}</td>
+  </tr>
+</table>

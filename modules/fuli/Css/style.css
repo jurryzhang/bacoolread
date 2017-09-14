@@ -1,0 +1,34 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0px auto; padding:0px;}
+body{font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;}
+.bg_img{ background:#c12822 url(../Images/top_bg.jpg) no-repeat center; height:488px;}
+.content{ background:#fdf3d0; padding:20px 0;}
+.box{ width:1048px; background:url(../Images/tit_img.jpg) no-repeat; margin-bottom:20px;}
+.box .hd{width:940px; height:110px; line-height:65px; text-align:center;}
+.box .hd h3{ font-family:"MicroSoft YaHei"; font-size:24px; color:#fff; text-shadow:3px 2px 1px #823600;}
+.box .bd{ width:876px; padding:0 30px 20px 30px; background:#efefef; border:1px solid #d6d6d6; border-top:none;}
+.box .bd h4{ border-bottom:1px dotted #c4c4c4; font-family:"MicroSoft YaHei"; font-size:20px;  color:#d52d24; padding:25px 0 5px 0; margin-bottom:5px;}
+.box .bd span{font-family:"MicroSoft YaHei"; font-size:15px; font-weight:normal; line-height:28px; display:block;}
+.box .bd table{ border-collapse:collapse; margin-top:10px; float:left; display:block;}
+.box .bd table td{ text-align:center; border:1px solid #ccc; height:30px;}
+.box .bd .tb{ width:860px; float:left; margin-bottom:10px;}
+.box .bd .btn_link{ width:100%; float:left;}
+.box .bd .btn_link a{margin-bottom:30px; width:205px; height:55px; line-height:55px; float:left; color:#fff; text-decoration:none; text-align:center; font-size:20px; font-weight:bold; }
+.box .bd .blue_btn{ background:#077c91; box-shadow:0px 3px 0px #1d545e; text-shadow:2px 1px 1px #16464f; margin-left:200px;}
+.box .bd .blue_btn:hover{background:#066576;}
+.box .bd .green_btn{ background:#578737; box-shadow:0px 3px 0px #4a5d3e; text-shadow:2px 1px 1px #4a5d3e; margin-left:80px;}
+.box .bd .green_btn:hover{background:#467527;}
+.right_float{right: 51%; margin-right: 508px; position: fixed; top:10px; width: 118px; z-index: 999; display: none;
+background:url(../Images/right_float_img.png) top no-repeat; padding-top:72px; border-bottom:1px solid #ab2321;}
+.right_float ul li{ list-style: none; width: 116px; text-align:center; border:1px solid #ab2321; border-bottom:none; float:left;}
+.right_float ul li a{ font-size:15px; text-shadow:1px 1px 1px #823600; font-weight:bold; color:#fff; background:#dc2e19; text-decoration:none; width: 116px; 
+height:34px; line-height:34px; float:left; cursor:pointer;}
+.right_float ul li a:hover{ background:#f8bf39; color:#8b1515; text-shadow:1px 1px 1px #fdf3d0;}
+.right_float .gray_bg{ background-color:#79280f;}
+.footer{ text-align:center; font-size:14px;}
+
+
+
+
+

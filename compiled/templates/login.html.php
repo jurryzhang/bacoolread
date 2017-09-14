@@ -1,0 +1,88 @@
+<?php
+echo '<div id="content">
+<link rel="stylesheet" rev="stylesheet" href="/sink/css/login.css" type="text/css" media="all" />
+<div class="box_mid fix">
+  <div class="login">
+   <h3>用户登录</h3>
+<form name="frmlogin" id="frmlogin" class="signup" action="'.$this->_tpl_vars['url_login'].'" method="post">
+<fieldset>
+    <div class="form-item">
+        <div class="field-name">用户名:</div>
+        <div class="field-input">
+          <input type="text" maxlength="30" name="username" onKeyPress="javascript: if (event.keyCode == 32 || event.which == 32) return false;">
+        </div>
+    </div>
+    <div class="form-item">
+        <div class="field-name">密码:</div>
+        <div class="field-input">
+          <input type="password" name="password" autocomplete="off" data-rule="密码:required;length[3~]" />
+        </div>
+    </div>
+	';
+if($this->_tpl_vars['show_checkcode'] == 1){
+echo '
+	    <div class="form-item" id="code_div">
+	        <div class="field-name">验证码:</div>
+	        <div class="field-input">
+	          	<input type="text" name="checkcode" class="yzm" maxlength="6" autocomplete=”off”/>
+	          	<img src="'.$this->_tpl_vars['jieqi_url'].'/checkcode.php" class="pic" id="checkcode" /><a id="recode" class="f_org2 pl10" href="javascript:;">换一张</a>
+	        </div>
+	    </div>';
+}
+echo '
+    <div class="form-item">
+    	<div class="field-name"></div>
+        <div class="field-input">
+          <p><input name="usecookie" type="checkbox" value="1" checked="checked" class="check" />记住我(1个月免登录)</p>
+        </div>
+    </div>
+</fieldset>
+    
+<button name="submit" id="submit" class="btn-submit2" type="submit">登录</button>
+<input type="hidden" name="action" value="login">
+<p class="snback f_blue"><br />忘记密码？点击<a href="'.$this->_tpl_vars['url_getpass'].'" title="找回密码">找回密码</a></p>
+</form>
+
+  </div>
+  <div class="lother">
+   <h3>用户注册</h3>
+   还没有账号？
+   <a href="'.$this->_tpl_vars['jieqi_user_url'].'/register.php" onclick="openDialog(\''.$this->_tpl_vars['jieqi_user_url'].'/register.php?ajax_gets=jieqi_contents\', false);stopEvent();"  title="立即注册" class="reg"></a>
+   你也可以用站外账号登录:
+    <p class="o_login"><a href="'.$this->_tpl_vars['jieqi_url'].'/api/qq/login.php" title="腾讯QQ" class="qq">
+<a href="'.$this->_tpl_vars['jieqi_url'].'/api/weibo/login.php" title="新浪微博" class="sina"></a>
+ <a href="'.$this->_tpl_vars['jieqi_url'].'/api/weixin/login.php" title="微信登录" class="wechat"></a>
+</div>
+  
+
+</a><a href="javascript:;" onclick="otherlogin(\''.$this->_tpl_vars['jieqi_url'].'/api/weibo/login.php\');" title="新浪微博" class="sina"></a><a href="javascript:;" onclick="otherlogin(\'#\');" title="微信登录" class="wechat"></a><a href="javascript:;" onclick="otherlogin(\'#\');" title="百度登录" class="baidu"></a></p>
+
+
+
+</div></div>
+
+<script type="text/javascript">
+layer.ready(function(){
+		$(\'#frmlogin\').on(\'submit\', function(e){
+		e.preventDefault();
+		var i = layer.load(0);
+
+        GPage.postForm(\'frmlogin\', $("#frmlogin").attr("action"),
+       function(data){
+            if(data.status==\'OK\'){
+                layer.msg(data.msg,1,{type:1,shade:false},function(){});
+                $.ajaxSetup ({ cache: false });
+                jumpurl(data.jumpurl);
+            }else{
+                layer.close(i);
+                layer.alert(data.msg, 8, !1);
+            }
+       });
+//			}
+});
+});
+$(\'#recode\').click(function(){
+	$(\'#checkcode\').attr(\'src\',\''.$this->_tpl_vars['jieqi_url'].'/checkcode.php?rand=\'+Math.random());
+});
+</script>';
+?>

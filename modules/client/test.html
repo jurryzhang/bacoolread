@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>点击文字显示图片</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        ul {
+            width: 400px;
+            height: 600px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #FF359A;
+            border-style: solid;
+        }
+
+        li {
+            list-style-type: none; /*去除列表符号*/
+            position: relative; /*配合子标签使用*/
+        }
+
+        * { /*使所有的内容都紧靠在一起*/
+            margin: 0px;
+            padding: 0px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            display: block; /*图片保持显示状态*/
+        }
+
+        /*设置默认属性*/
+        li:LINK {
+            background-color: #28FF28;
+        }
+
+        li:VISITED {
+            background-color: #0066CC;
+        }
+
+        li:HOVER {
+            background-color: #FFC1E0;
+        }
+
+        li:ACTIVE {
+            background-color: #d0d0d0;
+        }
+        /*设置关联属性*/
+        #div_02 {
+            display: none; /*初始不显示*/
+            position: absolute; /*使图片脱离流*/
+            left: 120px;
+            top: 15px;
+        }
+
+        #div_02 img {
+            display: block; /*一直显示*/
+        }
+
+        li:HOVER #div_02 {
+            display: block; /*当鼠标悬停时，显示图片 */
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <div id="div_01">01 爱的纹身</div>
+        <div id="div_02">
+            <img alt="图片不存在"
+                 src="http://imgcache.qq.com/music/photo/singer/54/singerpic_5554_0.jpg" />
+        </div>
+    </li>
+    <li>
+        <div id="div_01">02 我还念的</div>
+        <div id="div_02">
+            <img alt="图片不存在"
+                 src="http://imgcache.qq.com/music/photo/singer/9/singerpic_109_0.jpg" />
+        </div>
+    </li>
+    <li>
+        <div id="div_01">03 累了</div>
+        <div id="div_02">
+            <img alt="图片不存在"
+                 src="http://imgcache.qq.com/music/photo/singer/47/singerpic_6547_0.jpg" />
+        </div>
+    </li>
+    <li>
+        <div id="div_01">04 漫漫 慢慢</div>
+        <div id="div_02">
+            <img alt="图片不存在"
+                 src="http://imgcache.qq.com/music/photo/singer/61/singerpic_6361_0.jpg" />
+        </div>
+    </li>
+    <li>
+        <div id="div_01">05 听,花期越来越近</div>
+        <div id="div_02">
+            <img alt="图片不存在"
+                 src="http://imgcache.qq.com/music/photo/singer/33/singerpic_4733_0.jpg" />
+        </div>
+    </li>
+</ul>
+</body>
+</html>

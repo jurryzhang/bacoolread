@@ -1,0 +1,57 @@
+<link href="/sink/css/au.css" type="text/css" rel="stylesheet" />
+<div class="wrap clearfix">
+<div class="auzuojia col10">
+<br /><br />
+<form name="frmbuychapter" method="post" action="{?$url_buychapter?}">
+ <table class="grid" width="60%" align="center">
+    <caption>购买VIP章节</caption>
+	<tr>
+	  <td width="100" align="right">章节名称：</td>
+	  <td width="300">《{?$obookname?} - {?$chaptername?}》</td>
+    </tr>
+	<tr>
+	  <td align="right">价&nbsp;&nbsp;&nbsp; 格：</td>
+	  <td>{?$saleprice?}{?$egoldname?}</td>
+    </tr>
+	<tr>
+	  <td align="right">购买用户：</td>
+	  <td>{?$username?}</td>
+    </tr>
+	<tr>
+	  <td align="right">现有余额：</td>
+	  <td>{?$useremoney?}{?$egoldname?}</td>
+    </tr>
+
+	 <!--burn修改，2017-01-04-->
+	 <!--<tr>-->
+	  <!--<td align="right">现有抵用卷：</td>-->
+          <!--<td>{?$juan?}{?$juanname?}</td>-->
+    <!--</tr>-->
+  <tr>
+    <td width="29%" align="right" valign="middle">支付选项：</td>
+    <td width="71%">
+	{?section name=i loop=$getepe['items']?}
+		{?if $getepe['items'][i] != '赠卷' ?}
+		<input type="radio" class="radio" name="buytype" id="buytype" value="{?$i['key']?}" {?if $i['key'] == $getepe['default']?} checked="checked"{?/if?}/>{?$getepe['items'][i]?}<br />
+
+		{?/if?}
+	{?/section?}
+	</td>
+  </tr>
+	<tr>
+	  <td align="right">订阅选项：</td>
+	  <td><input type="checkbox" name="autobuy" value="1"> <span title="选择自动订阅，则本书所有VIP章节在点击阅读时自动购买，不需要每次购买后再阅读。">自动订阅本书其它VIP章节</span></td>
+    </tr>
+	<tr align="center">
+	  <td colspan="2"><input type="hidden" name="action" value="buy">
+      <input type="hidden" name="cid" value="{?$cid?}">      <input type="submit" class="button" value="确定购买并阅读" name="submit"></td>
+    </tr>
+	<tr align="center">
+	  <td colspan="2" class="foot">
+	  <a href="{?function jieqi_geturl:'article':'article':$articleid:'index'?}">返回目录</a> | <a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}">返回书页</a> | <a href="{?$url_obookinfo?}">VIP信息</a> | <a href="{?$url_buyegold?}">帐户充值</a>
+	  </td> 
+    </tr>
+  </table>
+</form><br /><br />
+</div>
+</div>

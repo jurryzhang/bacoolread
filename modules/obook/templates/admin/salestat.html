@@ -1,0 +1,53 @@
+
+{?set jieqi_page_rows = "50"?}
+<form name="frmsearch" method="get" action="{?$url_salestat?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+      <td>关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50"> 
+            <input name="keytype" type="radio" class="radio" value="0" checked="checked">书名
+            <input type="radio" name="keytype" class="radio" value="1">作者 
+			&nbsp;&nbsp;
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+        &nbsp;&nbsp;&nbsp;</td>
+    </tr>
+</table>
+</form>
+<table class="grid" width="100%" align="center">
+<caption>
+<a href="{?$obook_dynamic_url?}/admin/salestat.php">显示全部</a>
+{?if $jieqisites|count > 0?}
+ | <a href="{?$obook_dynamic_url?}/admin/salestat.php?siteid=0">本站原创</a>
+{?section name=i loop=$jieqisites?} | <a href="{?$obook_dynamic_url?}/admin/salestat.php?siteid={?$i['key']?}">{?$jieqisites[i].name?}</a>{?/section?}
+{?/if?}
+</caption>
+  <tr align="center">
+    <th width="11%">电子书名称</th>
+    <th width="8%">作者</th>
+	<th width="8%">收款银行</th>
+	<th width="10%">收款账号</th>
+	<th width="8%">收款人</th>
+    <th width="6%">订阅</th>
+	<th width="6%">打赏</th>
+	<th width="6%">催更</th>
+    <th width="8%">总收入</th>
+	<th width="8%">待结算</th>
+    <th width="21%">操作</th>
+  </tr>
+  {?section name=i loop=$obookrows?}
+  <tr>
+    <td><a href="{?function jieqi_geturl:'article':'article':$obookrows[i].articleid:'info'?}" target="_blank">{?$obookrows[i].obookname?}</a></td>
+    <td>{?if $obookrows[i].authorid == 0?}{?$obookrows[i].author?}{?else?}<a href="{?$jieqi_url?}/admin/personmanage.php?id={?$obookrows[i].authorid?}" target="_blank">{?$obookrows[i].author?}</a>{?/if?}</td>
+	<td align="center">{?$obookrows[i].banktype?}</td>
+	<td align="center">{?$obookrows[i].bankcard?}</td>
+	<td align="center">{?$obookrows[i].bankuser?}</td>
+    <td align="center">{?$obookrows[i].allsale?}</td>
+	<td align="center">{?$obookrows[i].sumtip?}</td>
+	<td align="center">{?$obookrows[i].sumhurry?}</td>
+    <td align="center">{?$obookrows[i].sumemoney?}</td>
+    <td align="center">{?$obookrows[i].remainemoney?}</td>
+    <td align="center"><a href="{?$obook_dynamic_url?}/admin/chapterstat.php?oid={?$obookrows[i].obookid?}">章节销售</a> | <a href="{?$jieqi_modules['article']['url']?}/admin/actlog.php?aid={?$obookrows[i].articleid?}">打赏记录</a> | <a href="{?$obook_dynamic_url?}/admin/paidlog.php?oid={?$obookrows[i].obookid?}">结算记录</a> | <a href="{?$obook_dynamic_url?}/admin/paidnew.php?oid={?$obookrows[i].obookid?}">结算</a></td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

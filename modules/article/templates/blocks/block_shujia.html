@@ -1,0 +1,6 @@
+{?if $ownerid > 0?}
+{?section name=i loop=$bookcaserows?}
+<dd class="fix"><em class="nam"><a href="{?$bookcaserows[i].url_articleinfo?}" target="_blank" class="f_black">¡¶{?$bookcaserows[i].articlename?}¡·</a></em><em class="nam2"><a href="{?$bookcaserows[i].url_lastchapter?}" target="_blank" class="f_blue1">¿ªÊ¼ÔÄ¶Á</a></em>
+           
+           </dd>{?/section?}  
+{?/if?}

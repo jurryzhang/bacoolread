@@ -1,0 +1,67 @@
+<!--burn 添加 2016-12-20-->
+<form>
+    <table width="100%" class="grid" cellspacing="1" align="center">
+        <caption>小说一级分类管理</caption>
+        {? if $id != 0 ?}
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                一级分类ID：
+            </td>
+
+            <td class="tdr" width="75%">
+                {?$id?}
+            </td>
+        </tr>
+        {?/if ?}
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                一级分类名称：
+            </td>
+
+            <td class="tdr" width="75%">
+                <input type="text" class="text" name="category" size="25" maxlength="20" value="{?$category?}" />
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                所属频道：
+            </td>
+
+            <td class="tdr" width="75%">
+                <select class="select" size="1" name="rgroupid" id="rgroupid">
+                    {?section name=i loop=$rgroup['items']?}
+                    {?if $i['key'] == $rgroupid ?}
+                    <option value="{?$i['key']?}" selected="selected">{?$rgroup['items'][i]?}</option>
+                    {?else?}
+                    <option value="{?$i['key'] ?}">
+                        {?$rgroup['items'][i]?}
+                    </option>
+                    {?/if ?}
+                    {?/section?}
+                </select>
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl">
+                {? if $id != 0 ?}
+                <input type="hidden" name="action"  value="edit" />
+                <input type="hidden" name="id"  value="{?$id?}" />
+            </td>
+
+            <td class="tdr">
+                <input type="submit" class="button" name="submit"  id="submit" value="保存修改" />
+                {? else ?}
+                <input type="hidden" name="action" id="action" value="add" />
+            </td>
+
+            <td class="tdr">
+                <input type="submit" class="button" name="submit"  id="submit" value="增 加" />
+                {?/if?}
+
+            </td>
+        </tr>
+    </table>
+</form>

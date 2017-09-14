@@ -1,0 +1,3 @@
+{?section name=i loop=$linkrows?}
+  <a href="{?$linkrows[i].url?}" target="_blank"{?if $linkrows[i].namecolor != ''?}  style="color:{?$linkrows[i].namecolor?}"{?/if?}>{?$linkrows[i].name?}</a>&nbsp;
+{?/section?}

@@ -1,0 +1,216 @@
+$jieqiSort = Array
+(
+    [article] => Array
+        (
+            [1] => Array
+                (
+                    [code] => xuanhuan
+                    [caption] => Ðþ»ÃÄ§·¨
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [1] => ¶«·½Ðþ»Ã
+                            [2] => Ä§·¨Ð£Ô°
+                            [3] => Íõ³¯Õù°Ô
+                            [4] => Î÷·½Ææ»Ã
+                            [5] => ÒìÊÀ´óÂ½
+                            [6] => Ô¶¹ÅÉñ»°
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [code] => wuxia
+                    [caption] => ÎäÏÀÐÞÕæ
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [7] => ´«Í³ÎäÏÀ
+                            [8] => ¹ÅµäÏÉÏÀ
+                            [9] => ÏÖ´úÏÉÏÀ
+                            [10] => ÒìÊÀÐÞÏÉ
+                            [11] => ÒìÊÀÐÞÕæ
+                            [12] => ºé»Ä´«Ëµ
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [code] => dushi
+                    [caption] => ¶¼ÊÐÐ£Ô°
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [13] => ¶¼ÊÐÄÐÅ®
+                            [14] => ¶¼ÊÐÒìÄÜ
+                            [15] => ¶¼ÊÐÖØÉú
+                            [16] => ¶¼ÊÐÐÞÕæ
+                            [17] => »Âº£³Á¸¡
+                            [18] => ÏçÍÁÐ¡Ëµ
+                            [19] => Ö°³¡ÉÌ³¡
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [code] => lishi
+                    [caption] => ÀúÊ·¾üÊÂ
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [20] => ¼Ü¿ÕÀúÊ·
+                            [21] => ÀúÊ·´«¼Ç
+                            [22] => ÏÖ´ú¾üÊÂ
+                            [23] => Õ½Õù»ÃÏë
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [code] => alingyi
+                    [caption] => ÁéÒìÐüÒÉ
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [24] => ÏÖ´ú
+                            [25] => ¹Å´ú
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [code] => kehuan
+                    [caption] => ¿Æ»ÃÍ¬ÈË
+                    [group] => 1
+                    [types] => Array
+                        (
+                            [26] => Ä©ÊÀÎ£»ú
+                            [27] => Î´À´ÊÀ½ç
+                            [28] => ÎäÏÀÍ¬ÈË
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [code] => xianyan
+                    [caption] => ÏÖ´úÑÔÇé
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [29] => ×Ü²Ã
+                            [30] => ¶¼ÊÐ
+                            [31] => Ð£Ô°
+                        )
+
+                )
+
+            [8] => Array
+                (
+                    [code] => chuanyue
+                    [caption] => ¹Å´úÑÔÇé
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [32] => ¹¬Í¢
+                            [33] => Å®×ð
+                            [34] => ÖÖÌï
+                        )
+
+                )
+
+            [9] => Array
+                (
+                    [code] => huanyan
+                    [caption] => »ÃÏëÑÔÇé
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [35] => ÐÞÕæ
+                            [36] => ´©Ô½
+                            [37] => ÒìÊÀ
+                        )
+
+                )
+
+            [10] => Array
+                (
+                    [code] => blingyi
+                    [caption] => ÁéÒìÐüÒÉ
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [38] => ÏÖ´ú
+                            [39] => ¹Å´ú
+                        )
+
+                )
+
+            [11] => Array
+                (
+                    [code] => zonghe
+                    [caption] => µ¢ÃÀÍ¬ÈË
+                    [group] => 2
+                    [types] => Array
+                        (
+                            [40] => µ¢ÃÀ
+                            [41] => Í¬ÈË
+                        )
+
+                )
+
+            [12] => Array
+                (
+                    [code] => wenxue
+                    [caption] => ÎÄÑ§³ö°æ
+                    [group] => 3
+                    [types] => Array
+                        (
+                            [42] => Çà´ºÑÔÇé
+                            [43] => ÁéÒìÐüÒÉ
+                            [44] => Ðþ»ÃÎäÏÀ
+                            [45] => »ÃÏëÑÔÇé
+                            [46] => Ö°³¡ÉÌÕ½
+                        )
+
+                )
+
+        )
+
+)
+
+$articleinfo = stdClass Object
+(
+    [articleid] => 534
+    [postdate] => 1462257977
+    [lastupdate] => 1480003214
+    [articlename] => ç™½å¯Œç¾Žçš„è´´èº«å…µçŽ‹
+    [authorid] => 3647
+    [author] => ç‰›å¾—ä¸€æ¯”
+    [keywords] => å…µçŽ‹å’Œç™½å¯Œç¾Žçš„æ•…äº‹
+    [intro] => å¯¹æ‰‹ä¸ä¹–ï¼Œå°±è¦ä»Žä»–èº«ä¸Šç¢¾è¿‡ï¼Œç™½å¯Œç¾Žä¸ä¹–ï¼Œå°±è¦ä»Žå¥¹èº«ä¸ŠåŽ‹è¿‡ï¼Œæˆ‘å«ç§¦å°‘è™Žï¼Œä¸€ä¸ªæ‰åŽä¸Žæ­¦åŠ›é›†äºŽä¸€èº«çš„å®Œç¾Žç”·äººï¼ï¼ï¼
+    [notice] => 
+    [fullflag] => 0
+    [chapters] => 632
+    [words] => 1997998
+    [isvip] => 1
+    [rgroup] => 1
+    [category] => éƒ½å¸‚æ ¡å›­
+    [type] => éƒ½å¸‚æ¿€æˆ˜
+    [cover] => http://www.ytread.com/files/article/image/0/534/534s.jpg
+    [bigcover] => http://www.ytread.com/files/article/image/0/534/534l.jpg
+    [freechapterid] => 16938
+    [freechapter] => 20.å±±é›¨æ¬²æ¥
+    [freevolume] => 
+    [freetime] => 1462258691
+    [vipchapterid] => 94400
+    [vipchapter] => 625.é«˜çº§æŒ‡æŒ¥å®˜
+    [vipvolume] => 
+    [viptime] => 1480003214
+    [sortid] => 3
+)

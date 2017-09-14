@@ -1,0 +1,33 @@
+<div class="main">
+<!--栏目导航-->
+<div><span class="navbar"><a href="{?$jieqi_url?}">首页</a>{?section name=i loop=$nav_list?}<img src="{?$iconpath?}icon_nav.gif" align="absmiddle" hspace="5" /><a href="{?$nav_list[i].url?}">{?$nav_list[i].title?}</a>{?/section?}</span></div>
+<h1>{?$title?}</h1>
+<p>作者：{?$author?}&nbsp;&nbsp;来源：{?$source?}&nbsp;&nbsp;发布时间：{?$date?}</p>
+<hr />
+<!--获取新闻内容-->
+<div class="news_content">{?$body?}</div>
+<hr />
+<div id="top_list"></div>
+<br />
+{?if $relt_show == 1?}
+<div class="block">
+<div class="blocktitle">相关新闻</div>
+<div class="blockcontent"><div class="c_foot" id="relt_list"></div></div>
+</div>
+{?/if?}
+</div>
+
+<script language="JavaScript">
+<!--
+//获取新闻统计列表
+function geTopBar(){
+	Ajax.Update('{?$stat_url?}?method=fetch&id={?$id?}', {outid:'top_list',tipid:'top_list',onLoading:'新闻统计数据加载中...'});
+}
+function getRelateNewsList(){
+	Ajax.Update('{?$relt_url?}?method=fetch&id={?$id?}', {outid:'relt_list',tipid:'relt_list',onLoading:'相关新闻列表加载中...'});
+}
+geTopBar();
+
+{?if $relt_show == 1?}getRelateNewsList();{?/if?}
+//-->
+</script>

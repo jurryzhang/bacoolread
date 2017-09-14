@@ -1,0 +1,39 @@
+<!--burn 添加 2016-12-26-->
+<form>
+    <table class="grid" width="100%" align="center">
+        <caption>APP后台--热搜词列表
+            <a  href="{?$jieqi_modules['app']['url']?}/admin/editSearchKeyWord.php?id=-1&action=show">
+                + 增加热搜词
+            </a>
+        </caption>
+
+        <tr align="center" class="head">
+            <td width="18%" valign="middle">bookID</td>
+            <td width="15%" valign="middle">名称</td>
+            <td width="13%" valign="middle">操作</td>
+        </tr>
+
+        {?section name=i loop=$hotSearch ?}
+        <tr valign="middle">
+            <td align="center">
+                {? $hotSearch[i]['bookID'] ?}
+            </td>
+
+            <td align="center">
+                {? $hotSearch[i]['bookName'] ?}
+            </td>
+
+            <input type="hidden" name="id" value="{? $hotSearch[i]['id'] ?}">
+
+            <td align="center">
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editSearchKeyWord.php?id={? $hotSearch[i]['id'] ?}&action=show">修改
+                </a>
+                |
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editSearchKeyWord.php?id={? $hotSearch[i]['id'] ?}&action=delete">删除
+                </a>
+            </td>
+        </tr>
+        {?/section?}
+    </table>
+</form>
+

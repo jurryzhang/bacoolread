@@ -1,0 +1,7 @@
+<ul class="ultop">
+{?section name=i loop=$newsrows?}
+<li>{?$newsrows[i].title|truncate:21:"..."?}
+</li>
+{?/section?}
+</ul>
+<div class="more"><a href="{?$url_more?}">¸ü¶à...</a></div>

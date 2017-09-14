@@ -1,0 +1,77 @@
+/*
+Uploadify
+Copyright (c) 2012 Reactive Apps, Ronnie Garcia
+Released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
+*/
+
+.uploadify {
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.uploadify-button.disabled {
+	background-color: #D0D0D0;
+	color: #808080;
+}
+.uploadify-queue {
+	margin-bottom: 1em;
+}
+.uploadify-queue-item {
+	background-color: #F5F5F5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font: 11px Verdana, Geneva, sans-serif;
+	margin-top: 5px;
+	max-width: 350px;
+	padding: 10px;
+}
+.uploadify-error {
+	background-color: #FDE5DD !important;
+}
+.uploadify-queue-item .cancel a {
+	background: url('uploadify-cancel.png') 0 0 no-repeat;
+	float: right;
+	height:	16px;
+	text-indent: -9999px;
+	width: 16px;
+}
+.uploadify-queue-item.completed {
+	background-color: #E5E5E5;
+}
+.uploadify-progress {
+	background-color: #E5E5E5;
+	margin-top: 10px;
+	width: 100%;
+}
+.uploadify-progress-bar {
+	background-color: #0099FF;
+	height: 3px;
+	width: 1px;
+}
+
+
+
+.case_rightee{position:relative;float:right;width:728px;overflow:hidden;border:#c3e0c3 1px solid;border-top:none;}
+.case_right1{position:relative;margin:10px auto;width:728px;overflow:hidden;border:#c3e0c3 1px solid;border-top:none;}
+.case_title{background:url(images/case.png) repeat-x 0 -58px;height:38px;line-height:38px;text-align:center;font-size:14px;font-weight:bold;color:#2b8200;}
+.case_rightee select{margin-left:5px;margin-top:8px;padding:2px;width:90px;border:1px solid;height:25px;line-height:25px;border-color: #090 #ddd #ddd #090;color:#000;cursor:pointer;}
+.case_avatar{position:absolute;right:0px;top:38px;width:130px;text-align:center;background:#fff;padding:10px 15px}
+.case_avatar img{width:120px;height:120px;padding:1px;border:#dbe6d8 1px solid;}
+.case_rightee .yonghu{background:url(images/casebg.png);}
+.case_rightee .yonghu li{height:32px;line-height:32px;padding:0 15px;color:#666;}
+.case_rightee .yonghu li:hover{border-bottom:#dbe6d8 1px solid;background:#e6f5e2;height:31px;}
+.case_rightee li{height:31px;color:#666;overflow:hidden;}
+.case_rightee li .input{width:15px;height:15px;margin-top:8px;}
+.case_rightee li.top{background:#e6f5e2;height:31px;font-weight:bold;overflow:hidden;}
+.case_rightee .fk{width:28px;}
+.case_rightee .wz{width:145px;}
+.case_rightee .wz2{width:145px;border-right:medium none;}
+.case_rightee .zx{width:225px;}
+.case_rightee .gx{width:50px;}
+.case_rightee .cz{width:50px;border-right:medium none;}
+.case_rightee .sc {width:110px;border-right:medium none}
+.case_rightee .sc img{padding-top:10px;}
+.case_rightee .bt {width:295px;}
+.case_rightee .bt2 {width:407px;}
+.case_rightee li.bottom{text-align:center;background:#e6f5e2;height:38px;line-height:38px;font-weight:bold;}

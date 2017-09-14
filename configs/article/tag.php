@@ -1,0 +1,253 @@
+<?php
+$jieqiTag['article'] = array (
+  6 => 
+  array (
+    'caption' => 'ÒìÊÀ´óÂ½',
+  ),
+  7 => 
+  array (
+    'caption' => 'Ðþ»Ã´ò¶·',
+  ),
+  8 => 
+  array (
+    'caption' => 'ÎÞÏÞÁ÷',
+  ),
+  9 => 
+  array (
+    'caption' => 'Ñ§Ôº',
+  ),
+  10 => 
+  array (
+    'caption' => 'Å°Áµ',
+  ),
+  11 => 
+  array (
+    'caption' => 'ÊÕ¼¯',
+  ),
+  12 => 
+  array (
+    'caption' => 'ÁéÒì',
+  ),
+  13 => 
+  array (
+    'caption' => '¿Ö²À',
+  ),
+  14 => 
+  array (
+    'caption' => 'µÀÊõ',
+  ),
+  15 => 
+  array (
+    'caption' => 'ËãØÔ',
+  ),
+  16 => 
+  array (
+    'caption' => 'Ð£Ô°',
+  ),
+  17 => 
+  array (
+    'caption' => '½­ºþ',
+  ),
+  18 => 
+  array (
+    'caption' => 'ÈÈÑª',
+  ),
+  19 => 
+  array (
+    'caption' => 'Õù¶·',
+  ),
+  21 => 
+  array (
+    'caption' => 'Ä±ÂÔ',
+  ),
+  20 => 
+  array (
+    'caption' => '¹ÅÑÔ',
+  ),
+  26 => 
+  array (
+    'caption' => '´©Ô½',
+  ),
+  27 => 
+  array (
+    'caption' => 'ÌðÃÛ³èÎÄ',
+  ),
+  28 => 
+  array (
+    'caption' => 'Ú¶Ð³ÎÂÜ°',
+  ),
+  31 => 
+  array (
+    'caption' => '¶¼ÊÐ',
+  ),
+  32 => 
+  array (
+    'caption' => '¶·Ä§',
+  ),
+  34 => 
+  array (
+    'caption' => '×Ü²Ã',
+  ),
+  35 => 
+  array (
+    'caption' => 'ºì°ü',
+  ),
+  36 => 
+  array (
+    'caption' => '×·ÆÞ',
+  ),
+  39 => 
+  array (
+    'caption' => 'ÇýÄ§Ê§ÒäÅ®ºÍ·¸×ïÐÄÀí×¨¼ÒÁªºÏÆÆ°¸~',
+  ),
+  40 => 
+  array (
+    'caption' => '³¯ÌÃ',
+  ),
+  41 => 
+  array (
+    'caption' => '°®Çé',
+  ),
+  42 => 
+  array (
+    'caption' => 'ÓÑÇé',
+  ),
+  43 => 
+  array (
+    'caption' => 'È¨Ä±',
+  ),
+  44 => 
+  array (
+    'caption' => 'Ìð³è',
+  ),
+  45 => 
+  array (
+    'caption' => 'Ú¶Ð³',
+  ),
+  46 => 
+  array (
+    'caption' => 'ÏÖ´úÑÔÇé',
+  ),
+  47 => 
+  array (
+    'caption' => 'ÀúÊ·',
+  ),
+  48 => 
+  array (
+    'caption' => 'ÃÔÎí',
+  ),
+  49 => 
+  array (
+    'caption' => 'ÕæÏà',
+  ),
+  50 => 
+  array (
+    'caption' => 'ÎÂÜ°',
+  ),
+  51 => 
+  array (
+    'caption' => 'ÌðÃÛ',
+  ),
+  52 => 
+  array (
+    'caption' => '¹¬¶·',
+  ),
+  53 => 
+  array (
+    'caption' => 'Õ¬¶·',
+  ),
+  54 => 
+  array (
+    'caption' => 'Å®Ç¿',
+  ),
+  55 => 
+  array (
+    'caption' => 'ÄæÏ®',
+  ),
+  56 => 
+  array (
+    'caption' => '½ðµ¤',
+  ),
+  57 => 
+  array (
+    'caption' => 'ÐÞÕæ',
+  ),
+  58 => 
+  array (
+    'caption' => '³¤Éú',
+  ),
+  62 => 
+  array (
+    'caption' => '³Â·ã',
+  ),
+  63 => 
+  array (
+    'caption' => 'ÄªÓð',
+  ),
+  64 => 
+  array (
+    'caption' => 'ÑÅÃÀ',
+  ),
+  65 => 
+  array (
+    'caption' => 'ÎÂÜ°Å¯ÎÄ',
+  ),
+  66 => 
+  array (
+    'caption' => 'ÏÉÏÀ',
+  ),
+  67 => 
+  array (
+    'caption' => 'ÌÒ»¨',
+  ),
+  68 => 
+  array (
+    'caption' => 'Çà´º',
+  ),
+  69 => 
+  array (
+    'caption' => '³É³¤',
+  ),
+  70 => 
+  array (
+    'caption' => 'êÓÃÁ',
+  ),
+  71 => 
+  array (
+    'caption' => '»éÁµ',
+  ),
+  72 => 
+  array (
+    'caption' => '³èÎÄ',
+  ),
+  74 => 
+  array (
+    'caption' => 'ÂÞÏ¦ÑÕ',
+  ),
+  75 => 
+  array (
+    'caption' => '¹Ëå·',
+  ),
+  76 => 
+  array (
+    'caption' => 'ÁÖÇÇ°²',
+  ),
+  77 => 
+  array (
+    'caption' => '³Ì½õÄÏ',
+  ),
+  78 => 
+  array (
+    'caption' => '¶þ»é',
+  ),
+  80 => 
+  array (
+    'caption' => 'Éý¼¶',
+  ),
+  81 => 
+  array (
+    'caption' => 'Éñ×ù',
+  ),
+);
+
+?>

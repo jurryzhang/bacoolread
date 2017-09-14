@@ -1,0 +1,3 @@
+	{?section name=i loop=$picrows?}
+	document.write('<img id="obookimage{?$i['order']?}" src="{?$picrows[i].url?}" class="imagecontent" {?if $i['index']==0?}onload="showfront()" {?/if?}>');
+	{?/section?}

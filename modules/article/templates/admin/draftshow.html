@@ -1,0 +1,8 @@
+
+<div class="c_title">作品待审章节</div>
+<hr />
+<div class="c_head">作品名称：<a href="{?function jieqi_geturl:'article':'article':$draftvals['articleid']:'info'?}" target="_blank">{?$draftvals['articlename']?}</a> | 章节名称：{?$draftvals['chaptername']?} | 类型：{?if $draftvals['isvip'] == 1?}电子书{?else?}公众小说{?/if?} | 作者：<a href="{?function jieqi_geturl:'system':'user':$draftvals['posterid']?}" target="_blank">{?$draftvals['poster']?}</a> | 发表时间：{?$draftvals['postdate']|date:'Y-m-d H:i:s'?}</div>
+<hr />
+<div class="c_content">{?$draftvals['chaptercontent']?}</div>
+<hr />
+

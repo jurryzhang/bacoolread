@@ -1,0 +1,216 @@
+<!--[if lt IE 7 ]><html class="lowie ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="lowie ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="lowie ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="" lang="zh-cn">
+<!--<![endif]-->
+<head>
+	<meta charset="gbk">
+<meta name="keywords" content="{?$articlename?} {?$chaptername?} {?$author?} {?$sort?} {?$jieqi_sitename?}" />
+<meta name="description" content="{?$summary|truncate:500:'..'?}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{?$articlename?}-{?$chaptername?}-{?$author?}-{?$sort?}-{?$jieqi_sitename?}</title>
+	<link rel="stylesheet" href="/sink/css/commo.css" type="text/css">
+    <link rel="stylesheet" href="/sink/css/read.css" type="text/css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico"/>
+<script type="text/javascript" src="/sink/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/sink/js/base.js"></script>
+<script type="text/javascript" src="/sink/js/layer.js"></script>
+<script type="text/javascript" src="/sink/js/page.js"></script>
+<!--book headerjs-->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/sink/css/iefix.css" type="text/css">
+<script src="/sink/js/html5shiv.min.js" info="html5shiv"></script>
+<script>
+window.lowie = 1;
+</script>
+<script src="/sink/js/iefix.js"></script>    
+<![endif]-->
+
+</head>
+
+
+<body>
+<div style="height:38px;"></div>
+<div class="nav-group">
+  <div class="top-bar">
+  <div class="main top-wrap">
+    <div class="fl">
+      <div class="top-opt"> <a class="nav-tit" href="{?$jieqi_url?}" target="_blank">{?$jieqi_sitename?}</a>
+      </div>  
+
+       </div>
+    <div class="fr">
+      <div class="login-box fl">
+                <div class="before-login">
+				{?if $jieqi_userid == 0?}
+          <a href="javascript:;" onclick="userLogin();">登录</a> <span>|</span> <a href="{?$jieqi_user_url?}/register.php">注册</a>
+		  {?else?}
+		  <img src="{?$jieqi_url?}/files/badge/image/3/0/{?$jieqi_vip_img?}.png" class="logvip" /><a href="{?$jieqi_url?}/user/">{?$jieqi_username?}</a> <span>|</span> <a href="{?$jieqi_url?}/user/">个人中心</a><span>|</span> <a href="/logout.php">退出</a>
+		   {?/if?}
+        </div>
+              </div>
+            <span class="sp">|</span>
+      <div class="fl top-chg"> <a href="" target="_blank">充值</a> </div>
+    </div>
+  </div>
+  <!-- end of top-wrap--> 
+</div>
+<!--end of top bar-->
+
+</div>
+<!--end of nav group -->
+
+<div class="read-main">
+  
+  <!--end read-tab-->
+  <div class="read-top">
+    <h2><a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}" target="_balnk">{?$articlename?}</a><span>{?$chaptername?}</span></h2>
+      <div class="selcetbox_yd">
+      <script type="text/javascript" src="/sink/js/pagetop.js"></script>
+     </div>
+
+    <!--end read-setup--> 
+  </div>
+  <!--end read-top-->
+  <div id="htmlContent" class="read-content">
+    <h2>{?$chaptername?}</h2>
+    <div class="textinfo">
+    小说：<a href="{?function jieqi_geturl:'article':'article':$articleid:'info'?}" target="_blank">{?$articlename?}</a>
+    作者：<a href="{?function jieqi_geturl:'article':'author':$authorid:$author?}" target="_blank">{?$author?}</a>
+        更新时间：{?$chaptertime|date:'Y-m-d H:i'?}    字数：{?$chaptersize_c?}  </div>
+  
+    <style>
+		.read-content p *{ font-style:normal; font-weight:100; text-decoration:none; line-height:inherit;}
+		.read-content p cite{ display:none; visibility:hidden;}	
+    </style>
+    
+ 
+   
+
+<p>
+{?$jieqi_content?}
+</p>
+    
+    
+  </div>
+  <!--end read-content-->
+
+  
+
+  <div class="read-page"> 
+  	<span class="gray">（← 快捷键 </span> 
+  	  	<a href="{?$url_preview?}">上一章</a> 
+  	  	<a href="{?$url_index?}">回目录</a> 
+  	    <a href="{?$url_next?}">下一章</a> 
+  	  	<span class="gray">快捷键→）</span> 
+  </div>
+  <!--end read-page--> 
+
+  
+   
+  <!--end book-rcm-->
+</div>
+
+
+  <div class="sidebar read-toolbar" id="rightToolbar" style="left: 1191.5px; visibility: visible;">
+    <div class="sidebar-btn">
+      <ul>
+        <li><a class="addto-shelf-btn" href="javascript:;" onclick="GPage.addbook('{?$jieqi_modules['article']['url']?}/addbookcase.php?bid={?$articleid?}&cid={?$cid?}');"><i class="icon icon-book"></i>书签</a></li>
+        <li><a class="send-reward-btn" href="javascript:void(0);" onclick="huodong('{?$jieqi_modules['article']['url']?}/tip.php?id={?$articleid?}');"><i class="icon icon-reward"></i>打赏</a></li>
+        <li><a class="send-flower-btn" href="javascript:void(0);" onclick="huodong('{?$jieqi_modules['article']['url']?}/gift.php?type=flower&id={?$articleid?}');"><i class="icon icon-flower"></i>送花</a></li>
+                
+        
+      </ul>
+    </div>
+    <!--end sidebar-btn-->
+    <div class="sidebar-scroll">
+      <ul>
+      	        <li><a title="" href="{?$url_preview?}"><i class="arr-up"></i></a></li>
+                        <li><a href="{?$url_next?}"><i class="arr-down"></i></a></li>
+              </ul>
+    </div>
+
+
+<script type="text/javascript" src="/sink/js/pagebottom.js"></script>
+<script language="JavaScript">
+var preview_page = "{?$url_previous?}";
+var next_page = "{?$url_next?}";
+var index_page = "{?$url_index?}";
+var article_id = "{?$articleid?}";
+var chapter_id = "{?$chapterid?}";
+
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) document.location = preview_page;
+  if (event.keyCode == 39) document.location = next_page;
+  if (event.keyCode == 13) document.location = index_page;
+}
+document.onkeydown=jumpPage;
+
+
+  $(function(){
+   var art_tit = "{?$articlename?}";
+   var chp_tit = "{?$chaptername?}"
+   var chp_url = document.URL;
+   var art_url = "{?function jieqi_geturl:'article':'chapter':$cid:$articleid:1?}";
+   var history;
+   var json="[";
+   var json1;
+   var canAdd= true;
+   if(!$.cookie("history")){
+    history = $.cookie("history","[{art_tit:\""+art_tit+"\""+",art_url:\""+art_url+"\""+",chp_tit:\""+chp_tit+"\""+",chp_url:\""+chp_url+"\"}]",{expires:1, path: '/'});
+   }else {
+    history = $.cookie("history");
+    json1 = eval("("+history+")");
+    $(json1).each(function(){
+     if(this.art_tit==art_tit&&this.chp_tit==chp_tit){
+      canAdd=false;
+      return false;
+     }
+    })
+    if(canAdd){
+     $(json1).each(function(){
+	 if(this.art_tit!=art_tit){
+      json = json + "{\"art_tit\":\""+this.art_tit+"\",\"art_url\":\""+this.art_url+"\",\"chp_tit\":\""+this.chp_tit+"\",\"chp_url\":\""+this.chp_url+"\"},";
+	  }
+     })
+     json = json + "{\"art_tit\":\""+art_tit+"\",\"art_url\":\""+art_url+"\",\"chp_tit\":\""+chp_tit+"\",\"chp_url\":\""+chp_url+"\"}]";
+     $.cookie("history",json,{expires:1, path: '/'});
+    }
+   }
+  });
+</script>
+<script type="text/javascript">
+function getx(e){ 
+  var l=e.offsetLeft; 
+  
+  while(e=e.offsetParent){ 
+    l+=e.offsetLeft; 
+  } 
+  return(l+'px'); 
+} 
+function gety(e){ 
+  var l=e.offsetTop; 
+  while(e=e.offsetParent){ 
+    l+=e.offsetTop; 
+  } 
+  return(l+'px'); 
+} 
+function showfront(){
+  var frontdiv=document.getElementById('frontdiv');
+  var frontimage=document.getElementById('frontimage');
+  var obookimage=document.getElementById('obookimage1');
+  var loadinginfo=document.getElementById('loadinginfo');
+  loadinginfo.style.visibility='hidden';
+  frontdiv.style.left=getx(obookimage);
+  frontdiv.style.top=gety(obookimage);
+  frontimage.width=obookimage.width;
+  frontimage.height=obookimage.height;
+}
+
+</script>
+<noscript><iframe src="*.html"></iframe></noscript>
+</body>
+</html>

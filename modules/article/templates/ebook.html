@@ -1,0 +1,45 @@
+<link rel="stylesheet" rev="stylesheet" href="{?$jieqi_local_url?}/69css/case.css" type="text/css" media="all" />
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+<div class="case_main">
+<div class="case_left">
+<dl>
+<dt>会员中心</dt>
+<dd><a href="{?$jieqi_url?}/userdetail.php" title="会员首页">会员首页</a></dd><dd><a href="{?$jieqi_url?}/modules/article/newebook.php" title="上传小说">上传电子书</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/ebook.php" title="我的上传列表">我的上传列表</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/bookcase.php" title="我的书架">我的书架</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/modules/article/jifen.php" title="兑换鲜花鸡蛋 ">兑换鲜花鸡蛋</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/qiandao/qiandao.php" title="我要签到" target="_blank">我要签到</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd></dl>
+<dl>
+<dt>消息中心</dt>
+<dd><a href="{?$jieqi_url?}/message.php?box=inbox" title="收件箱">收件箱</a></dd><dd><a href="{?$jieqi_url?}/message.php?box=outbox" title="发件箱">发件箱</a></dd><dd><a href="{?$jieqi_url?}/newmessage.php" title="发送新消息">发送新消息</a></dd><dd><a href="{?$jieqi_url?}/newmessage.php?tosys=1" title="发送给管理员">发送给管理员</a></dd>
+</dl>
+<dl>
+<dt>作者专区</dt>
+<dd><a href="{?$jieqi_url?}/modules/article/newarticle.php" title="发表新作">发表新作</a></dd><dd><a href="{?$jieqi_url?}/modules/article/newdraft.php" title="新建草稿">新建草稿</a></dd><dd><a href="{?$jieqi_url?}/modules/article/draft.php" title="草稿箱">草稿箱</a></dd><dd><a href="{?$jieqi_url?}/modules/article/masterpage.php" title="我的文章列表">我的文章列表</a></dd>
+</dl>
+<dl>
+<dt>会员设置</dt>
+<dd><a href="{?$jieqi_url?}/useredit.php" title="修改资料">修改资料</a></dd><dd><a href="{?$jieqi_url?}/setavatar.php" title="设置头像">设置头像</a><img src="{?$jieqi_url?}/69css/images/hot.gif" alt="热门"></dd><dd><a href="{?$jieqi_url?}/passedit.php" title="修改密码">修改密码</a></dd><dd><a href="{?$jieqi_url?}/logout.php" title="退出登录">退出登录</a></dd>
+</dl>
+</div>
+
+<div class="case_right">
+<form method="post" name="checkform" id="checkform" onsubmit="return check_confirm();">
+<div class="case_title">我的电子书</div>
+<ul>
+<li class="top">
+<span style="width:155px">文章名称</span>
+<span style="width:255px">最新章节</span>
+<span style="width:102px">作者</span>
+<span style="width:100px">分类</span>
+<span style="width:65px">状态</span>
+<span style="width:45px; border-right:none">操作</span></li>
+{?section name=i loop=$ebookrows?}
+<li>
+<span style="width:155px"><a href="{?$ebookrows[i].url_index?}" target="_blank">{?$ebookrows[i].articlename?}</a></span>
+<span style="width:255px"><a href="{?$ebookrows[i].url_lastchapter?}" target="_blank">{?$ebookrows[i].lastchapter?}</a></span>
+<span style="width:102px">{?if $ebookrows[i].authorid == 0?}{?$ebookrows[i].author?}{?else?}<a href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}" target="_blank">{?$ebookrows[i].author?}</a>{?/if?}</span>
+<span style="width:100px">{?$ebookrows[i].sort?}</span>
+<span style="width:65px">{?$ebookrows[i].fullflag?}</span>
+<span style="width:45px; border-right:none">{?if $ebookrows[i].display==1?}<a href="{?$article_static_url?}/ebookedit.php?id={?$ebookrows[i].articleid?}">编辑</a>{?else?}<font color="#FF0000">已审核</font>{?/if?}</span>
+<li>
+{?/section?}
+</ul></form></div>
+</div>

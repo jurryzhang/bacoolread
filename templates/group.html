@@ -1,0 +1,138 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "groupblocks"?}
+<link rel="stylesheet" rev="stylesheet" href="/themes/jieqi180/index.css" type="text/css" media="all" /><div class="body mb cf">
+	<div class="row">
+
+		<div class="col9">
+			<!-- 封面推荐 -->
+			<div class="chel1">
+				<div class="chel1Tit"><a href="{?$jieqi_url?}/">首页</a> &gt; {?$groupname?}频道</div>
+				{?$jieqi_pageblocks['0']['content']?}
+			</div>
+			<!-- 本期精品 -->
+			<div class="chel2">
+				<div class="bg2 chel2Tit"><span>本期精品</span><div class="titA"></div></div>
+				{?$jieqi_pageblocks['211']['content']?}
+			</div>
+			<!-- 最新更新 -->
+			<div class="vip2">
+				<div class="vipLeft2">
+					<ul class="viplUl2">
+						<li  id="vip1" onmouseover="setTab('vip',1,2)" class="on" >最新更新</li>
+						<li  id="vip2" onmouseover="setTab('vip',2,2)" style="border-right:none;">最新完本</li>
+					</ul>
+					<div id="con_vip_1">	
+						{?$jieqi_pageblocks['311']['content']?}
+					</div>
+					<div id="con_vip_2" style="display:none;">	
+						{?$jieqi_pageblocks['312']['content']?}
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col3 last">
+			<!-- 人气榜 -->
+			<div class="rankTabTit2 mb10 cf">
+				<div class="rankTop">人气榜</div>
+				<ul class="rankUl">
+					<li class="on"  onmouseover="setTabout(this)">周</li>
+					<li onmouseover="setTabout(this)">月</li>
+					<li onmouseover="setTabout(this)">总</li>
+				</ul>
+			</div>
+			<div class="rankTabList mb15">
+				<div>                	
+					{?$jieqi_pageblocks['131']['content']?}	          
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['132']['content']?}	            
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['133']['content']?}	          
+				</div>
+			</div>
+			<!-- VIP小说榜 -->
+			<div class="rankTabTit2 mb10 cf">
+				<div class="rankTop">VIP小说榜</div>
+				<ul class="rankUl">
+					<li class="on"  onmouseover="setTabout(this)">周</li>
+					<li onmouseover="setTabout(this)">月</li>
+					<li onmouseover="setTabout(this)">总</li>
+				</ul>
+			</div>
+			<div class="rankTabList mb15">
+				<div>                	
+					{?$jieqi_pageblocks['231']['content']?}	          
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['232']['content']?}	            
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['233']['content']?}	          
+				</div>
+			</div>
+			<!-- 推荐榜 -->
+			<div class="rankTabTit2 mb10 cf">
+				<div class="rankTop">推荐榜</div>
+				<ul class="rankUl">
+					<li class="on"  onmouseover="setTabout(this)">周</li>
+					<li onmouseover="setTabout(this)">月</li>
+					<li onmouseover="setTabout(this)">总</li>
+				</ul>
+			</div>
+			<div class="rankTabList mb15">
+				<div>                	
+					{?$jieqi_pageblocks['331']['content']?}	          
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['332']['content']?}	            
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['333']['content']?}	          
+				</div>
+			</div>
+			<!-- 鲜花榜 -->
+			<div class="rankTabTit2 mb10 cf">
+				<div class="rankTop">鲜花榜</div>
+				<ul class="rankUl">
+					<li class="on"  onmouseover="setTabout(this)">周</li>
+					<li onmouseover="setTabout(this)">月</li>
+					<li onmouseover="setTabout(this)">总</li>
+				</ul>
+			</div>
+			<div class="rankTabList mb15">
+				<div>                	
+					{?$jieqi_pageblocks['334']['content']?}	          
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['335']['content']?}	            
+				</div>
+				<div style="display:none;">                	
+					{?$jieqi_pageblocks['336']['content']?}	          
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+</div>
+
+
+<div class="main">
+	{?$jieqi_pageblocks['400']['content']?}
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	//频道页图片效果
+	$(".cheUl li").hover(function(){
+		$(this).find(".imgBlok,.imgFont").css({display:"block"});
+		$(this).find(".imgBlok").css({opacity:"0.5"});
+		  }, function(){    
+			$(this).find(".imgBlok,.imgFont").css({display:"none"});   
+	});
+});
+</script>

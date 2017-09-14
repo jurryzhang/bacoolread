@@ -1,0 +1,15 @@
+{?if $ownerid > 0?}
+{?section name=i loop=$bookcaserows?}
+	          <dd>
+	          	<span class="name">
+	          		<a href="{?$bookcaserows[i].url_articleinfo?}" target="_blank" class="f_blue4 f14">{?$bookcaserows[i].articlename?}</a>
+	          		<a href="{?$bookcaserows[i].url_lastchapter?}" target="_blank" class="f_gray9">{?$bookcaserows[i].lastchapter?}</a>
+	          	</span>
+	          	<span class="status">{?if $bookcaserows[i].fullflag == 0 ?}连载中{?else?}已完结{?/if?}</span>
+	          	<span class="date">{?$bookcaserows[i].lastupdate|date:"Y-m-d h:i"?}</span>
+	          	<a href="{?$bookcaserows[i].url_lastchapter?}" class="more">立即阅读&gt;&gt;</a>
+	          </dd>
+
+  
+{?/section?}  
+{?/if?}

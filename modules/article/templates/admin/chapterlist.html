@@ -1,0 +1,70 @@
+<link type="text/css" rel="stylesheet" href="/sink/jedate/skin/jedate.css">
+<script type="text/javascript" src="/sink/jedate/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/sink/jedate/jquery.jedate.js"></script>
+
+<form name="frmsearch" method="post" action="{?$url_chapter?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td>关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="0" maxlength="50"> <input name="keytype" type="radio" class="radio" value="0" checked>
+            小说名称
+			<input type="radio" name="keytype" class="radio" value="1">
+            发表者 &nbsp;&nbsp;
+			更新日期：<input name="datestart" type="text" class="text" size="12" id="date1" maxlength="15" value="{?$_request['datestart']?}">-<input name="dateend" type="text" id="date2"class="text" size="12" maxlength="15" value="{?$_request['dateend']?}">  
+            <button type="submit" name="btnsearch" class="button" >搜索</button>
+			<button  style="margin-top:20px;" type="button" name="btnexport" class="button" onclick="document.getElementById('isexport').value = 1;this.form.submit();document.getElementById('isexport').value = 0;">导出</button>
+		<input id="isexport" name="isexport" type="hidden" value="0">
+
+            &nbsp;&nbsp;&nbsp; <a href="{?$url_chapter?}">显示全部章节</a></td>
+    </tr>
+</table>
+</form>
+<br />
+<form action="{?$url_article?}" method="post" name="checkform" id="checkform">
+<table class="grid" width="100%" align="center">
+<caption>{?$articletitle?}</caption>
+  <tr align="center">
+    <th width="5%"><input type="checkbox" id="checkall" name="checkall" value="checkall" onclick="javascript: for (var i=0;i<this.form.elements.length;i++){ if (this.form.elements[i].name != 'checkkall') this.form.elements[i].checked = this.form.checkall.checked; }"></th>
+    <th width="18%">小说名称</th>
+    <th width="28%">章节名称</th>
+    <th width="11%">发表者</th>
+    <th width="11%">字数</th>
+    <th width="17%">更新</th>
+    <th width="10%">类型</th>
+  </tr>
+  {?section name=i loop=$chapterrows?}
+  <tr>
+    <td align="center"><input type="checkbox" id="checkid[]" name="checkid[]" value="{?$chapterrows[i].chapterid?}"></td>
+    <td><a href="{?function jieqi_geturl:'article':'article':$chapterrows[i].articleid:'info'?}" target="_blank">{?$chapterrows[i].articlename?}</a></td>
+    <td>{?if $chapterrows[i].chaptertype == 0?}<a href="{?function jieqi_geturl:'article':'chapter':$chapterrows[i].chapterid:$chapterrows[i].articleid:$chapterrows[i].isvip_n?}" target="_blank">{?$chapterrows[i].chaptername?}</a>{?else?}<strong>{?$chapterrows[i].chaptername?}</strong>{?/if?}{?if $chapterrows[i].isvip_n > 0?}<span class="hottext">vip</span>{?/if?}</td>
+    <td><a href="{?function jieqi_geturl:'system':'user':$chapterrows[i].posterid?}" target="_blank">{?$chapterrows[i].poster?}</a></td>
+    <td align="center">{?$chapterrows[i].size_c?}</td>
+    <td align="center">{?$chapterrows[i].lastupdate|date:'Y-m-d H:i:s'?}</td>
+    <td align="center">{?if $chapterrows[i].chaptertype > 0?}分卷{?else?}章节{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<table width="100%"  border="0" cellspacing="2" cellpadding="3">
+  <tr>
+    <td width="88%" align="right">{?$url_jumppage?}</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+	$("#date1").jeDate({
+    isinitVal:false,
+    ishmsVal:false,
+    maxDate: $.nowDate(0),
+    format:"YYYY-MM-DD",
+    zIndex:3000,
+});
+$("#date2").jeDate({
+    isinitVal:false,
+    ishmsVal:false,
+    maxDate: $.nowDate(0),
+    format:"YYYY-MM-DD",
+    zIndex:3000,
+});
+	
+</script>

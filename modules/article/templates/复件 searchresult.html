@@ -1,0 +1,55 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+{?set $jieqi_pagetitle = "搜索关键词“{$searchkey}”-{$jieqi_sitename}"?}
+{?set jieqi_page_rows = "20"?}
+<link rel="stylesheet" type="text/css" href="/sink/css/sort.css"/>
+
+
+
+<div class="layout">
+<div class="mainstore">
+<div class="sysc_tit">
+<div class="sxts"><h3><b class="hottext">{?$searchkey?}</b>搜索结果</h3></div></div>
+
+<div class="tab_2">
+<div class="search_result">
+<div style="display: block;">
+{?section name=i loop=$articlerows?}
+<div class="book">
+<a target="_blank" href="{?$articlerows[i].url_articleinfo?}">
+<img width="90" height="128" src="{?$articlerows[i].url_image?}"></a>
+<div class="book_info"><h3><em class="btn_a">
+<a target="_blank" href="{?$articlerows[i].url_articleinfo?}" class="active">立即阅读</a>
+<a href="javascript:;" onclick="GPage.addbook('{?$articlerows[i].url_bookcase?}');">收藏本书</a></em>
+<a id="book_716873" target="_blank" href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename_hl?}</a></h3>
+<dl><dt>作者：</dt><dd class="w_auth"><a target="_blank" href="{?$jieqi_modules['article']['url']?}/authorpage.php?id={?$articlerows[i].authorid?}">{?$articlerows[i].author?}</a></dd><dt>分类：</dt>
+<dd class="w_auth"><a href="{?function jieqi_geturl:article:articlelist:1:$articlerows[i].sortid?}" target="_blank">[{?$articlerows[i].sortname?}]</a></dd><dt>状态：</dt><dd class="w_auth">连载中</dd></dl><div class="clear"></div><dl><dt>更新：</dt><dd class="w_auth">{?$articlerows[i].lastupdate|date:'Y-m-d h:i'?}</dd><dt>字数：</dt><dd class="w_auth">{?$articlerows[i].size?}</dd></dl><div class="clear"></div><dl><dt>简介：</dt><dd class="book_intro" id="introCut">{?$articlerows[i].intro|truncate:102:'..'?}<a id="moreIntroBtn" style="display:inline block" href="{?$articlerows[i].url_articleinfo?}">更多</a></dd></dl></div></div>{?/section?}	
+																			   
+</div>
+<div class="cls"></div>
+{?$url_jumppage?}
+
+</div></div></div>
+
+<div class="layout_right" id="right_2">
+<div class="rankTitBox">
+<h3>热门搜索<span>榜</span></h3>
+</div>
+<div class="tabWrap channelList">
+<div class="rankListWrap">
+<ul class="rankList rankHover numList">
+{?$jieqi_pageblocks['1']['content']?}  </ul>
+
+</div></div>
+
+
+</div></div>
+
+<script type="text/javascript" src="/sink/js/search_allbooks.js"></script><script type="text/javascript">    var searchInfo = {"TagListOne":"all","TagListTwo":"all","TagListThree":"all","TagListFour":"all","TagListFive":"all","TagListSix":"all","Bookwords":"all","Updatestatus":"all","Lastupdate":"all","Sortby":2,"Isvip":"all","Website":2,"Subjectid":0,"Contentid":0},
+    getBookList_ajaxUrl = "";
+
+    $(function () {
+        CS.page.search.allbooks.init(searchInfo, getBookList_ajaxUrl);
+    });
+
+</script>

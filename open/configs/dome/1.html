@@ -1,0 +1,31 @@
+列表总条数：<{$TotalItem}>
+列表总页数：<{$TotalPage}>
+当前页码：<{$PageIndex}>
+一页显示条数：<{$PageSize}>
+返回请求状态：<{$Success}>
+返回失败/成功原因：<{$Msg}>
+/*下面参数为循环参数，循环输出小说列表*/
+<{section name=a loop=$Data}>//循环开始
+	小说ID：<{$Data[a].articleid}>
+	小说标题：<{$Data[a].articlename}>
+	小说关键字：<{$Data[a].keywords}>
+	作者：<{$Data[a].author}>
+	介绍：<{$Data[a].intro}>
+	分类ID：<{$Data[a].sortid}>
+	分类名称：<{$Data[a].sortname}>
+	最新章节ID：<{$Data[a].lastchapterid}>
+	最新章节名称：<{$Data[a].lastchaptername}>
+	总章节：<{$Data[a].chapters}>
+	总字数：<{$Data[a].size}>
+	最近更新：<{$Data[a].lastupdate|date_format:"%Y-%m-%d %H:%M:%S"}>
+	是否全本：<{$Data[a].fullflag}>
+	小说创建时间<{$Data[a].postdate|date_format:"%Y-%m-%d %H:%M:%S"}>：
+	总点击：<{$Data[a].allvisit}>
+	月点击：<{$Data[a].monthvisit}>
+	周点击：<{$Data[a].weekvisit}>
+	日点击：<{$Data[a].dayvisit}>
+	总推荐：<{$Data[a].allvote}>
+	月推荐：<{$Data[a].monthvote}>
+	周推荐：<{$Data[a].weekvote}>
+	日推荐：<{$Data[a].dayvote}>
+<{/section}>//循环结束

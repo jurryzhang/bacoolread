@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>微信登录</title>
+		<meta charset="utf-8">
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+	</head>
+	<body>
+	<script>
+	var obj = new WxLogin({
+    id:"login_container", 
+    appid: "wx2bdf336a139027ad", 
+    scope: "snsapi_login", 
+    redirect_uri: "http%3A%2F%2Fwww.mianfeidushu.com%2Fapi%2Fweixin%2Floginback.php",
+    state: "c6ca6d452f0e9d2325f695b78a9d1faa",
+    style: "",
+    href: "http://www.mianfeidushu.com/weixin.css"
+    });
+	</script>
+	<a id="login_container"></a>
+	</body>
+</html>

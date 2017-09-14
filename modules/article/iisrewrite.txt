@@ -1,0 +1,6 @@
+# 本规则用于IIS下的urlrewrite规则
+[ISAPI_Rewrite]
+RewriteRule /files/article/info/[0-9]+/([0-9]+)\.htm$                /modules/article/articleinfo.php\?id=$1
+RewriteRule /files/article/sort([0-9]*)/[0-9]+/([0-9]+)\.htm$        /modules/article/articlelist.php\?page=$2&class=$1
+RewriteRule /files/article/initial([01A-Z])/[0-9]+/([0-9]+)\.htm$    /modules/article/articlelist.php\?page=$2&initial=$1
+RewriteRule /files/article/top([a-z]+)([0-9]*)/[0-9]+/([0-9]+)\.htm$ /modules/article/toplist.php\?page=$3&sort=$1&class=$2

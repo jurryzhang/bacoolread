@@ -1,0 +1,38 @@
+<div class="col4">
+		<div class="blockc">
+		<div class="clearfix">
+	<div class="slidetitle">
+	<script type="text/javascript">
+		var int_tab_slide;
+		function slide_tab_slide(){
+			int_tab_slide = setInterval(function(){nexttab("tab_slide")}, 5000);
+		}
+		addEvent(window, "load", slide_tab_slide);
+	</script>
+	<ul id="tab_slide">
+{?section name=i loop=$articlerows?}
+		{?if $i['order'] == 1?}
+		<li><a href="javascript:void(0)" onmouseover="selecttab(this);clearInterval(int_tab_slide);" onmouseout="slide_tab_slide();" class="selected"><img src="{?$articlerows[i].url_image?}" /></a></li>
+		{?else?}
+		<li><a href="javascript:void(0)" onmouseover="selecttab(this);clearInterval(int_tab_slide);" onmouseout="slide_tab_slide();"><img src="{?$articlerows[i].url_image?}" /></a></li>
+		{?/if?}{?/section?}
+	</ul>
+	</div>
+	<div class="slidecontent">
+{?section name=i loop=$articlerows?}
+		{?if $i['order'] == 1?}		
+		<div>
+		<img src="{?$articlerows[i].url_image?}" />
+		<span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></span><br />
+		<p>{?$articlerows[i].intro|truncate:80?}...</p>
+		</div>
+		{?else?}
+		<div style="display:none;">
+		<img src="{?$articlerows[i].url_image?}" />
+		<span><a href="{?$articlerows[i].url_articleinfo?}" target="_blank">{?$articlerows[i].articlename?}</a></span><br />
+		<p>{?$articlerows[i].intro|truncate:80?}...</p>
+		</div>
+{?/if?}{?/section?}	</div>
+</div>
+		</div>
+	</div>

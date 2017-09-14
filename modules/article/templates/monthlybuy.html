@@ -1,0 +1,102 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "authorblocks"?}
+<link href="/sink/css/au.css" type="text/css" rel="stylesheet" />
+<div class="wrap clearfix">
+{?$jieqi_pageblocks['0']['content']?}
+<div class="auzuojia col10">
+<ul class="ultab">
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=1">申请VIP</a></li>
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=3">申请签约</a></li>
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=2">申请包月</a></li>
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=6">申请VIP免费阅读</a></li> 
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=4">申请精品</a></li>
+<li><a href="{?$jieqi_url?}/modules/article/monthlybuy.php?id=5">申请封面推荐</a></li>
+</ul>
+<table class="grid" width="100%" align="center"><tr align="center" class="head">	
+<th width="20%" class="head">申请书名</th>
+    <th width="35%" class="head">申请时间</th>
+	<th width="13%" class="head">申请状态</th>
+<th width="13%" class="head">申请类型</th>
+	<th width="50%" class="head">管理员回复</th>  </tr>
+  {?section name=i loop=$monthlyrows?}
+  <tr valign="middle">	
+  <td><a href="/modules/article/articleinfo.php?id={?$monthlyrows[i].bookid?}" target="_blank">{?$monthlyrows[i].bookname?}</a></td>
+	<td>{?$monthlyrows[i].date|date:'Y-m-d'?}</td>
+    <td>{?if $monthlyrows[i].typeid == 0?}处理中{?elseif $monthlyrows[i].typeid == 1?}已失败{?elseif $monthlyrows[i].typeid == 2?}通过{?/if?}</td>
+<td>{?$monthlyrows[i].types?}</td>
+    <td>{?$monthlyrows[i].texts?}</td>
+  </tr>
+  {?/section?}
+ 	</table>
+<form name="frmnewarticle" id="frmnewarticle" action="{?$jieqi_url?}/modules/article/monthlybuy.php?do=submit" method="post" onsubmit="return frmnewdraft_validate();">
+<table width="100%" class="grid" cellspacing="1" align="center">
+<caption>申请{?$mouthlybuyname?}</caption>
+<tr valign="middle" align="left">
+  <td class="tdl" width="25%">申请说明：</td>
+  <td class="tdr">{?$gfuname?}</td>
+</tr>
+
+
+<tr valign="middle" align="left">
+  <td class="tdl">小说名称：</td>
+  <td class="tdr">
+
+		<div id="selarticle" style="display:block;">
+{?if $tid == 3 ?}
+		<select class='select'  size='1' name='articleid' id='articleid'>
+		<option value='0'>--请选择--</option>
+
+		{?section name=i loop=$articlerows?}
+{?if $articlerows[i].issign == 0?}
+		<option value='{?$articlerows[i].articleid?}'>{?$articlerows[i].articlename?}</option>{?/if?}
+		{?/section?}
+
+		</select>
+{?elseif $tid == 1?}
+        <select class='select'  size='1' name='articleid' id='articleid'>
+		<option value='0'>--请选择--</option>
+
+		{?section name=i loop=$articlerows?}
+{?if $articlerows[i].isvip == 0 && $articlerows[i].issign > 0?}
+		<option value='{?$articlerows[i].articleid?}'>{?$articlerows[i].articlename?}</option>{?/if?}
+		{?/section?}
+
+		</select>
+{?else?}
+		<select class='select'  size='1' name='articleid' id='articleid'>
+		<option value='0'>--请选择--</option>
+               	{?section name=i loop=$articlerows?}
+{?if $articlerows[i].isvip > 0 ?}
+		<option value='{?$articlerows[i].articleid?}'>{?$articlerows[i].articlename?}</option>{?/if?}
+		{?/section?}
+{?/if?}
+		</div>
+
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">联系方式：</td>
+  <td class="tdr"><input type="text" class="text" name="pc" id="pc" size="30" maxlength="30" value="" /> <span class="hottext"></span>*输入你的手机号码或者是固定电话</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">类型：</td>
+  <td class="tdr"> 
+  <input type="radio" class="radio" name="type" id="type" value="{?$tid?}" checked="checked" />申请{?$mouthlybuyname?}
+</td>
+</tr><tr valign="middle" align="left">
+  <td class="tdl">作者留言：</td>
+  <td class="tdr"><textarea class="textarea" name="text" id="text" rows="6" cols="60"></textarea>*输入你想对编辑说的话，作品申请的理由等。</td>
+</tr>
+<tr valign="middle" align="left">
+  <td width="20%">
+  &nbsp;
+  <input type="hidden" name="action" id="action" value="post" />
+  </td>
+  <td>
+  <input type="submit" class="button" name="submit"  id="submit" value="提 交" />
+  </td>
+</tr>
+</table>
+</form>
+</div>
+</div>

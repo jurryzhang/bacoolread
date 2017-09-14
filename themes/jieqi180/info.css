@@ -1,0 +1,869 @@
+﻿/********************简介页 begin********************/
+/*简介统计选项卡 begin*/
+.intrCount {
+	background: #f0f1f3;
+}
+.intrCountL {
+	float: left;
+	width: 185px;
+	padding-top: 20px;
+	position:relative;
+}
+.intrCountL img {
+	width: 170px;
+	height: 205px;
+	display: block;
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+.intrCountL span {
+	width: 170px;
+	height: 30px;
+	line-height:30px;
+	text-align:center;
+	display: block;
+	margin-left: 15px;
+	bottom: 20px;
+	position:absolute;
+	z-index:100;
+	color: #fff;
+	background: #4c4c4c;
+	opacity: 0.8;
+}
+.intrCountR {
+	float: right;
+	width: 485px;
+}
+.intrCountR h3 {
+	font-size: 24px;
+	font-weight: 400;
+	padding-top: 6px;
+	margin-bottom: 12px;
+}
+.intrCountR h3 .t {
+	margin-right: 40px;
+}
+.spanLabel {
+	font-size: 12px;
+	margin-right: 40px;
+	color: #5e6878;
+}
+.spanLabel b {
+	font-weight: 400;
+	color: #a2a2a2;
+}
+/*选项卡*/
+.countTabTit {
+	margin-bottom: 15px;
+}
+.countTabTit li {
+	position: relative;
+	float: left;
+	_display: inline;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	color: #5b697e;
+	font-size: 12px;
+	margin-right: 10px;
+	padding: 0 24px;
+	cursor: pointer;
+}
+.countTabTit li.on {
+	background: #626262;
+	color: #fff;
+}
+.countTabTit li.on span {
+	position: absolute;
+	left: 45%;
+	top: 31px;
+	width: 9px;
+	height: 4px;
+	background: url(images/sjx.png) no-repeat;
+}
+.countTabInfo li {
+	float: left;
+	_display: inline;
+	width: 151px;
+	height: 26px;
+	line-height: 26px;
+	padding-right: 10px;
+	vertical-align: middle;
+	font-size: 14px;
+	overflow: hidden;
+	color: #5e677e;
+}
+.countTabInfo li span {
+	color: #fc7e1a;
+}
+/*简介统计选项卡 end*/
+
+/*简介文字和按钮 begin*/
+.intrTextBn {
+}
+.intrTextBnL {
+	float: left;
+	width: 370px;
+	text-align: center;
+	padding-top: 5px;
+}
+.intrTextBnL p {
+	padding: 10px 0 5px 15px;
+	line-height: 30px;
+	color: #5d6779;
+	font-size: 12px;
+	text-indent: 24px;
+	text-align: left;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.intrTextBnR {
+	float: right;
+	width: 300px;
+}
+.intrBnUl {
+	margin-bottom: 30px;
+}
+.intrBnUl li {
+	float: left;
+
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+	_display: inline;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+.intrBnUl li.nomr {
+	margin-right: 0;
+}
+
+.intrBnUl li a {
+    display: inline-block;
+    line-height: 1.4;
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #1c86d4;
+    color: #ffffff;
+    background: #3cb0fd;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#3cb0fd', endColorstr='#3498db', GradientType='0');
+}
+.intrBnUl li a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background: #00c9fe;
+    background-image: -webkit-linear-gradient(top, #00c9fe, #008db2);
+    background-image: -moz-linear-gradient(top, #00c9fe, #008db2);
+    background-image: -ms-linear-gradient(top, #00c9fe, #008db2);
+    background-image: -o-linear-gradient(top, #00c9fe, #008db2);
+    background-image: linear-gradient(to bottom, #00c9fe, #008db2);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00c9fe', endColorstr='#008db2', GradientType='0');
+}
+/*简介文字和按钮 begin*/
+
+/*最新章节 begin*/
+.latestChapter {
+}
+.latestChapter h3 {
+	padding-bottom: 10px;
+	padding-left: 15px;
+	margin-top: 12px;
+	font-size: 18px;
+	font-weight: 400;
+	color: #5d687a;
+	border-bottom: 1px solid #f1f1f1;
+}
+.latestChapter p {
+	font-size: 14px;
+	color: #60667c;
+	padding-left: 15px;
+	text-indent: 28px;
+}
+/*最新章节 begin*/
+
+/*最新VIP章节和最新免费章节 begin*/
+.intrVipFree {
+	margin-bottom: 40px;
+}
+.VipFreeTabTit {
+	display: block;
+	padding-left: 15px;
+}
+.VipFreeTabTit li {
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	vertical-align: middle;
+	padding: 0 10px;
+	margin-right: 10px;
+	_display: inline;
+	font-size: 18px;
+	cursor: pointer;
+}
+.VipFreeTabTit li.on {
+	background: #626262;
+	color: #fff;
+}
+.VipFreeTabCon {
+	border-top: 1px solid #f1f1f1;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+.vipFreeUl {
+	display: block;
+	margin-bottom: 20px;
+}
+.vipFreeUl li {
+	float: left;
+	width: 337px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.vipFreeUl li a {
+	font-size: 14px;
+	color: #3b3b3b;
+	padding: 0 50px 0 0;
+}
+.vipFreeUl li a:hover {
+	color: #ff7d00;
+}
+.vipFreeUl li.vip {
+	background: url(images/sp.png) 0 -631px no-repeat;
+}
+.vipFreeUl li.vip a {
+	padding: 0 50px 0 35px;
+}
+.vipFreeIcon {
+	display: block;
+}
+.vipFreeIcon li {
+	float: left;
+	display: block;
+	_display: inline;
+	width: 103px;
+	height: 103px;
+	background: url(images/act.png) no-repeat;
+	margin-right: 13px;
+}
+.vipFreeIcon a{
+	display: block;
+	text-align: center;
+	padding-top:80px;
+	color: #7a8194;
+    font-size: 12px;
+	width:100%;
+	height: 100%;
+}
+.vipFreeIcon li.honghua {
+	background-position: 0 0;
+}
+.vipFreeIcon li.modou {
+	background-position: -104px 0;
+}
+.vipFreeIcon li.yuepiao {
+	background-position: -208px 0;
+}
+.vipFreeIcon li.tuijian {
+	background-position: -312px 0;
+}
+
+/*最新VIP章节和最新免费章节 end*/
+
+/*最新书评和精华评论 begin*/
+intrReviewTab {
+	margin-bottom: 20px;
+}
+.reviewTabTit {
+	display: block;
+	height: 28px;
+	border-bottom: 1px solid #c3c3c3;
+}
+.reviewTabTit li {
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	border: 1px solid #dedede;
+	border-bottom: none;
+	vertical-align: middle;
+	padding: 0 10px;
+	_display: inline;
+	font-size: 12px;
+	cursor: pointer;
+	background: #f7f7f7;
+	color: 35f6a7e;
+}
+.reviewTabTit li.on {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+.shupingList {
+	border-bottom: 1px dotted #d2d2d2;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.splnobd {
+	border-bottom: 0;
+}
+.splImg {
+	float: left;
+	width: 45px;
+	text-align: right;
+}
+.splImg img {
+	width: 40px;
+	height: 40px;
+}
+.splInfo {
+	float: right;
+	width: 600px;
+	font-size: 12px;
+}
+.splInfo b {
+	float: left;
+	font-weight: 400;
+	color: #5880b3;
+}
+.splInfo em {
+	float: right;
+	color: #a2a4a1;
+	font-style : normal;
+}
+.splInfo p {
+	font-size: 14px;
+	color: #464749;
+	line-height: 22px;
+}
+.splInfohf {
+	font-size: 14px;
+	text-align: right;
+	padding-right: 25px;
+}
+.splInfohf a {
+	color: #ff8017;
+}
+.splInfohf a:hover {
+	color: #ff8017;
+}
+.plAreaBox {
+	padding-top: 10px;
+	text-align: right;
+}
+.plArea {
+	width: 690px;
+	height: 70px;
+	padding: 6px 5px;
+	border: 1px solid #d1d1d1;
+	background: none;
+	font-family: "Microsoft Yahei", "微软雅黑", "Tahoma", "SimSun";
+	font-size: 14px;
+	color: #c6c6c6;
+	resize: none;
+	margin-bottom: 15px;
+}
+.plBn {
+	width: 92px;
+	height: 29px;
+	background: url(images/sp.png) -120px -585px no-repeat;
+	border: 0;
+	font-family: "Microsoft Yahei", "微软雅黑", "Tahoma", "SimSun";
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+	padding-right: 15px;
+	cursor: pointer;
+}
+/*最新书评和精华评论 begin*/
+
+/*相关内容 begin*/
+.intrRelated {
+	padding-top: 30px;
+}
+.intrRelated ul li {
+	float: left;
+	width: 175px;
+	text-align: center;
+	font-size: 12px;
+	display: block;
+}
+.intrRelated ul li img {
+	width: 140px;
+	height: 190px;
+	display: block;
+}
+.intrRelated ul li b, .intrRelated ul li span {
+	display: block;
+	width: 140px;
+	font-weight: 400;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+}
+/*相关内容 end*/
+
+
+/*作者其他作品 begin*/
+.intrOtherWorks {
+	background: #f8f8f8;
+}
+.intrTitle1 {
+	height: 38px;
+	line-height: 38px;
+	background: #f0f1f3;
+	border-bottom: 1px solid #2c91e1;
+	font-size: 18px;
+	font-weight: 400;
+	color: #2f8fdb;
+	padding-left: 15px;
+}
+.intrTitle1 a {
+	float: right;
+	color: #2f8fdb;
+	font-size: 12px;
+	_display: inline;
+	margin-right: 10px;
+}
+.introwList {
+	border-bottom: 1px solid #e5eaee;
+	padding: 8px 0 9px 0;
+}
+.owlImg {
+	float: left;
+	width: 70px;
+	text-align: right;
+}
+.owlImg img {
+	width: 55px;
+	height: 85px;
+	display: block;
+	margin-left: 15px;
+}
+.owlInfo {
+	float: right;
+	width: 160px;
+	color: #5b667a;
+	font-size: 12px;
+}
+.owlInfo h4 {
+	font-size: 12px;
+	font-weight: 700;
+	height: 20px;
+	line-height: 20px;
+	padding-right: 10px;
+	overflow: hidden;
+	margin-bottom: 6px;
+}
+.owlInfo h4 a {
+	color: #5b667a;
+}
+.owlInfo h4 a:hover {
+	color: #ff7d00;
+}
+.owlInfo p {
+	line-height: 26px;
+}
+.owlInfo p span {
+	color: #939393;
+}
+/*作者其他作品 end*/
+
+/*本书粉丝排行 begin*/
+.intrBookFans {
+	font-size: 12px;
+}
+.BookFansUl li {
+	display: block;
+	width: 240px;
+	height: 34px;
+	line-height: 34px;
+	vertical-align: middle;
+	border-bottom: 1px solid #e7ebee;
+}
+.BookFansUl li.nobd {
+	border-bottom: 0;
+}
+.BookFansUl li b {
+	float: left;
+	_display: inline;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	color: #fff;
+	background: #cdccd2;
+	font-weight: 400;
+	font-family: Arial, sans-serif;
+	margin: 10px 10px 9px 15px;
+}
+.BookFansUl li b.orange {
+	background: #fc7e17;
+}
+.BookFansUl li span {
+	float: left;
+	display: block;
+	width: 190px;
+	height: 34px;
+	line-height: 34px;
+	overflow: hidden;
+}
+.BookFansUl li span em {
+	font-style: normal;
+	color: #d32c1a;
+	float:right;
+}
+.BookFansUl li i {
+	float: right;
+	display: block;
+	width: 60px;
+	height: 34px;
+	background: url(images/sp.png) 0px -833px no-repeat;
+}
+/*本书粉丝排行 begin*/
+
+/*新书榜 强推榜 begin*/
+.rankTabTit {
+	height: 38px;
+	line-height: 38px;
+	background: #f0f1f3;
+	border-bottom: 1px solid #2c91e1;
+	font-size: 18px;
+	color: #2f8fdb;
+}
+.rankTabTit li {
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	width: 120px;
+	text-align: center;
+	cursor: pointer;
+}
+.rankTabTit li.on {
+	border-bottom: 3px solid #2c91e1;
+}
+
+.BookRankUl {
+	width: 240px;
+	height:447px;
+	overflow: hidden;
+	font-size: 12px;
+}
+.BookRankUl li {
+	cursor:pointer;
+	border-bottom: 1px #ddd solid;
+}
+.BookRankUl li.on .Rankh3Top{
+	display:none;
+}
+.BookRankUl li.nobd {
+	border-bottom: none;
+}
+.Rankh3Top {
+	height: 37px;
+	line-height: 37px;
+	padding-left: 15px;
+	padding-right: 10px;
+	vertical-align: middle;
+	font-size: 12px;
+	overflow: hidden;
+	font-weight: 700;
+	color: #535e82;
+}
+.Rankh3Top b {
+	float: left;
+	_display: inline;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	color: #fff;
+	background: #cdccd2;
+	font-weight: 400;
+	font-family: Arial, sans-serif;
+	margin: 11px 10px 9px 0;
+}
+.Rankh3Top b.blue {
+	background: #2e90e2;
+}
+.szimgTxt {
+	position:relative;
+	height: 105px;
+	overflow: hidden;
+	padding:0 0 0 15px;
+}
+.szimgTxt b {
+	position:absolute;
+	left:15px;
+	top:10px;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	color: #fff;
+	background: #cdccd2;
+	font-weight: 400;
+	font-family: Arial, sans-serif;
+}
+.szimgTxt b.blue {
+	background: #2e90e2;
+}
+.szimgTxt img {
+	float: left;
+	margin: 10px 10px 0 0;
+	height: 85px;
+	width: 55px;
+}
+.szimgTxt p {
+	line-height: 24px;
+}
+.szimgTxt p span {
+	color: #939393;
+}
+.szimgTxt p a {
+	display:block;
+	line-height:20px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #535e82;
+	padding-top:5px;
+	margin-bottom:3px;
+}
+.szimgTxt p a:hover{
+	color: #ff7d00;
+}
+/*新书榜 强推榜 end*/
+/********************简介页 end**********************/
+
+
+/*面包屑 beging*/
+.crumbs {
+	height: 20px;
+	line-height: 20px;
+	padding-bottom: 10px;
+	color: #979797;
+}
+.crumbs a {
+	position: relative;
+	float: left;
+	_display: inline;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	color: #5b697e;
+	font-size: 12px;
+	*margin-right: 10px;
+	padding: 0 5px;
+	cursor: pointer;
+	background: #626262;
+    color: #fff;
+}
+.bn1{
+	position: relative;
+	_display: inline;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	color: #5b697e;
+	font-size: 12px;
+	*margin-right: 10px;
+	padding: 0 5px;
+	cursor: pointer;
+	background: #626262;
+    color: #fff;
+}
+.pinglun{
+	position: relative;
+	_display: inline;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	color: #5b697e;
+	font-size: 12px;
+	*margin-right: 10px;
+	padding: 0 5px;
+	cursor: pointer;
+	background: #626262;
+    color: #fff;
+}
+.crumbs a:hover {
+	color: #fff;
+}
+/*面包屑 end*/
+
+/*Share begin*/
+.share {
+	height: 24px;
+	line-height: 24px;
+}
+.share span {
+	float: left;
+	color: #a1a1a1;
+}
+.ulTop1 {
+	float: left;
+}
+.ulTop1 li, .h3Top {
+	width: 24px;
+	height: 24px;
+	transition: all .5s;
+	-moz-transition: all .5s; /* Firefox 4 */
+	-webkit-transition: all .5s; /* Safari 和 Chrome */
+	-o-transition: all .5s; /* Opera */
+}
+.ulTop1 li {
+	float: left;
+	margin-right: 5px;
+}
+.h3Top {
+	display: block;
+}
+.ulTop1 li a, .bshare-custom1 a {
+	cursor: pointer;
+	background: url(images/tubiao.png) no-repeat;
+}
+.bshare-custom1 a {
+	float: left;
+	display: block;
+	width: 24px;
+	_margin-left: -5px;
+}
+.ulTop1 li a.lt0 {
+	background-position: 0 -31px;
+}
+.ulTop1 li a.lth0 {
+	background-position: 0 0;
+}
+.ulTop1 li a.lt1 {
+	background-position: -24px -31px;
+}
+.ulTop1 li a.lth1 {
+	background-position: -24px 0;
+}
+.ulTop1 li a.lt2 {
+	background-position: -48px -31px;
+}
+.ulTop1 li a.lth2 {
+	background-position: -48px 0;
+}
+.ulTop1 li a.lt3 {
+	background-position: -72px -31px;
+}
+.ulTop1 li a.lth3 {
+	background-position: -72px 0;
+}
+.bshare-custom1 a.lt4 {
+	background-position: -96px -31px;
+}
+.bshare-custom1 a.lth4 {
+	background-position: -96px 0;
+}
+/*Share end*/
+.row{
+}
+
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+	float: left;
+	margin-right: 2%;
+	*margin-right: 1%;
+}
+.col1 {
+	width: 7.4166%;
+}
+.col2 {
+	width: 16.3333%;
+}
+.col3 {
+	width: 25%;
+}
+.col4 {
+	width: 29.1667%;
+}
+.col5 {
+	width: 41.6667%;
+}
+.col6 {
+	width: 45.8333%;
+}
+.col7 {
+	width: 57.9166%;
+}
+.col8 {
+	width: 66.3333%;
+}
+.col9 {
+	width: 72.9167%;
+}
+.col10 {
+	width: 81.6666%;
+}
+.col11 {
+	width: 91.5833%;
+}
+.col12 {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+.row .last {
+	float: right;
+	margin-right: 0;
+}
+
+.col2 .block{
+	border:1px solid #ccc;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+}
+.mb10 {
+	margin-bottom: 10px;
+}
+.mb15 {
+	margin-bottom: 15px;
+}
+.mb20 {
+	margin-bottom: 20px;
+}
+.mb25 {
+	margin-bottom: 25px;
+}
+.mb30 {
+	margin-bottom: 30px;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.tl {
+	text-align: left;
+}
+.tc {
+	text-align: center;
+}
+.tr {
+	text-align: right;
+}
+.mt {
+	margin-top: 0.6em;
+}
+.mb {
+	margin-bottom: 0.6em;
+}
+.cf:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}

@@ -1,0 +1,3 @@
+<ul class="vipFreeUl cf">{?section name=i loop=$chapterrows?}
+{?if $chapterrows[i].chaptertype == 0?}<li><a href="{?$chapterrows[i].url_chapter?}">{?if $chapterrows[i].isvip_n > 0?}<span class="hot"><i class="fa fa-vimeo-square fa-fw"></i></span>{?else?}{?/if?}{?$chapterrows[i].volumename?} {?$chapterrows[i].chaptername?}</a> [{?$chapterrows[i].lastupdate|date:'Y-m-d H:i'?}]</li>{?/if?}{?/section?}
+</ul>

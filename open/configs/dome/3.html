@@ -1,0 +1,18 @@
+列表总条数：<{$TotalItem}>
+列表总页数：<{$TotalPage}>
+当前页码：<{$PageIndex}>
+一页显示条数：<{$PageSize}>
+返回请求状态：<{$Success}>
+返回失败/成功原因：<{$Msg}>
+/*下面参数为循环参数，循环输出小说列表*/
+<{section name=a loop=$Data}>//循环开始
+	小说ID：<{$Data[a].articleid}>
+	小说标题：<{$Data[a].articlename}>
+	章节ID：<{$Data[a].chapterid}>
+	章节标题：<{$Data[a].chaptername}>
+	章节字数：<{$Data[a].size}>
+	章节发布时间：<{$Data[a].postdate|date_format:"%Y-%m-%d %H:%M:%S"}>
+	章节更新时间：<{$Data[a].lastupdate|date_format:"%Y-%m-%d %H:%M:%S"}>
+	是否付费：<{$Data[a].license}>
+	是否章节/分卷：<{$Data[a].chaptertype}>
+<{/section}>//循环结束

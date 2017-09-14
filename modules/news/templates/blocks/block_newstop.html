@@ -1,0 +1,10 @@
+<div>
+  <dl>
+	{?if $news_error == '' ?}
+		<dt><a href="{?$news_url?}"><span style="font-size:18px;font-family:'黑体';line-height:30px;"> {?$news_title?}</span></a>&nbsp;&nbsp;<span style="color:#999;">发布日期：{?$news_date?}</span></dt>
+		<dd><span style="line-height:20px;">&nbsp;&nbsp;&nbsp;&nbsp;{?$news_summary?}-> <a href="{?$news_url?}">阅读全文</a></span></dd>
+	{?else?}
+		{?$news_error?}
+	{?/if?}
+  </dl>
+</div>

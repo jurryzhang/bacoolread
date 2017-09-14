@@ -1,0 +1,48 @@
+<!--burn 添加 2017-01-11-->
+<form>
+    <table class="grid" width="100%" align="center">
+        <caption>APP后台--常见列表
+            <a  href="{?$jieqi_modules['app']['url']?}/admin/editQuestionAndAnswer.php?id=-1&action=show">
+                + 增加常见问题
+            </a>
+        </caption>
+
+        <tr align="center" class="head">
+            <td width="15%" valign="middle">顺序</td>
+            <td width="15%" valign="middle">问题</td>
+            <td width="15%" valign="middle">答案</td>
+            <td width="18%" valign="middle">时间</td>
+            <td width="13%" valign="middle">操作</td>
+        </tr>
+
+        {?section name=i loop=$questionAndAnswerList ?}
+        <tr valign="middle">
+            <td align="center">
+                {? $questionAndAnswerList[i]['showid'] ?}
+            </td>
+
+            <td align="center">
+                {? $questionAndAnswerList[i]['question'] ?}
+            </td>
+
+            <td align="center">
+                {? $questionAndAnswerList[i]['answer'] ?}
+            </td>
+
+            <td align="center">
+                {? $questionAndAnswerList[i]['time'] ?}
+            </td>
+
+            <td align="center">
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editQuestionAndAnswer.php?id={?$questionAndAnswerList[i]['id']?}&action=show">修改
+                </a>
+                |
+                <a href="{?$jieqi_modules['app']['url']?}/admin/editQuestionAndAnswer.php?id={?$questionAndAnswerList[i]['id']?}&action=delete">删除
+                </a>
+            </td>
+
+        </tr>
+        {?/section?}
+    </table>
+</form>
+

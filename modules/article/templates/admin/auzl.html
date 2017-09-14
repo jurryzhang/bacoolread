@@ -1,0 +1,53 @@
+<table width="100%" class="grid" cellspacing="1" align="center">
+<caption>作者实名信息</caption>
+<tr valign="middle" align="left">
+  <td class="tdl">真实姓名：</td>
+  <td class="tdr">{?$realname?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">电话：</td>
+  <td class="tdr">{?$telephone?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">手机：</td>
+  <td class="tdr">{?$mobilephone?}</td>
+</tr>
+
+<tr valign="middle" align="left">
+  <td class="tdl">证件类型：</td>
+  <td class="tdr">
+  <input type="radio" class="radio" name="p_idcardtype" id="p_idcardtype" value="1"{?if $idcardtype == '' || $idcardtype == '1'?} checked="checked"{?/if?}  />身份证
+  <input type="radio" class="radio" name="p_idcardtype" id="p_idcardtype" value="2"{?if $idcardtype == '2'?} checked="checked"{?/if?} />护照
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">证件号码：</td>
+  <td class="tdr">{?$idcard?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">联系地址：</td>
+  <td class="tdr">{?$address?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">邮编：</td>
+  <td class="tdr">{?$zipcode?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">收款银行：</td>
+  <td class="tdr">
+  {?$banktype?}
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">银行所在地：</td>
+  <td class="tdr">{?$bankname?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">卡号：</td>
+  <td class="tdr">{?$bankcard?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="tdl">持卡人姓名：</td>
+  <td class="tdr">{?$bankuser?}</td>
+</tr>
+</table>

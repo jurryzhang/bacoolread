@@ -1,0 +1,17 @@
+      <dl>
+       <dt class="img"><img src="{?function jieqi_geturl:'system':'avatar':$jieqi_userid:'s':$jieqi_avatar?}" onerror="javascript:this.src='/images/noavatars.jpg'"><span class="mask"></span></dt>
+	   <div class="infor_box">
+
+       <dd>{?$jieqi_username?}
+       </dd>
+       <dd><a title="{?$jieqi_vip?}" href="#"><img src="{?$jieqi_vip_imageurl?}"></a></dd>
+       <dd><a title="{?$jieqi_honor?}级" href="#"><img src="{?$jieqi_honor_imageurl?}"></a></dd>
+	   </div>
+      </dl>
+    </div>
+    <dl class="assets">
+     <dd><em>余额：</em>{?$jieqi_egold?}{?$jieqi_egoldname?}<a href="{?$jieqi_modules['pay']['url']?}/buyegold.php" target="_blank" class="recharge2">充值</a></dd>
+     <dd><em>抵扣券：</em>{?$jieqi_juan?}{?$jieqi_juanname?}</dd>
+     <dd><em>月票：</em>{?$userset['vipvote']?}张</dd>
+     <dd><em>包月：</em>{?if $overtime == 0?}尚未包月{?elseif $overtime < $time ?}已经到期{?else?}{?$overtime|date:'Y-m-d'?} 到期{?/if?}<a href="javascript:;" onclick="huodong('{?$jieqi_modules['article']['url']?}/monthly.php?id={?$jieqi_userid?}');" class="recharge2">开通</a></dd>
+    </dl>

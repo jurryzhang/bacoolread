@@ -1,0 +1,86 @@
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+{?set jieqi_page_rows = "30"?}
+{?set jieqi_blocks_module = "pay"?}
+{?set jieqi_blocks_config = "payblocks"?}
+<div id="content"><link href="/sink/css/user.css" type="text/css" rel="stylesheet">
+
+<!--wrap begin-->
+<div class="wrap2">
+  <script type="text/javascript">
+$(function(){
+	
+  var ss = 'userhub'+'_'+'';
+  if(ss == 'userhub_inbox' || ss == 'userhub_outbox' || ss == 'userhub_draft' || ss == 'userhub_toSysView' || ss == 'userhub_messagedetail'){
+      $('#userhub_newmessage').parent("dl.list_menu").show();
+	  $('#userhub_newmessage').children("a").addClass("focus");
+  }
+  if(ss == 'chapter_cmView'){
+      $('#article_masterPage').parent("dl.list_menu").show();
+	  $('#article_masterPage').children("a").addClass("focus");
+  }
+//  if('' == 'upaView'){
+//      $('#userhub_usereditView').parent("dl.list_menu").show();
+//	  $('#userhub_usereditView').children("a").addClass("focus");
+//  }
+  if('' == 'hotcomment'){
+      $('#userhub_comment').parent("dl.list_menu").show();
+	  $('#userhub_comment').children("a").addClass("focus");
+  }
+  if('' == 'uservip'){
+      $('#userhub_usermember').parent("dl.list_menu").show();
+	  $('#userhub_usermember').children("a").addClass("focus");
+  }
+  if('' == 'moderatorView'){
+      $('#userhub_review_view').parent("dl.list_menu").show();
+	  $('#userhub_review_view').children("a").addClass("focus");
+  }
+  $('#'+ss).parent("dl.list_menu").show();
+  $('#'+ss).children("a").addClass("focus");
+  $("li#row em").click(function(){
+  $(this).parent().parent().children("dl.list_menu").toggle(300);
+  });
+});
+
+</script>
+<!--sidebar2 begin-->
+  <div class="sidebar2 fl bg4 fix">
+	
+		    <div class="user2 f_blue fix">
+{?$jieqi_pageblocks['3']['content']?}
+
+	{?$jieqi_pageblocks['2']['content']?}
+  <div class="kf"></div>
+  </div>
+  <div class="article2 fr">
+	<div class="boxm2">
+<table class="grid" width="100%" align="center">
+<caption>VIP作品订阅记录</caption>
+  <tr align="center">
+    <th width="20%">书名</th>
+	<th width="15%">最近更新</th>
+	<th width="15%">最后购买</th>
+    <th width="20%">已订阅/总章节</th>
+	<th width="30%">操作</th>
+  </tr>
+  {?section name=i loop=$obuyrows?}
+  <tr>
+    <td><a href="{?function jieqi_geturl:'article':'article':$obuyrows[i].articleid:'index'?}" target="_blank">{?$obuyrows[i].obookname?}</a></td>
+	<td align="center">{?if $obuyrows[i].lastupdate > $obuyrows[i].buytime?}<span class="hottext">{?$obuyrows[i].lastupdate|date:"Y-m-d H:i"?}</span>{?else?}{?$obuyrows[i].lastupdate|date:"Y-m-d H:i"?}{?/if?}</td>
+	<td align="center">{?$obuyrows[i].buytime|date:"Y-m-d H:i"?}</td>
+    <td align="center">{?$obuyrows[i].chapternum?}/{?$obuyrows[i].chapters?}</td>
+	<td align="center">
+	<a href="{?$obook_dynamic_url?}/buylog.php?oid={?$obuyrows[i].obookid?}">订阅记录</a>
+	{?if $obuyrows[i].autobuy > 0?}
+	| <a href="buylist.php?obuyid={?$obuyrows[i].obuyid?}&action=unsetautobuy&page={?$jieqi_page_nowpage?}" title="自动订阅表示点击一个未订阅VIP章节阅读时，系统不提示购买，自动订阅并显示阅读页面">取消自动订阅</a>
+	{?else?}
+	| <a href="buylist.php?obuyid={?$obuyrows[i].obuyid?}&action=setautobuy&page={?$jieqi_page_nowpage?}" title="自动订阅表示点击一个未订阅VIP章节阅读时，系统不提示购买，自动订阅并显示阅读页面">设为自动订阅</a>
+	{?/if?}
+	</td>
+  </tr>
+  {?/section?}
+</table>
+{?$url_jumppage?}
+</div>
+</div></div></div>
+

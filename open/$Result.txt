@@ -1,0 +1,101 @@
+Array
+(
+    [0] => Array
+        (
+            [filename] => 1
+            [edittime] => 1478164768
+            [data] => Array
+                (
+                    [name] => 阅庭
+                    [mark] => 1
+                    [userid] => 1
+                    [status] => Array
+                        (
+                            [0] => online
+                        )
+
+                    [begintime] => 1461600000
+                    [overtime] => 1554048000
+                )
+
+        )
+
+    [1] => Array
+        (
+            [filename] => 123
+            [edittime] => 1480056950
+            [data] => Array
+                (
+                    [name] => test
+                    [mark] => 123
+                    [userid] => 123
+                    [status] => Array
+                        (
+                            [0] => debug
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [filename] => 2
+            [edittime] => 1465701002
+            [data] => Array
+                (
+                    [name] => 鬼姐姐
+                    [mark] => 2
+                    [userid] => 1228
+                    [status] => Array
+                        (
+                            [0] => online
+                        )
+
+                    [begintime] => 1462723200
+                    [overtime] => 1557331200
+                )
+
+        )
+
+    [3] => Array
+        (
+            [filename] => 3
+            [edittime] => 1465282785
+            [data] => Array
+                (
+                    [name] => 凤栖梧
+                    [mark] => 3
+                    [userid] => 3128
+                    [status] => Array
+                        (
+                            [0] => online
+                        )
+
+                    [begintime] => 1465228800
+                    [overtime] => 1737993600
+                )
+
+        )
+
+    [4] => Array
+        (
+            [filename] => 4
+            [edittime] => 1470446983
+            [data] => Array
+                (
+                    [name] => 创策
+                    [mark] => 4
+                    [userid] => 4934
+                    [status] => Array
+                        (
+                            [0] => online
+                        )
+
+                    [begintime] => 1468252800
+                    [overtime] => 1531411200
+                )
+
+        )
+
+)

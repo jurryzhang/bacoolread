@@ -1,0 +1,43 @@
+<form name="frmsearch" method="post" action="badgeaward.php">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">
+		关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50"> 
+            <select name="keytype">
+              <option value="toname">拥有者用户名</option>
+			  <option value="toid">拥有者ID</option>
+			  <option value="fromname">颁发者用户名</option>
+			  <option value="fromname">颁发ID</option>
+            </select>
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+		</td>
+    </tr>
+</table>
+</form> 
+<table class="grid" width="100%" align="center">
+<caption>徽章授予记录</caption>
+  <tr align="center">
+    <th width="14%">徽章类型</th>
+	<th width="15%">徽章名称</th>
+	<th width="16%">徽章标志</th>
+    <th width="15%">徽章拥有者</th>
+    <th width="15%">徽章颁发者</th>
+    <th width="15%">颁发时间</th>
+	<th width="10%">操作</th>
+  </tr>
+  {?section name=i loop=$awardrows?}
+  <tr>
+    <td class="odd" align="center">{?$awardrows[i].btypename?}</td>
+	<td class="even" align="center">{?$awardrows[i].caption?}</td>
+    <td class="odd" align="center"><img src="{?$awardrows[i].url_image?}" border="0" /></td>
+    <td class="even" align="center"><a href="{?function jieqi_geturl:'system':'user':$awardrows[i].toid?}" target="_blank">{?$awardrows[i].toname?}</a></td>
+    <td class="odd" align="center"><a href="{?function jieqi_geturl:'system':'user':$awardrows[i].fromid?}" target="_blank">{?$awardrows[i].fromname?}</a></td>
+	<td class="even" align="center">{?$awardrows[i].addtime|date:"Y-m-d H:i"?}</td>
+	<td class="odd" align="center"><a href="badgeaward.php?action=delete&awardid={?$awardrows[i].awardid?}&page={?$page?}&keytype={?$keytype?}&keyword={?$keyword?}">取消授予</a></td>
+  </tr>
+  {?/section?}
+  <tr>
+    <td colspan="8" class="foot">&nbsp;{?$url_jumppage?}</td>
+  </tr>
+</table>

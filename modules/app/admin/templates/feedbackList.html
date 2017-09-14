@@ -1,0 +1,38 @@
+<!--burn 添加 2016-12-26-->
+<form>
+    <table class="grid" width="100%" align="center">
+        <caption>
+            APP后台--反馈列表
+        </caption>
+
+        <tr align="center" class="head">
+            <td width="15%" valign="middle">用户</td>
+            <td width="60%" valign="middle">内容</td>
+            <td width="15%" valign="middle">提交时间</td>
+            <td width="13%" valign="middle">操作</td>
+        </tr>
+
+        {?section name=i loop=$feedbackList ?}
+        <tr valign="middle">
+            <td align="center">
+                {? $feedbackList[i]['username'] ?}
+            </td>
+
+            <td align="center">
+                {? $feedbackList[i]['content'] ?}
+            </td>
+
+            <td align="center">
+                {? $feedbackList[i]['time'] ?}
+            </td>
+
+            <td align="center">
+                <a href="{?$jieqi_modules['app']['url']?}/admin/feedbackList.php?id={?$feedbackList[i]['id']?}&action=delete">删除
+                </a>
+            </td>
+
+        </tr>
+        {?/section?}
+    </table>
+</form>
+

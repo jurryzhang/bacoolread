@@ -1,0 +1,33 @@
+{?section name=i loop=$articlerows?} 
+{?if $i.order == 1?}
+	<div class="nr">
+      <!--图书图片-->
+      <div class=" zl_bookimg"><a href="{?$jieqi_wap_url?}/info.php?id={?$articlerows[i].articleid?}" title="{?$articlerows[i].articlename?}"><img src="{?$articlerows[i].url_image?}" width="90" height="120"></a></div>
+      <!--图书内容简介-->
+      <div class="zl_booknr">
+        <ul>
+          <li>
+            <h3>{?$articlerows[i].articlename?}</h3>
+          </li>
+          <li>
+            <h4>作者：{?$articlerows[i].author?}</h4>
+          </li>
+          <li>
+            <p>{?$articlerows[i].intro?}...</p>
+          </li>
+        </ul>
+      </div>
+    </div >
+
+    <!--分门别类-->
+    <div  class="lb">
+      <ul>
+	  {?else?}
+                <li>
+          <span>[{?$articlerows[i].sort?}]</span> 
+          <a style="color:#000000" href="{?$jieqi_wap_url?}/info.php?id={?$articlerows[i].articleid?}">{?$articlerows[i].articlename?}</a>
+        </li>
+		{?/if?}
+     {?/section?}
+              </ul>
+    </div>

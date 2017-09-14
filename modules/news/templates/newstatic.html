@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{?$jieqi_pagetitle?}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta name="keywords" content="{?$meta_keywords?}" />
+<meta name="description" content="{?$meta_description?}" />
+<meta name="author" content="{?$meta_author?}" />
+<meta name="copyright" content="{?$meta_copyright?}" />
+<meta name="generator" content="jieqi.com" />
+<link rel="stylesheet" rev="stylesheet" href="{?$jieqi_themeurl?}style.css" type="text/css" media="all" />
+<script language="javascript" type="text/javascript" src="{?$jieqi_url?}/scripts/common.js"></script>
+<script language="javascript" type="text/javascript" src="{?$jieqi_themeurl?}theme.js"></script>
+{?$jieqi_head?}
+</head>
+<body>
+<div class="m_top"><div class="m_ceil"><div class="fl">
+<script language="javascript" type="text/javascript" src="{?$jieqi_url?}/scripts/toplink.js"></script></div>
+<div class="fr"></div></div>
+<div class="cb"></div>
+<div class="h_logo"><a href="{?$jieqi_url?}/"><img src="{?$jieqi_themeurl?}logo.gif" border="0" alt="{?$jieqi_sitename?}" /></a></div>
+<div class="h_right">
+<div class="h_login">
+我们致力于模块化、高性能的网站系统架设！
+</div>
+<div class="h_nav">
+<ul id="jieqi_menu">
+<li><a href="{?$jieqi_url?}">杰奇首页</a></li>
+<li><a href="{?$jieqi_url?}/modules/product/productlist.php">杰奇产品</a></li>
+<li><a href="{?$jieqi_url?}/modules/jieqi/softdown.php">下载中心</a></li>
+<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=4">产品服务</a>
+  <ul>
+    <li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=4&cid=5">服务条款</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=4&cid=6">版权申明</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=4&cid=7">在线演示</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=4&cid=8">成功案例</a></li>
+  </ul>
+</li>
+<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=9">购买指南</a>
+  <ul>
+    <li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=9&cid=10">购买流程</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=9&cid=11">支付方式</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=9&cid=12">联系方式</a></li>
+  </ul>
+</li>
+<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13">帮助中心</a>
+  <ul>
+    <li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=14">安装指南</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=15">使用入门</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=16">操作详解</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=17">模板制作</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=18">优化技巧</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=13&cid=19">常见问题</a></li>
+  </ul>
+</li>
+<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=1">杰奇新闻</a>
+  <ul>
+    <li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=1&cid=2">官方新闻</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=1&cid=3">产品新闻</a></li>
+  </ul>
+</li>
+<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=20">关于杰奇</a>
+  <ul>
+    <li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=20&cid=21">公司简介</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=20&cid=22">公司文化</a></li>
+	<li><a href="{?$jieqi_url?}/modules/news/newslist.php?pid=20&cid=23">发展历程</a></li>
+  </ul>
+</li>
+<li><a href="{?$jieqi_url?}/modules/forum/index.php">用户论坛</a></li>
+</ul>
+</div>
+</div>
+<div class="cb"></div>
+</div>
+<div class="main h_ads"><img src="{?$jieqi_themeurl?}images/aadd.jpg" /></div>
+
+<!---------------------------------------新闻显示开始-------------------------------------->
+<div class="main">
+<h1>{?$title?}</h1>
+<p>作者：{?$author?}&nbsp;&nbsp;来源：{?$source?}&nbsp;&nbsp;发布时间：{?$date?}</p>
+<hr />
+<!--获取新闻内容-->
+<div class="news_content">{?$body?}</div>
+<hr />
+</div>
+<div class="cb"></div>
+<div class="m_foot"><span style="font-size:14px; font-weight:bold;"><a href="{?$jieqi_url?}/files/news/html/gsjj.html">公司简介</a> | <a href="{?$jieqi_url?}/files/news/html/lxfs.html">联系方式</a> | <a href="{?$jieqi_url?}/files/news/html/khal.html">客户案例</a> | <a href="{?$jieqi_url?}/files/news/html/bzzx.html">帮助中心</a> | <a href="{?$jieqi_url?}/files/news/html/fwtk.html">服务条款</a> | <a href="{?$jieqi_url?}/files/news/html/zffs.html">支付方式</a> </span><br />
+Copyright  2006-2008 jieqi.com, All Rights Reserved.<br />
+浙ICP备05000663号</div>
+</body>
+</html>

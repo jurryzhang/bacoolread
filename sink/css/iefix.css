@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* zl iefix styles */
+.ie6 .zlblue{color: #48a2e0;}
+
+.ie6 body{ background-color:#fff;}
+
+.ie6 h1.zl-logo {
+background: url(../image/logo.gif) center center no-repeat;
+}
+
+.ie6 .g-nav-fn a i {
+background-image: url(../image/nav-icon.png);
+}
+
+.ie6 .top-sch div.sch-bdr button {
+background: url(../image/icon-search.png) center center no-repeat;
+}
+
+.ie6 .fs-rcm li div.dtl-box dl{ width:160px;
+	}
+
+.ie6 .top-sch .main{ position:relative;}
+.ie6 .top-push{ position:absolute; right:0; top:0; float:none;}
+
+.ie6 .g-nav-fn a{ float:left; margin-top:12px;}
+.ie6 .g-nav-fn a i{ vertical-align:-2px;}
+.ie6 .g-nav-fn a i.app{ background-position:0 -1px;}
+
+/*
+ie6 不支持 > 选择符 几乎无解
+.ie6 .fs-rcm li > a {
+display: block;
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+}*/
+
+
+.ie6  .focus-img .bx-wrapper .bx-controls-auto, 
+.ie6 .focus-img .bx-wrapper .bx-pager{ width:526px; bottom:6px; zoom:1; text-align:right;}
+.ie6 .focus-img .bx-wrapper .bx-pager div{ font-size:0; line-height:500em; overflow:hidden;}
+
+.lowie .bx-wrapper .bx-pager.bx-default-pager a { background:#f0f0f0; width:12px; height:12px;
+}
+.lowie .bx-wrapper .bx-pager.bx-default-pager a.active { background: #48a2e0;}
+
+
+.lowie .bx-wrapper .bx-controls-direction {
+filter: alpha(opacity=100);
+
+display: block;
+}
+
+.lowie .bx-wrapper a.bx-prev{ background:url(../image/prev.gif) center center no-repeat transparent;}
+.lowie .bx-wrapper a.bx-next{ background:url(../image/next.gif) center center no-repeat transparent;}
+
+
+.fs-rcm li.on{ z-index:9999;}
+
+.ie6 .img-list li{ display:inline;}
+.ie6 .hot-book ul{ padding:0 13px; width:94px; overflow:hidden;}
+.ie6 .hot-book ul li{ width:94px; margin:0; overflow:hidden; height:32px; line-height:32px;}
+
+.ie6 .collect-list{ width:100%; display:block; overflow:hidden; background:#f6f6f6;}
+.ie6 .collect-list ul{ float:left;}
+
+.ie6 .ranking-con td{ height:26px; line-height:26px;}
+
+.ie6 .cover-left{ overflow:hidden;}
+/*暂时隐藏*/
+.ie6 .cmt-box{  zoom:1; position:relative;}
+.ie6 .comment-area{  overflow:hidden; _height:800px;}
+
+.ie6 #edt-textarea{ width:688px;}
+.ie6 .cmt-list{ zoom:1; display:block; position:relative; clear:both; }
+.ie6 .cmt-itm{ height:80px;}
+
+.ie6 .channel-focus dd li.cur p{ line-height:24px; height:96px; padding-bottom:4px;}
+
+.ie6 .recommend2{ zoom:1; overflow:hidden;}
+.ie6 .recommend2:after{display: table; content: ''; clear: both; }
+
+.ie6 .recommend2 li {
+float: left;
+margin: -1px 0 0 0;
+padding: 30px 12px 0 20px;
+}
+
+.ie6 .recommend-list li span.red{ float:right; padding-top:11px; line-height:normal;}
+.ie6 .recommend-list li span.red i{ vertical-align:middle;}
+
+.lowie .bx-wrapper .bx-pager{ padding-top:0; bottom:10px;}
+
+.top-sch div.sch-bdr input{ line-height:34px;}
+.fans-rank-tab ol{ margin-right:14px;}
+
+.table-odd tr.odd td, 
+.table-even tr.even td { padding: 11px 0; background: #f9f9f9; }

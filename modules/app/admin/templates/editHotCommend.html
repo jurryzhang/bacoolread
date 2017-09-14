@@ -1,0 +1,87 @@
+<!--burn 添加 2016-12-27-->
+<link href="/sink/css/au.css" type="text/css" rel="stylesheet" />
+<form action="{?$jieqi_modules['app']['url']?}/admin/editHotCommend.php" method="post"  enctype="multipart/form-data">
+    <table width="100%" class="grid" cellspacing="1" align="center">
+        <caption>APP后台--热推书专区设置</caption>
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                名称：
+            </td>
+
+            <td class="tdr">
+                <input type="text" class="text" name="title" size="25" maxlength="20" value="{?$hotcommend['title']?}" />
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                显示顺序：
+            </td>
+
+            <td class="tdr">
+                <select class="select" size="1" name="showid">
+                    {?section name=i loop=$showOrder ?}
+                    {?if $i['key'] == $hotcommend['showID'] ?}
+                    <option value="{?$i['key']?}" selected="selected">{?$showOrder[i]?}</option>
+                    {?else?}
+                    <option value="{?$i['key'] ?}">
+                        {?$showOrder[i]?}
+                    </option>
+                    {?/if ?}
+                    {?/section?}
+                </select>
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                所属频道：
+            </td>
+
+            <td class="tdr">
+                <select class="select" size="1" name="channelid">
+                    {?section name=i loop=$channelList ?}
+                    {?if $i['key'] == $hotcommend['channel'] ?}
+                    <option value="{?$i['key']?}" selected="selected">{?$channelList[i]?}</option>
+                    {?else?}
+                    <option value="{?$i['key'] ?}">
+                        {?$channelList[i]?}
+                    </option>
+                    {?/if ?}
+                    {?/section?}
+                </select>
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                booksID：
+            </td>
+
+            <td class="tdr">
+                <input type="text" class="text" name="booksID" value="{?$hotcommend['booksID']?}" />
+                <span class="hottext">多本书用"|"隔开</span>
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td  class="tdl" width="25%">
+                {? if $id != -1 ?}
+                <input type="hidden" name="action" value="edit" />
+                <input type="hidden" name="id"     value="{?$hotcommend['id']?}" />
+            </td>
+
+            <td class="tdr">
+                <input type="submit" class="button" name="submit"  id="submit" value="保存修改" />
+                {? else ?}
+                <input type="hidden" name="action" id="action" value="add" />
+            </td>
+
+            <td class="tdr">
+                <input type="submit" class="button" name="submit"  id="submit" value="增 加" />
+                {?/if?}
+
+            </td>
+        </tr>
+    </table>
+</form>

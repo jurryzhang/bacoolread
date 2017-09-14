@@ -1,0 +1,257 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "infoblocks"?}
+{?set $jieqi_pagetitle = "{$articlename}-{$author}-{$jieqi_sitename}"?}
+{?set $meta_keywords = "{$articlename} {$author} {$sort}"?}
+<link rel="stylesheet" href="{?$jieqi_themeurl?}info.css" type="text/css" media="all" />
+<script type="text/javascript" src="{?$jieqi_url?}/scripts/rating.js"></script>
+
+<div class="body mb cf">
+  <div class="row">
+    <div class="col9">
+      <div class="crumbs">
+        <a href="{?$jieqi_url?}/"><i class="fa fa-home fa-fw"></i>首页<i class="fa fa-chevron-right fa-fw"></i></a><a href="{?function jieqi_geturl:'article':'articlelist':$sortid?}" target="_blank"><i class="fa fa-folder-open fa-fw"></i>{?$sortname?}<i class="fa fa-chevron-right fa-fw"></i></a><a href="{?$url_read?}" target="_blank"><i class="fa fa-folder-open fa-fw"></i>{?$articlename?}</a>
+      </div>
+      <!-- 简介页统计选项卡 begin -->
+        <div class="intrCount cf">
+            <div class="intrCountL">
+			<a href="{?$url_limage?}" target="_blank"><img src="{?$url_simage?}" alt="{?$articlename?}"/></a>
+			</div>
+            <div class="intrCountR">
+                <h3><span class="t">{?$articlename?}</span><span class="spanLabel"><b>作者：</b><a href="{?function jieqi_geturl:'article':'author':$authorid:$author?}" target="_blank">{?$author?}</a></span></h3>
+                <div class="countTab">
+                    <ul class="countTabTit cf">
+                        <li id="one1" onClick="setTab('one',1,2)" class="on"><span></span>属性</li>
+                        <li id="one2" onClick="setTab('one',2,2)"><span></span>公告</li>
+                    </ul>
+                    <div id="con_one_1">
+                        <ul class="countTabInfo cf">
+                            <li>作品分类：<span>{?$sort?}</span></li>
+<li>二级分类：<span>{?$type?}</span></li>
+<li>所属频道：<span>{?$rgroup?}</span></li>
+                            <li>连载状态：<span>{?$fullflag?}</span></li>
+                            <li>最后更新：<span>{?$lastupdate|date:'Y-m-d'?}</span></li>
+                            <li>作品性质：<span>{?$isvip?}</span></li>
+                            <li>授权级别：<span>{?$permission?}</span></li>
+                            
+							<li>总 字 数：<span>{?$size_c?}</span></li>
+                            <li>总 点 击：<span>{?$allvisit?}</span></li>
+                            <li>本月点击：<span>{?$monthvisit?}</span></li>
+                            <li>收 藏 数：<span>{?$goodnum?}</span></li>
+							<li>总 推 荐：<span>{?$allvote?}</span></li>
+                            <li>本月推荐：<span>{?$monthvote?}</span></li>
+							<li>鲜 花 数：<span>{?$allflower?}</span></li>
+							<li>月 票 数：<span>{?$allvipvote?}</span></li>
+                        </ul>
+                        <div class="mb5">
+                       
+                        </div>
+                    </div>
+                    <div id="con_one_2" style="display:none;padding:0 10px 10px 0;overflow:hidden;">
+                        {?if $notice != ""?}{?$notice|htmlclickable?}{?else?}本书尚无公告！{?/if?}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- 简介页统计选项卡 end -->
+        <!-- 简介页文字和按钮 begin -->
+        <div class="intrTextBn mb25 cf">
+            <div class="intrTextBnL">
+              <p id="aintro" style="height: 140px;" class="BSHARE_TEXT">{?$intro?}</p>
+                <input type="button" class="bn1" value="展开∨" onclick="if($_('aintro').style.height == 'auto'){$_('aintro').style.height = '140px';this.value='展开∨';}else{$_('aintro').style.height = 'auto';this.value='缩进∧';}">
+            </div>
+            <div class="intrTextBnR">
+                <ul class="intrBnUl cf">
+				  <li><a href="{?$url_read?}">点击阅读</a></li>
+                  <li><a id="a_uservote" href="javascript:;" onclick="if({?$jieqi_userid?}) Ajax.Tip(event, '{?$url_uservote?}', {method: 'POST'}); else openDialog('{?$jieqi_user_url?}/login.php?jumpurl={?$jieqi_thisurl|urlencode?}&ajax_gets=jieqi_contents', false);">推荐本书</a></li>
+
+                  <li class="nomr"><a href="javascript:;" onClick="addbook({?$articlerows[i].articleid?});">加入书架</a></li>
+                  <li><a href="{?function jieqi_geturl:'article':'author':$authorid:$author?}">作者专栏</a></li>
+                  <li><a href="{?$article_static_url?}/packdown.php?id={?$articleid?}&type=txt&fname={?$articlename|urlencode?}" rel="nofollow">全文下载</a></li>
+				  <li class="nomr"><a href="{?$article_static_url?}/shortcut.php?id={?$articleid?}" rel="nofollow">桌面快捷</a></li>
+                </ul>
+                <!-- 分享 begin -->
+                <div class="share">
+                   
+                    <ul class="ulTop1 cf">
+                        <li><a title="分享到QQ空间" onClick="javascript:bShare.share(event,'qzone',0);return false;" class="h3Top lt0"></a></li>
+                        <li><a title="分享到新浪微博"  onClick="javascript:bShare.share(event,'sinaminiblog',0);return false;" class="h3Top lt1"></a></li>
+                        <li><a title="分享到腾讯微博" onClick="javascript:bShare.share(event,'qqmb',0);return false;" class="h3Top lt2"></a></li>
+                        <li><a title="分享到微信" onClick="javascript:bShare.share(event,'weixin',0);return false;" class="h3Top lt3"></a></li>
+                    </ul>
+                    <div class="bshare-custom1">
+                        <a title="更多平台" class="bshare-more lt4" style="height:24px;"/></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&style=-1"></script>
+				<script type="text/javascript" charset="utf-8">
+				bShare.addEntry({
+					pic: "{?if $jieqi_url == ''?}{?$jieqi_local_url?}{?/if?}{?$url_simage?}"
+				});
+				</script> 
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC1.js"></script>
+                <!-- 分享 end -->
+            </div>
+        </div>
+        <!-- 简介页文字和按钮 end -->
+	  {?if $foreword != ''?}
+		<!-- 简介页 编辑点评 begin -->
+      <div class="latestChapter mb30">
+          <h3>编辑点评</h3>
+          <p>{?$foreword?}</p>
+        </div>
+        <!-- 简介页 编辑点评 end -->
+	  {?/if?}
+        
+        <!-- 简介页 最新章节 begin -->
+      <div class="latestChapter mb30">
+          <h3>最新章节</h3>
+            
+            {?if $isvip_n > 0?}
+            <p><a href="{?$url_vipchapter?}">{?if $vipvolume != ''?}{?$vipvolume?} {?/if?}{?$vipchapter?}</a></p>
+            <p><a href="{?$url_vipchapter?}">{?$vipsummary|strip_tags|truncate:260:'..'?}</a></p>
+            {?else?}
+            <p><a href="{?$url_lastchapter?}">{?if $lastvolume != ''?}{?$lastvolume?} {?/if?}{?$lastchapter?}</a></p>
+             <p><a href="{?$url_lastchapter?}">{?$lastsummary|strip_tags|truncate:260:'..'?}</a></p>
+            {?/if?}
+        </div>
+        <!-- 简介页 最新章节 end -->
+        
+        <!-- 简介页 最新VIP章节和最新免费章节 begin -->
+      <div class="intrVipFree">
+            <ul class="VipFreeTabTit mb10 cf">
+                <li id="two1" onClick="setTab('two',1,2)" class="on">最后六章</li>
+                <li id="two2" onClick="setTab('two',2,2)">最前六章</li>
+            </ul>
+            <div class="VipFreeTabCon">
+                <div id="con_two_1">
+                {?$jieqi_pageblocks['5']['content']?}  
+
+                </div>
+                <div id="con_two_2" style="display:none">
+                  {?$jieqi_pageblocks['6']['content']?}  
+                </div>
+                <ul class="vipFreeIcon cf">
+                  <li class="modou"><a id="a_tip" href="javascript:;" onclick="openDialog('{?$jieqi_modules['article']['url']?}/tip.php?id={?$articleid?}&ajax_gets=jieqi_contents', false);">打赏魔豆</a></li>
+                  <li class="honghua"><a id="a_flower" href="javascript:;" onclick="openDialog('{?$jieqi_modules['article']['url']?}/gift.php?type=flower&id={?$articleid?}&ajax_gets=jieqi_contents', false);">赠送鲜花</a></li>
+                  <li class="yuepiao"><a id="a_vipvote" href="javascript:;" onclick="openDialog('{?$jieqi_modules['article']['url']?}/gift.php?type=vipvote&id={?$articleid?}&ajax_gets=jieqi_contents', false);">赠送月票</a></li>
+                  <li class="tuijian"><a id="a_hurry" href="javascript:;" onclick="openDialog('{?$jieqi_modules['article']['url']?}/hurry.php?id={?$articleid?}&ajax_gets=jieqi_contents', false);">催更本书</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 简介页 最新VIP章节和最新免费章节 end -->
+
+{?if $showvote > 0?}
+<div class="divbox">
+  <form name="frmvote" method="post" action="{?$jieqi_modules['article']['url']?}/votedo.php" target="_blank">  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><span class="hot">作品投票调查：</span></td>
+    <td width="50%" align="right">
+    <input name="aid" type="hidden" value="{?$articleid?}" />
+    <input name="vid" type="hidden" value="{?$voteid?}" />
+      <input type="submit" name="votepost" value="提交投票" class="button" />&nbsp;
+      <input type="button" name="voteshow" value="查看结果" class="button" onclick="window.open('{?$jieqi_modules['article']['url']?}/voteresult.php?id={?$voteid?}')" />
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">主题：<strong>{?$votetitle?}</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+  <ul>
+    {?section name=i loop=$voteitemrows?}
+    <li style="width:49%;float:left;padding:3px;">
+    {?if $mulselect == 1?}
+    <input name="voteitem[]" type="checkbox" value="{?$voteitemrows[i].id?}" />
+    {?else?}
+    <input name="voteitem" type="radio" value="{?$voteitemrows[i].id?}" />
+    {?/if?}
+    {?$voteitemrows[i].item?}
+    </li>
+    {?/section?}
+    </ul>
+  </td>
+  </tr>
+  </table>
+  </form>
+</div>
+{?/if?}
+{?if $eachlinknum > 0 && $eachlinkcount > 0?}
+<div class="divbox">
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><span class="hot">推荐阅读：</span></td>
+  </tr>
+  <tr>
+    <td>
+  <ul>
+    {?section name=i loop=$eachlinkrows?}
+    <li style="width:24%;float:left;padding:3px;">《<a href="{?$eachlinkrows[i].url_articleinfo?}" target="_blank">{?$eachlinkrows[i].articlename?}</a>》</li>
+    {?/section?}
+  </ul>
+  </td>
+  </tr>
+</table>
+</div>
+{?/if?}
+
+        
+        <!-- 简介页 最新书评和精华评论 begin -->
+        <div>{?$jieqi_pageblocks['7']['content']?}  </div>
+        {?if $jieqi_userid > 0?}
+<form name="frmreview" id="frmreview" method="post" action="{?$jieqi_modules['article']['url']?}/reviews.php?aid={?$articleid?}" target="_blank">
+          <textarea class="textarea" name="pcontent" id="pcontent" cols="60" rows="8" style="width:100%;"></textarea>
+          <div>
+          {?if $postcheckcode > 0?}验证码：<input type="text" class="text" size="8" maxlength="8" name="checkcode" onfocus="if($_('p_imgccode').style.display == 'none'){$_('p_imgccode').src = '{?$jieqi_url?}/checkcode.php';$_('p_imgccode').style.display = '';}" title="点击显示验证码"><img id="p_imgccode" src="" style="cursor:pointer;vertical-align:middle;margin-left:3px;display:none;" onclick="this.src='{?$jieqi_url?}/checkcode.php?rand='+Math.random();" title="点击刷新验证码">{?/if?}
+          		<!-- <input type="submit" name="Submit" class="button" value=" 发表书评 "> -->
+				  <input type="button" name="Submit" class="pinglun" value=" 发表书评 " style="cursor:pointer;" onclick="Ajax.Request('frmreview',{onComplete:function(){alert(this.response.replace(/<br[^<>]*>/g,'\n'));Form.reset('frmreview');
+}});">
+        
+          <input type="hidden" name="action" value="newpost" />{?$jieqi_token_input?}
+        </div>
+</form>
+{?else?}
+<table class="grid" width="100%" align="center">
+  <tr><td align="center">
+    <br />您需要 <a href="{?$jieqi_url?}/login.php">登录</a> 才能发表书评！<br /><br />
+  </td></tr>
+</table>
+{?/if?}
+        
+        <!-- 简介页 最新书评和精华评论 end -->
+    </div>
+
+    <div class="col3 last">
+			<div class="intrOtherWorks mb20">
+        	<h3 class="intrTitle1 cf">作者其他作品</h3>
+			{?$jieqi_pageblocks['0']['content']?}   
+</div>
+
+{?$jieqi_pageblocks['2']['content']?}  
+
+{?$jieqi_pageblocks['1']['content']?}  
+
+        <div class="intrBookRank mb20">
+          <ul class="rankTabTit mb10 cf">
+                <li id="four1" onClick="setTab('four',1,2)" class="on">新书榜</li>
+                <li id="four2" onClick="setTab('four',2,2)">强推榜</li>
+            </ul>
+            <div class="rankTabList">
+              <div id="con_four_1">   
+              <ul class="BookRankUl">              
+                   {?$jieqi_pageblocks['4']['content']?}   
+</ul> 				   
+                </div>
+                <div id="con_four_2" style="display:none;">
+				<ul class="BookRankUl">
+                  {?$jieqi_pageblocks['3']['content']?}
+				  </ul> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>

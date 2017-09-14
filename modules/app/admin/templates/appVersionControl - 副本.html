@@ -1,0 +1,39 @@
+<!--burn 添加 2016-12-28-->
+<link href="/sink/css/au.css" type="text/css" rel="stylesheet" />
+<form action="{?$jieqi_modules['app']['url']?}/admin/appVersionControl.php" method="post"  enctype="multipart/form-data">
+    <table width="100%" class="grid" cellspacing="1" align="center">
+        <caption>
+            APP后台--APP版本设置
+        </caption>
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                版本号：
+            </td>
+
+            <td class="tdr">
+                <input type="text" name="version" value="{?$version?}" />
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td class="tdl" width="25%">
+                上传APK：
+            </td>
+
+            <td class="tdr">
+                <input type="file" class="text" name="apk_file" accept=".apk" />
+                <span class="hottext">应用格式：.apk</span>
+            </td>
+        </tr>
+
+        <tr valign="middle" align="left">
+            <td  class="tdl" width="25%">
+                <input type="hidden" name="action" value="edit" />
+            </td>
+
+            <td class="tdr">
+                <input type="submit" class="button" name="submit"  id="submit" value="修改" />
+            </td>
+        </tr>
+    </table>
+</form>

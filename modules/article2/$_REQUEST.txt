@@ -1,0 +1,19 @@
+Array
+(
+    [rgroupid] => 1
+    [sortid] => 6
+    [typeid] => 26
+    [articlename] => 测试一下
+    [backupname] => 测试两下
+    [keywords] => 三下
+    [agent] => 初心不负
+    [allowtrans] => 0
+    [permission] => 0
+    [firstflag] => 0
+    [intro] => 
+    [notice] => 
+    [ebook] => 33
+    [token] => YTo0OntzOjY6InVzZXJpZCI7aTo3O3M6MjoiaXAiO3M6MTM6IjEyMy4xNC4zNy4xOTciO3M6NDoidGltZSI7ZDoxNDgwOTkzMDY3LjQzNDMyNTk7czo0OiJzaWduIjtzOjMyOiI2NTkxM2IzM2EwYWVjYmE3ZGMyMTAwMjIyMTJjZmFjZiI7fQ
+    [action] => check
+    [submit] => 提 交
+)
